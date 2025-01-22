@@ -1,0 +1,3 @@
+model_name,seconds,code_name,max_lenght,gpu_name,caracteristcs,accuracy
+codellama/CodeLlama-7b-hf,71.62808537483215,26GC,1024.0,Tesla T4,Lorem Ipsum,0.0
+deepseek-ai/DeepSeek-Coder-V2-Lite-Base,86.3503782749176,P7CH,1024.0,NVIDIA A100-SXM4-40GB,Lorem Ipsum,0.0
