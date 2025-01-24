@@ -1,5 +1,7 @@
-model,mean_seconds,std_seconds,mean_accuracy,std_accuracy,sample_size,text_length,
-codellama/CodeLlama-7b-hf,7.460465717315674,0.4129561241576454,0.0,0.0,20.0,128.0
-codellama/CodeLlama-7b-hf,15.587704420089722,0.0643517148911962,0.0,0.0,20.0,256.0
-codellama/CodeLlama-7b-hf,33.195766842365266,0.1520243018048608,0.0,0.0,20.0,512.0
-codellama/CodeLlama-7b-hf,70.61274592876434,8.715630888589288,0.0,0.0,20.0,1024.0
+model,mean_seconds,std_seconds,mean_accuracy,std_accuracy,sample_size,text_length,Unnamed: 7,lower_value,higher_value
+codellama/CodeLlama-7b-hf,7.460465717315674,0.4129561241576454,0.0,0.0,20.0,128.0,,,
+codellama/CodeLlama-7b-hf,15.587704420089722,0.0643517148911962,0.0,0.0,20.0,256.0,,,
+codellama/CodeLlama-7b-hf,33.195766842365266,0.1520243018048608,0.0,0.0,20.0,512.0,,,
+codellama/CodeLlama-7b-hf,70.61274592876434,8.715630888589288,0.0,0.0,20.0,1024.0,,,
+deepseek-ai/DeepSeek-Coder-V2-Lite-Base,63.405873966217044,33.974415362286486,,,10.0,1024.0,,3.3285951614379883,86.13112664222717
+deepseek-ai/DeepSeek-Coder-V2-Lite-Base,37.81146636009216,10.764221504414401,,,20.0,512.0,,6.706182241439819,43.46360945701599
