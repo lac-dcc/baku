@@ -2,12 +2,12 @@ import time
 import string
 import random
 import subprocess
-import DataLoader
+from data_loader import DataLoader
 
 class CodeGeneration:
     
     def __init__(self,model,model_name,tokenizer,data : DataLoader,input_str: str,input_id : int,
-                 max_length : int, base_code: str = "", perf=False):
+                 max_length : int, base_code: str = "", topology="regression"):
         self.model = model
         self.model_name = model_name
         self.data = data
@@ -15,8 +15,9 @@ class CodeGeneration:
         self.max_length = max_length
         self.input_id = input_id
         self.tokenizer = tokenizer
+        self.base_code = base_code
         
-        if perf is "performance":
+        if topology == "performance":
             self.template =  f"""
         Generate a C program optimized for the following Linux `perf` statistics:
         {self.input_str}
@@ -43,8 +44,8 @@ class CodeGeneration:
         
         else:
              self.template = f"""
-        Complete the following code with {self.input_str}:
-        {base_code}
+        Complete the following code, {self.input_str}:
+        {self.base_code}
         
 
         - **Requirements**:
@@ -53,7 +54,7 @@ class CodeGeneration:
 
         - **Output Format**:
             <Program>
-            {base_code}
+            {self.base_code}
             </Program>
         """
             
@@ -78,35 +79,51 @@ class CodeGeneration:
             print(f'Time spend in the code generation: {self.dif_seconds}')
         
             
-    def get_output_list(self,program):#Return the data from the program generation
-        if (self.program_name is "") or (self.program is ""):
+    def get_output_list(self):#Return the data from the program generation
+        if (self.program_name == "") or (self.program == ""):
             program = self.program_extratcion()
             
+        if(self.base_code in self.program):#Do not accept base code as a generated code
+                    
+            gpu_name = self.get_gpu_name()
+            len_program = len(self.tokenizer.encode(self.program)) #count the amount of tokens in the program
+            return [self.model_name, 
+                    self.dif_seconds, 
+                    self.program_name, 
+                    gpu_name, 
+                    self.input_id, 
+                    0, 
+                    -1]
+        
         gpu_name = self.get_gpu_name()
         len_program = len(self.tokenizer.encode(self.program)) #count the amount of tokens in the program
-        return list(self.model_name,self.dif_seconds,self.program_name,len_program,
-                    gpu_name,self.input_id,0)
+        return [self.model_name, 
+                self.dif_seconds, 
+                self.program_name, 
+                gpu_name, 
+                self.input_id, 
+                0, 
+                len_program]
    
             
     def program_extratcion(self):#Return the program generated
         self.name_generator()
         
-        if self.program is "":
+        if self.program == "":
             final_program = ""
             suboutput_list = self.output.split("<Program>")
             
             for subprogram in (suboutput_list):
                 program = subprogram.split("</Program>")[0]
-                
+
                 if(program.find("}")!=-1):
                     final_program = program
-                    break
             
             self.program = final_program 
         
         return self.program
             
-    def get_gpu_name(): #Get GPU used for the code gen
+    def get_gpu_name(self): #Get GPU used for the code gen
         try:
             # All the informations about the current GPU
             gpu_info = subprocess.check_output(
@@ -120,10 +137,10 @@ class CodeGeneration:
     
     def name_generator(self,size=4): #Randomly generate a new file name
         
-        if self.program_name is "" :
+        if self.program_name == "" :
             chars=string.ascii_uppercase + string.digits
             random_name = ''.join(random.choice(chars) for _ in range(size))
-            while random_name in self.data['code_name'].values:
+            while random_name in self.data.column_values('code_name'):
                 random_name = ''.join(random.choice(chars) for _ in range(size))
             self.program_name = random_name
         

@@ -4,7 +4,7 @@ class DataLoader:
     def __init__(self, data_path:str):
         try:
             self.data_path = data_path
-            self.dataframe = pd.read_csv(data_path)
+            self.dataframe = pd.read_csv(data_path) 
             print("Data Loaded.")
         except:
             raise Exception("Data couldn't be loaded.")
@@ -17,11 +17,22 @@ class DataLoader:
         except:
             raise Exception("Data couldn't be uploaded.")
         
+    def column_values(self,column_name):
+        try:
+            return self.dataframe[column_name].values
+        except:
+            raise Exception("Column must be wrong.")
         
-    def new_row(self, new_values: list):#add new row with the new values
-        columns = self.dataframe.columns.tolist()
-        new_row = dict(zip(columns,new_values))#make a dict to use as a new row
-        self.dataframe = pd.concat([self.dataframe, new_row], ignore_index=True)
+
+        
+    def new_row(self, new_values: list):#Matches two list to form a new data row
+      if len(new_values) != len(self.dataframe.columns):
+          raise ValueError("The number of values does not match the number of columns.")
+
+      # Create a DataFrame from the new row values
+      new_row = pd.DataFrame([dict(zip(self.dataframe.columns, new_values))])
+
+      self.dataframe = pd.concat([self.dataframe, new_row], ignore_index=True)
         
     def static_row_string(self,id,ignore_columns=""):#chose a value to generate
         if(id==0):
@@ -29,21 +40,21 @@ class DataLoader:
         
         else:
             
-            if not ignore_columns is "": #if there is a column...
+            if not ignore_columns == "": #if there is a column...
                 static = self.dataframe.drop(ignore_columns, axis=1).iloc[id]
             
             else: 
                 static = self.dataframe.iloc[id]
                 
-            static = static.to_string(index=True)
+            static = static.to_string(index=False)
             return static
         
     def random_row_string(self,ignore_columns=""):
         random = self.dataframe.sample()
         id = random.get('id').values[0]
         
-        if not ignore_columns is "":#if there is a column...
+        if not ignore_columns == "":#if there is a column...
             random = random.drop(ignore_columns, axis=1)
             
-        random = random.to_string(index=True)
+        random = random.to_string(index=False)
         return random,id

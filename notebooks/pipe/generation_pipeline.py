@@ -1,10 +1,19 @@
-import DataLoader
-import CodeGenerator
 import numpy as np
-
+from data_loader import DataLoader
+from code_generator import CodeGeneration
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUploadclass 
 class GenerationPipeline:
-    def __init__ (self,model,model_name,tokenizer,simulation_data_path,
-                  models_data_path,input_data_path,typolgy='regression'):
+    def __init__(
+            self,
+            model: object,
+            model_name: str,
+            tokenizer: object,
+            simulation_data_path: str,
+            models_data_path: str,
+            input_data_path: str,
+            topology: str = 'regression'  # Nome corrigido
+        ):
         self.model = model 
         self.model_name = model_name
         self.tokenizer = tokenizer
@@ -12,11 +21,13 @@ class GenerationPipeline:
         self.models_data = DataLoader(models_data_path)
         self.simulation_data = DataLoader(simulation_data_path)
         
-        if typolgy is "performance":
+        if topology == "performance":
             self.ignore_coluns = ['Suite','Program','id']
         
         else:
-            self.ignore_coluns = ['id']
+            self.ignore_coluns = ['id','type']
+            
+        self.topology = topology
         
     def upload_file_to_drive(self,code_name,program):#Upload file to drive for colab
         try:
@@ -27,7 +38,7 @@ class GenerationPipeline:
 
 
             with open(local_file_path, "w") as file:
-            file.write(program)
+             file.write(program)
 
 
             file_metadata = {
@@ -43,18 +54,32 @@ class GenerationPipeline:
         except Exception as e:
             print(f"File could not be uploaded. ERROR: {e}")  
     
-    def single_code_generation(self,max_len,static=False,id=0):#Single Program Generation
+    def single_code_generation(self, max_len: int, static: bool = False, id: int = 0) -> float:#Single Program Generation
         try:
             input_value = ""
             
-            if not static == 0:#Static Value
+            if static:#Static Value
                 input_value,input_id = self.input_data.static_row_string(id,self.ignore_coluns)
             
             else:#Random
                 input_value,input_id = self.input_data.random_row_string(self.ignore_coluns)
             
-            generator = CodeGenerator(self.model,self.model_name,self.tokenizer,self.model_data,input_value,
-                                    input_id, max_len, base_code="", perf=self.typolgy)
+            
+            base_code = """ int f(int a) {
+                return 0;
+                }"""
+            
+            generator = CodeGeneration(
+            model=self.model,
+            model_name=self.model_name,
+            tokenizer=self.tokenizer,
+            data=self.models_data,  
+            input_str=input_value,
+            input_id=input_id,
+            max_length=max_len,
+            base_code=base_code,
+            topology=self.topology  
+        )
             
             generator.generate_code()
             
@@ -62,11 +87,13 @@ class GenerationPipeline:
             
             output_list = generator.get_output_list()
             
-            self.upload_file_to_drive(output_list[2],program)#Save generation
+            if(output_list[6] > 0):
+                self.upload_file_to_drive(output_list[2],program)#Save generation
         
-            self.model_data.new_row(output_list)
-            self.model_data.save()
+            self.models_data.new_row(output_list)
+            self.models_data.save()
             
+            print("Program Generated:\n" + program)
             return output_list[1] 
         except Exception as e:
             print(f"ERRO: {e}")
@@ -86,8 +113,15 @@ class GenerationPipeline:
                 time_array = np.append(time_array,time_temp)
 
 
-            simulation_output = [self.model_name,np.mean(time_array),sample,current_max_length
-                                ,np.min(time_array),np.max(time_array)]
+            simulation_output = [self.model_name,
+                                 np.mean(time_array),
+                                 np.std(time_array),
+                                 0,
+                                 0,
+                                 sample,
+                                 current_max_length
+                                ,np.min(time_array),
+                                 np.max(time_array)]
 
 
             self.simulation_data.new_row(simulation_output)
