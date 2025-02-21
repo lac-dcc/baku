@@ -176,5 +176,6 @@ cython_debug/
 # vscode settings
 .vscode
 
-# Compiled programs
+# Compiled programs and object files
 *.out
+*.o

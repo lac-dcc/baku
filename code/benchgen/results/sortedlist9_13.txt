@@ -1,0 +1,131 @@
+#include "sortedlist9_13.h" 
+sortedlist_t* func0(sortedlist_t_param* vars, int loopsFactor) {
+   size_t pCounter = vars->size;
+   unsigned int loop1 = 0;
+   unsigned int loopLimit1 = (rand()%loopsFactor)/2 + 1;
+   for(; loop1 < loopLimit1; loop1++) {
+   }
+   sortedlist_t* sortedlist2;
+   if (pCounter > 0) {
+      sortedlist2 = vars->data[--pCounter];
+      sortedlist2->refC++;
+      DEBUG_COPY(sortedlist2->id);
+   } else {
+      sortedlist2 = (sortedlist_t*)malloc(sizeof(sortedlist_t));
+      sortedlist2->refC = 1;
+      sortedlist2->id = 2;
+      sortedlist2->n = 0;
+      sortedlist2->root = NULL;
+      DEBUG_NEW(sortedlist2->id);
+   }
+   return sortedlist2;
+}
+
+
+#include "sortedlist9_13.h" 
+unsigned long rng() {
+   unsigned long n = rand();
+   return (n << 32) | rand();
+}
+
+
+#include "sortedlist9_13.h"
+
+int main(int argc, char** argv) {
+   int loopsFactor = 100;
+   srand(0);
+   for (int i = 1; i < argc; i++) {
+      if (strcmp(argv[i], "-path-seed") == 0) {
+         i++;
+         if (i < argc) {
+            srand(atoi(argv[i]));
+         }
+      }
+      else if (strcmp(argv[i], "-loops-factor") == 0) {
+         i++;
+         if (i < argc) {
+            loopsFactor = atoi(argv[i]);
+         }
+      }
+   }
+   unsigned int loop0 = 0;
+   unsigned int loopLimit0 = (rand()%loopsFactor)/1 + 1;
+   for(; loop0 < loopLimit0; loop0++) {
+      sortedlist_t* sortedlist0 = (sortedlist_t*)malloc(sizeof(sortedlist_t));
+      sortedlist0->refC = 1;
+      sortedlist0->id = 0;
+      sortedlist0->n = 0;
+      sortedlist0->root = NULL;
+      DEBUG_NEW(sortedlist0->id);
+      sortedlist_t_param params0;
+      params0.size = 1;
+      params0.data = (sortedlist_t**)malloc(params0.size*sizeof(sortedlist_t*));
+      params0.data[0] = sortedlist0;
+      sortedlist_t* sortedlist1 = func0(&params0, loopsFactor);
+      DEBUG_RETURN(sortedlist1->id);
+      free(params0.data);
+      sortedlist1->refC--;
+      if(sortedlist1->refC == 0){
+           cell_t* cell0 = sortedlist1->root;
+           cell_t* tmp0  = NULL;
+           while(cell0 != NULL) {
+               tmp0 = cell0->next;
+               free(cell0);
+               cell0 = tmp0;
+           }
+           free(sortedlist1);
+           DEBUG_FREE(sortedlist1->id);
+      }
+      sortedlist0->refC--;
+      if(sortedlist0->refC == 0){
+           cell_t* cell1 = sortedlist0->root;
+           cell_t* tmp1  = NULL;
+           while(cell1 != NULL) {
+               tmp1 = cell1->next;
+               free(cell1);
+               cell1 = tmp1;
+           }
+           free(sortedlist0);
+           DEBUG_FREE(sortedlist0->id);
+      }
+   }
+   return 0;
+}
+
+
+#ifndef sortedlist9_13
+#define sortedlist9_13
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#ifdef DEBUG
+    #define DEBUG_NEW(id) printf("[NEW]\t\tId %d created\n", id)
+    #define DEBUG_COPY(id) printf("[COPY]\t\tId %d copied\n", id)
+    #define DEBUG_RETURN(id) printf("[RETURN]\tId %d returned\n", id)
+    #define DEBUG_FREE(id) printf("[FREE]\t\tId %d freed\n", id)
+#else
+    #define DEBUG_NEW(id)
+    #define DEBUG_COPY(id)
+    #define DEBUG_RETURN(id)
+    #define DEBUG_FREE(id)
+#endif
+#include <stdbool.h>
+#include "Dalloc.h"
+typedef struct cell_t {
+     struct cell_t* next;
+     unsigned int val;
+} cell_t;
+typedef struct sortedlist_t {
+     cell_t* root;
+     size_t refC;
+     int id;
+     unsigned int n;
+} sortedlist_t;
+typedef struct {
+   sortedlist_t** data;
+   size_t size;
+} sortedlist_t_param;
+
+unsigned long rng();
+sortedlist_t* func0(sortedlist_t_param* vars, int loopsFactor);
+#endif
