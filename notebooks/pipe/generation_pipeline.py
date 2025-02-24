@@ -1,17 +1,23 @@
 import numpy as np
+import string
+import random
+import os
 from data_loader import DataLoader
 from code_generator import CodeGeneration
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUploadclass 
+
 class GenerationPipeline:
     def __init__(
             self,
             model: object,
             model_name: str,
             tokenizer: object,
-            simulation_data_path: str,
+            sampling_data_path: str,
             models_data_path: str,
             input_data_path: str,
+            models_chain_path: str,
+            chains_data_path: str,
             topology: str = 'regression'  # Nome corrigido
         ):
         self.model = model 
@@ -19,7 +25,9 @@ class GenerationPipeline:
         self.tokenizer = tokenizer
         self.input_data = DataLoader(input_data_path)
         self.models_data = DataLoader(models_data_path)
-        self.simulation_data = DataLoader(simulation_data_path)
+        self.sampling_data = DataLoader(sampling_data_path)
+        self.models_chain = DataLoader(models_chain_path)
+        self.chains_data = DataLoader(chains_data_path)
         
         if topology == "performance":
             self.ignore_coluns = ['Suite','Program','id']
@@ -29,12 +37,10 @@ class GenerationPipeline:
             
         self.topology = topology
         
-    def upload_file_to_drive(self,code_name,program):#Upload file to drive for colab
+    def upload_single_file_to_drive(self,code_name,program):#Upload file to drive for colab
         try:
             folder_id = '1y_BZ7M_Rpq7q4TEoRQiGMkfDWhR0okan'
             local_file_path = f"/content/{code_name}.c"
-            drive_service = build('drive', 'v3')
-
 
 
             with open(local_file_path, "w") as file:
@@ -53,6 +59,53 @@ class GenerationPipeline:
             print(f"File uploaded successfully. File ID: {uploaded_file.get('id')}")
         except Exception as e:
             print(f"File could not be uploaded. ERROR: {e}")  
+            
+    def upload_chain_file_to_drive(self,program,folder_id,folder_name,n):#Upload file to drive for colab
+        try:
+            local_file_path = f"/content/{folder_name}{n}.c"
+
+
+            with open(local_file_path, "w") as file:
+             file.write(program)
+
+
+            file_metadata = {
+                'name': f'{folder_name}{n}.c',
+                'parents': [folder_id]
+            }
+
+            media = MediaFileUpload(local_file_path, mimetype='text/plain')
+            service = build('drive', 'v3')
+            uploaded_file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
+
+            print(f"File uploaded successfully. File ID: {uploaded_file.get('id')}")
+        except Exception as e:
+            print(f"File could not be uploaded. ERROR: {e}")  
+    
+    
+    def folder_generator(self,parent_folder_id,size=4):
+        chars=string.ascii_uppercase
+        random_name = ''.join(random.choice(chars) for _ in range(size))
+        while random_name in self.chains_data.column_values('folder_id'):
+            random_name = ''.join(random.choice(chars) for _ in range(size))
+        
+        folder_metadata = {
+            'name': random_name,
+            'mimeType': 'application/vnd.google-apps.folder'
+        }
+        
+        if parent_folder_id:
+            folder_metadata['parents'] = [parent_folder_id]
+        
+        service = build('drive', 'v3')
+        created_folder = service.files().create(
+            body=folder_metadata,
+            fields='id'
+        ).execute()
+        
+        return created_folder.get('id'),random_name
+      
+        
     
     def single_code_generation(self, max_len: int, static: bool = False, id: int = 0) -> float:#Single Program Generation
         try:
@@ -79,7 +132,7 @@ class GenerationPipeline:
             max_length=max_len,
             base_code=base_code,
             topology=self.topology  
-        )
+            )
             
             generator.generate_code()
             
@@ -87,8 +140,8 @@ class GenerationPipeline:
             
             output_list = generator.get_output_list()
             
-            if(output_list[6] > 0):
-                self.upload_file_to_drive(output_list[2],program)#Save generation
+            if(output_list[4] > 0):
+                self.upload_single_file_to_drive(output_list[2],program)#Save generation
         
             self.models_data.new_row(output_list)
             self.models_data.save()
@@ -100,7 +153,7 @@ class GenerationPipeline:
 
    
    
-    def single_simulation(self,first_max_length=1024,max_lenght_pow=1,sample=12):#Simulate different generation for time measure
+    def single_sampling(self,first_max_length=1024,max_lenght_pow=1,sample=12):#Simulate different generation for time measure
 
         current_max_length = first_max_length#Begin with some length
         time_array = np.array([])
@@ -113,31 +166,83 @@ class GenerationPipeline:
                 time_array = np.append(time_array,time_temp)
 
 
-            simulation_output = [self.model_name,
+            sampling_output = [self.model_name,
                                  np.mean(time_array),
                                  np.std(time_array),
-                                 0,
-                                 0,
                                  sample,
                                  current_max_length
                                 ,np.min(time_array),
                                  np.max(time_array)]
 
 
-            self.simulation_data.new_row(simulation_output)
-            self.simulation_data.save()
+            self.sampling_data.new_row(sampling_output)
+            self.sampling_data.save()
 
             time_array = np.empty(0)
 
             current_max_length *= 2 #make it double beacause could grow better
 
-        print("Simulation Done!")     
+        print("Sampling Done!")     
     
-    def chain_code_generation():
-        return 0
-        #empty for now
+    def chain_code_generation(self, max_len: int, n: int = 1) -> float:
+        try:
+            ac_time = 0
+            base_code = """ int f(int a) {
+                    return 0;
+                    }"""
+            i = 0
+            last_code_id = ''
+            for _ in range(n):
+                input_value,input_id = self.input_data.random_row_string(self.ignore_coluns)
+            
+                generator = CodeGeneration(
+                model=self.model,
+                model_name=self.model_name,
+                tokenizer=self.tokenizer,
+                data=self.models_data,  
+                input_str=input_value,
+                input_id=input_id,
+                max_length=max_len,
+                base_code=base_code,
+                topology=self.topology  
+                )
+                
+                generator.generate_code()
+                
+                program = generator.program_extratcion()
+                
+                output_list = generator.get_output_list()
+                
+                if i==0:
+                    folder_id,folder_name = self.folder_generator('1y_BZ7M_Rpq7q4TEoRQiGMkfDWhR0okan')
+                
+                if(output_list[4] > 0):
+                    output_list.append(last_code_id)
+                    output_list.append(folder_name)
+                    self.models_chain.new_row(output_list)
+                    self.models_chain.save()
+                    
+                    
+                    last_code_id = f'{folder_name}{i}'
+                    self.upload_chain_file_to_drive(program,folder_id,folder_name,i)
+                    
+                    i = i + 1
+                    
+                    ac_time = ac_time + output_list[1] 
+                    base_code = program
+                    
+                    print("Program Generated:\n" + program)
+               
+            #folder_id,num_regression,time_spent,mean_time_program,std_time,compilation
+            rows_chain = [folder_id,0,ac_time,0,0,"False"]    
+            self.chains_data.new_row(rows_chain)
+            self.chains_data.save()
+            
+            return ac_time
+        except Exception as e:
+            print(f"ERRO: {e}")
 
-    def chain_simulation():
+    def chain_sampling():
         return 0
         #empty for now
         

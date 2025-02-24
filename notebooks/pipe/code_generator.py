@@ -85,24 +85,19 @@ class CodeGeneration:
             
         if(self.base_code in self.program):#Do not accept base code as a generated code
                     
-            gpu_name = self.get_gpu_name()
             len_program = len(self.tokenizer.encode(self.program)) #count the amount of tokens in the program
             return [self.model_name, 
                     self.dif_seconds, 
-                    self.program_name, 
-                    gpu_name, 
-                    self.input_id, 
-                    0, 
+                    self.program_name,
+                    self.input_id,
                     -1]
         
         gpu_name = self.get_gpu_name()
         len_program = len(self.tokenizer.encode(self.program)) #count the amount of tokens in the program
         return [self.model_name, 
                 self.dif_seconds, 
-                self.program_name, 
-                gpu_name, 
+                self.program_name,
                 self.input_id, 
-                0, 
                 len_program]
    
             
@@ -122,18 +117,7 @@ class CodeGeneration:
             self.program = final_program 
         
         return self.program
-            
-    def get_gpu_name(self): #Get GPU used for the code gen
-        try:
-            # All the informations about the current GPU
-            gpu_info = subprocess.check_output(
-                'nvidia-smi --query-gpu=name,driver_version,memory.total,memory.used,memory.free,utilization.gpu --format=csv,noheader',
-                shell=True, text=True
-            )
-            return gpu_info.strip().split(',')[0]
-        except Exception as e:
-            print(f"Erro: {e}")
-            return "Unkown"
+
     
     def name_generator(self,size=4): #Randomly generate a new file name
         
