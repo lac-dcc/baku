@@ -1,411 +1,601 @@
-Program,cpu-cycles,instructions,cache-references,cache-misses,branch-instructions,branch-misses,page-faults,branch-loads,branch-load-misses,L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores,L1-dcache-store-misses,L1-dcache-prefetches,L1-dcache-prefetch-misses,L1-icache-loads,L1-icache-load-misses,L1-icache-prefetches,L1-icache-prefetch-misses,LLC-loads,LLC-load-misses,LLC-stores,LLC-store-misses,LLC-prefetch-misses,dTLB-loads,dTLB-load-misses,dTLB-stores,dTLB-store-misses,dTLB-prefetches,dTLB-prefetch-misses,iTLB-loads,iTLB-load-misses
-array1_1,13365033,21840235,132245,19260,4598992,44307,59,4155579,42248,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_1,11181124,20837083,111369,17080,4614418,30775,59,4827945,25880,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_1,11932530,22462703,118610,18704,4614759,36488,60,4793798,29605,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_1,95826917,177971682,458927,113775,28016143,156031,60,31074398,97814,115179797,42859,29292450,<not supported>,<not supported>,<not supported>,<not supported>,131484,<not supported>,<not supported>,21639,4484,6650,94,<not supported>,121171427,150,33412648,63,<not supported>,<not supported>,3055,354
-array1_1,11831464,20553155,137413,22429,4615076,39110,60,4731756,27995,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_1,96720252,198367191,448191,94707,29322101,101371,60,29608485,82947,101712126,52254,28514790,<not supported>,<not supported>,<not supported>,<not supported>,129144,<not supported>,<not supported>,12173,740,12283,2995,<not supported>,105951530,1235,29796613,174,<not supported>,<not supported>,5163,10167
-array1_1,11169377,21190553,109333,20585,4614759,30559,60,4906789,41514,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_1,86993326,184106312,299584,92038,28662820,93534,62,31068947,79679,109594820,42915,29651881,<not supported>,<not supported>,<not supported>,<not supported>,46031,<not supported>,<not supported>,3836,985,6350,42,<not supported>,111528790,139,27405276,42,<not supported>,<not supported>,4406,412
-array1_1,12907205,17525411,125957,26164,4614208,37453,60,5302184,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_1,89989258,195140412,295379,56518,29190099,71896,61,29450142,66692,96605707,44019,27578449,<not supported>,<not supported>,<not supported>,<not supported>,43028,<not supported>,<not supported>,3289,291,4647,55,<not supported>,112013919,166,30765370,48,<not supported>,<not supported>,1672,234
-array1_1,22103663,29910177,269348,48105,4800049,229060,62,4380128,288023,4786277,34717,3175856,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_1,7612486,15282135,87067,14337,3053349,15818,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_2,1557347,1112894,69973,21154,205136,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_2,1583576,1158513,70760,15677,211953,5590,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_3,6753001,12376835,68908,17949,2143656,10132,62,1980961,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_3,1835168,1685234,72369,14965,319960,4710,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_4,2357529,2921140,72640,15374,551386,7531,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_4,2127827,2378781,72780,17289,447709,6183,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_5,1777537,1755179,72795,22016,326120,8556,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_5,1957230,1410495,73720,19042,260867,7057,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_6,16551596,32939044,137729,20161,7121475,39609,61,7397338,38945,5653823,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_6,10783195,21567368,100053,18287,4761820,23212,60,5117203,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_7,7605057,14362396,75289,15403,2141996,5730,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_7,1860988,1688163,73234,15336,320847,6818,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_8,1483925,1115006,67744,16907,205546,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_8,1518040,1123175,71739,19301,206613,6433,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_9,7752728,13901052,78781,17360,2075752,5952,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_9,1789469,1678885,74030,16197,319195,7070,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_10,7289309,13462980,72649,15121,2077063,6200,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_10,1906185,1681285,70650,14807,319572,5829,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_11,1397554,1142891,72214,19924,210417,7146,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_11,1441517,1119796,69419,13940,206252,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_12,7614876,13841885,76119,17335,2077751,5837,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_12,1872337,1693980,74395,16486,321522,6360,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_13,1858526,1968111,68555,17262,372198,7933,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_13,1812247,1673065,69577,16652,315255,<not counted>,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_14,8084328,14506708,80330,16323,2143310,6268,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_14,1737615,1675431,64135,14745,318841,<not counted>,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_15,7679454,14015073,79712,15815,2538204,12627,62,2640322,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_15,2176523,3058315,75558,17117,584577,8760,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_16,5041837,7179360,84988,40207,1045611,6458,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_16,1580319,1388698,66861,16037,261119,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_17,3996855,6789590,75840,14379,1039429,5481,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_17,1553353,1386714,68148,14466,260694,7010,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_18,8857549,9668487,75195,19161,1734664,87528,60,1486989,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_18,3389033,5220522,76182,18599,993517,6403,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_19,5254969,13540901,97044,23695,2827549,20435,62,2647970,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist1_19,1455777,3979244,71950,16965,1195565,11977,62,965545,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array1_20,36717473,77963441,358192,83074,12304284,51095,61,13351523,45271,38512120,30063,12188035,<not supported>,<not supported>,<not supported>,<not supported>,70558,<not supported>,<not supported>,6588,362,6933,23,<not supported>,41542803,112,12265564,85,<not supported>,<not supported>,1177,487
-sortedlist1_20,8520568,16622578,90359,17483,3338243,18062,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_1,87095016,191506033,299597,68599,29198837,85462,62,29860619,74149,106572638,25591,29172707,<not supported>,<not supported>,<not supported>,<not supported>,65413,<not supported>,<not supported>,5931,524,5925,80,<not supported>,109405675,154,29444235,80,<not supported>,<not supported>,2473,531
-sortedlist2_1,7053439,14585828,85548,20250,3008151,18365,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_2,1523460,1132139,72444,17062,208139,6921,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_2,1273654,1116694,70336,18093,205671,7226,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_3,8526636,14655191,75930,17821,2139866,5635,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_3,1909643,1685376,71037,15438,320584,1793,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_4,2396682,2896691,73375,16055,549608,8035,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_4,1931312,2366222,68321,14430,446872,7851,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_5,2925964,2915314,82286,19929,547959,7328,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_5,2206318,2237922,86717,30636,420689,7178,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_6,20104797,28251204,429044,47551,8134047,76422,61,9131004,67942,10767256,33651,7997664,<not supported>,<not supported>,<not supported>,<not supported>,37540,<not supported>,<not supported>,3139,201,15307,1957,<not supported>,9414826,4355,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_6,14229774,24476978,208781,39750,6035343,30874,60,6879623,31025,7659821,20670,5214172,<not supported>,<not supported>,<not supported>,<not supported>,45022,<not supported>,<not supported>,27036,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_7,7429491,13885758,70667,15293,2139813,5768,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_7,1732878,1672689,64220,18105,319001,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_8,1457053,1111887,63245,14808,204938,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_8,1550792,1113689,67190,17348,205103,5369,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_9,7328818,12713887,79636,16637,2079619,7167,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_9,1418509,1685917,68697,17933,320576,7695,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_10,7209709,13307287,75898,14793,2077038,6207,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_10,1839218,1673620,68471,18243,318456,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_11,1708366,1146885,74778,21784,210778,4917,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_11,1541296,1130168,68747,16319,207610,4874,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_12,7333777,13137073,85979,18543,2083120,6594,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_12,1850600,1675457,69584,16769,318717,<not counted>,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_13,1831739,1960400,67965,18370,371293,6058,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_13,1699080,1609955,76826,16189,317164,11948,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_14,7592004,11766381,111673,14717,2144244,6864,60,2401918,8751,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_14,1681492,1679702,67622,17241,319594,5730,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_15,7994333,13415195,118479,17579,2558017,8609,63,2798948,10362,4136114,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_15,2025730,3051324,73666,21448,583392,10853,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_16,4456460,7416512,79431,15137,1039261,6886,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_16,1577375,1381903,65972,15216,260169,<not counted>,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_17,4107047,6751744,68054,15075,1033311,4166,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_17,606478,1387256,69718,18694,260944,7618,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_18,8889106,16422832,101922,17297,3786408,29185,61,4007339,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_18,5881685,8175265,133526,19274,2547373,18455,62,2928233,16523,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_19,16180490,27058318,234627,38985,6144655,35927,62,6946841,35947,12003896,17106,5547868,<not supported>,<not supported>,<not supported>,<not supported>,45100,<not supported>,<not supported>,8360,2018,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist2_19,10924403,9317329,94014,17584,3363764,66695,61,4710199,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array2_20,98656456,212561869,482048,82973,30656652,307725,64,30953965,361598,85813489,96059,29640589,<not supported>,<not supported>,<not supported>,<not supported>,171988,<not supported>,<not supported>,14217,3860,20127,0,<not supported>,105733803,283,34800741,63,<not supported>,<not supported>,3547,701
-sortedlist2_20,21297586,43079274,187305,23975,8730226,40199,61,9125996,40867,10296078,33148,2922166,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_1,89670892,192689423,370503,67733,29021226,81979,60,29969637,69361,107233364,31193,29284019,<not supported>,<not supported>,<not supported>,<not supported>,71434,<not supported>,<not supported>,5512,1499,8986,0,<not supported>,108022766,326,29002628,113,<not supported>,<not supported>,1450,241
-sortedlist3_1,7175573,12309494,112693,19438,3009017,17695,61,3365827,19676,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_2,1427775,1132956,73025,17996,208312,6944,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_2,1517399,1126115,73177,20948,207172,6873,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_3,7759684,13779112,94200,17794,2147402,6738,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_3,1712454,1674925,70245,12072,318425,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_4,2173736,2903231,70166,14329,548723,<not counted>,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_4,1757893,2370209,72715,20229,446339,8095,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_5,8246766,14523164,74537,18741,2387617,6621,62,1742746,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_5,1096796,2256605,68612,21662,426626,8792,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_6,34463302,44328217,456540,80311,9077868,527341,62,8855881,635794,9590340,41301,7286268,<not supported>,<not supported>,<not supported>,<not supported>,62509,<not supported>,<not supported>,22619,3510,42296,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_6,25702006,20040064,549774,101357,5344714,159057,61,6865139,74418,7493325,54491,5162678,<not supported>,<not supported>,<not supported>,<not supported>,100769,<not supported>,<not supported>,11745,511,14184,32,<not supported>,7853952,1117,4640980,466,<not supported>,<not supported>,<not counted>,<not counted>
-array3_7,5412610,7878115,172318,39301,2109916,11610,61,2389110,7620,8072491,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_7,1665287,1703329,81950,14840,323048,7554,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_8,1457069,1138773,67867,16546,209109,5770,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_8,1444852,1119187,64286,14451,205710,<not counted>,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_9,7785178,14312283,76827,16942,2076721,5810,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_9,1891877,1673740,70048,13942,318028,5473,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_10,6823066,11931763,75497,19619,2077401,10044,60,1332761,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_10,2438582,1671456,84039,19540,317567,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_11,1680917,1126585,66818,14335,207669,3263,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_11,1454394,1127045,69087,17206,207072,5775,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_12,7227994,11672303,103696,18649,2077288,6372,60,2277626,9588,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_12,1661723,1680237,73650,17269,319616,5360,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_13,2056450,1970062,74222,23283,372722,6285,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_13,2380827,1686009,91585,31687,317337,5851,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_14,7516186,14141066,76861,19385,2141669,6041,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_14,1803096,1674714,69148,24674,318175,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_15,8298010,14003077,77891,21691,2539303,10662,62,2675120,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_15,2398798,3063643,71663,15347,584993,5850,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_16,4589505,6764734,88358,19935,1035454,5684,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_16,1560247,1398489,74309,17793,262778,6354,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_17,3966231,6257534,78272,22920,1037235,3995,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_17,1458554,1394291,70551,18726,261520,9317,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_18,9663084,17311724,100051,25433,3789666,28716,63,3720086,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist3_18,8194051,14949645,99996,33750,2546756,30610,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_19,79899197,166668180,350724,97753,24491235,137117,61,24534546,120735,76031321,58739,22589350,<not supported>,<not supported>,<not supported>,<not supported>,112448,<not supported>,<not supported>,11081,2188,14779,23,<not supported>,83820426,320,25729207,59,<not supported>,<not supported>,735,266
-sortedlist3_19,12669510,21726099,197473,38192,5226166,31197,61,5987553,29150,6462022,25381,4238681,<not supported>,<not supported>,<not supported>,<not supported>,226294,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array3_20,283653810,607986611,814886,127952,92885735,755234,61,91412172,848668,287124576,166516,87057156,<not supported>,<not supported>,<not supported>,<not supported>,328444,<not supported>,<not supported>,27290,1110,49311,1864,<not supported>,299554894,1032,88368224,199,<not supported>,<not supported>,21631,1321
-sortedlist3_20,39651394,71970907,526080,101872,16664350,126023,61,17313158,119753,17232810,42889,12381646,<not supported>,<not supported>,<not supported>,<not supported>,67089,<not supported>,<not supported>,10452,725,16645,6424,<not supported>,16715689,3634,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_1,88073637,193236361,277202,47349,28958089,109134,62,29884056,103161,106922951,30631,28371541,<not supported>,<not supported>,<not supported>,<not supported>,66495,<not supported>,<not supported>,5158,6,3403,39,<not supported>,109750584,258,29616145,52,<not supported>,<not supported>,4211,92
-sortedlist4_1,10631233,10544951,101249,23940,3012151,94145,61,2085707,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_2,1489152,1119329,67915,23222,206055,5455,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_2,1494294,1132215,68006,21455,208137,5040,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_3,7793798,9779412,140016,37078,2174672,10185,61,2390018,7489,6299862,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_3,1949346,1675325,72820,26653,318532,5003,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_4,3045566,2910189,91741,27322,549923,11501,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_4,2294358,2370445,82758,20650,446863,5893,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_5,8957408,14665817,139020,29303,2357021,13055,62,2604314,15212,8479365,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_5,2451234,2240360,91966,16696,423991,20250,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_6,21466853,33939281,373040,106816,8678806,60566,63,10047793,69587,10735463,33350,7655438,<not supported>,<not supported>,<not supported>,<not supported>,46186,<not supported>,<not supported>,6231,2959,16927,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_6,14418940,23413770,262761,58023,6008648,31992,62,6833277,31504,7624943,23713,5226531,<not supported>,<not supported>,<not supported>,<not supported>,47470,<not supported>,<not supported>,17212,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_7,8246074,12329108,151936,26034,2129239,9949,61,2317486,8490,7429571,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_7,1734006,1673247,76987,20879,318346,7357,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_8,1604493,1128276,84108,24534,207521,6056,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_8,1463379,1113362,72754,20192,205020,4505,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_9,6260628,7933949,169484,27081,2082835,11171,60,2325950,7548,6909365,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_9,2414233,1689458,76802,21369,319290,10016,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_10,7160356,11195988,100922,25880,2079880,6369,62,2283054,10022,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_10,3111516,1702280,81054,30067,324748,9329,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_11,1855543,1163541,84056,15582,213721,6700,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_11,1892637,1120575,77798,20211,205920,5060,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_12,6116776,12096884,79959,17825,2080607,11104,60,1791874,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_12,1700480,1672891,69624,17344,317756,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_13,2336990,1973419,73055,15020,372614,5302,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_13,1750922,1663973,73769,26606,313853,5417,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_14,6369155,8017255,150579,31855,2138361,10820,61,2374755,6946,7312141,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_14,1825161,1688583,79632,26951,320126,5569,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_15,2625007,12923474,92656,36953,2540028,13634,63,2636149,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_15,2307970,3023980,69328,18541,580378,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_16,4520791,6916068,84946,20356,1037647,6993,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_16,1597897,1389447,68917,19729,260743,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_17,4234042,6967025,75289,29045,1036150,7943,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_17,1868321,1396892,70596,19914,261927,6455,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_18,9640917,12891281,212919,39402,3582714,37899,61,4348694,28065,4700180,33080,1055343,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist4_18,9713489,11434445,161163,47176,2519147,75951,60,2659213,81073,2970589,53182,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_19,132288333,286861860,509059,100148,46362347,162172,64,46161919,156996,144239082,79635,43389956,<not supported>,<not supported>,<not supported>,<not supported>,189878,<not supported>,<not supported>,16768,246,21010,662,<not supported>,136166225,520,42537154,236,<not supported>,<not supported>,5583,814
-sortedlist4_19,24485428,36446727,293478,46919,9867969,57869,62,11419198,64558,12264425,37275,7496111,<not supported>,<not supported>,<not supported>,<not supported>,128131,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array4_20,691674669,1522055319,1146064,119167,230225611,529596,62,231420615,520059,803827461,304637,218140912,<not supported>,<not supported>,<not supported>,<not supported>,676801,<not supported>,<not supported>,58201,1625,67388,2265,<not supported>,799997531,2507,216921441,492,<not supported>,<not supported>,25250,2288
-sortedlist4_20,37398958,70010004,501129,91224,18716036,106930,62,21119869,91541,24236633,46813,16048547,<not supported>,<not supported>,<not supported>,<not supported>,72182,<not supported>,<not supported>,8002,73,28833,6763,<not supported>,19060929,6856,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_1,94624366,208772452,315230,50867,31639962,87762,61,32291164,91192,111929983,47078,27290456,<not supported>,<not supported>,<not supported>,<not supported>,104277,<not supported>,<not supported>,11493,3506,5814,246,<not supported>,91595198,260,27670314,65,<not supported>,<not supported>,2571,1042
-sortedlist5_1,7467108,10489912,150190,27779,3045289,19798,61,3367194,19823,3143654,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_2,1483922,1120655,68161,23488,206357,5063,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_2,1450571,1103486,61694,13765,203547,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_3,7626936,13084197,76516,22600,2142603,7325,62,512024,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_3,2474907,1668011,73110,19208,317514,14568,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_4,2778466,2921473,75568,19996,551895,12426,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_4,2158773,2368717,75063,22853,446261,5652,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_5,7439417,9337922,171354,28229,2358196,9807,62,2680787,6880,8459697,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_5,1925991,2257443,68366,19623,426978,5999,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_6,24098090,47010971,215363,31030,8756714,72428,63,10029847,62749,11607895,46237,5144406,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_6,12733184,26589915,140020,24449,6440197,32594,61,6769474,32642,5484085,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_7,7592711,12935376,75624,16111,2146879,7318,61,1526292,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_7,1702409,1672961,63423,14572,317895,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_8,1247688,1124726,72585,13903,207325,7095,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_8,1610234,1110036,76075,21551,204539,5822,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_9,7230622,8496367,159625,23140,2078490,10099,60,2334682,8003,6698947,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_9,1268854,1705254,70780,14167,319200,7596,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_10,7110555,11455076,100680,19573,2077095,6200,61,2297761,9086,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_10,1729949,1682980,77411,17684,319377,5551,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_11,1490756,1134848,70225,16238,209163,<not counted>,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_11,1706000,1120476,68451,19283,206487,4855,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_12,7771382,11846385,72725,17168,2076049,7744,60,1507126,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_12,1787052,1675375,72068,16657,318310,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_13,1840044,1952863,69344,16334,369703,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_13,1725772,1661435,68791,16026,313631,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_14,7265606,11163250,107862,25917,2142424,6343,60,2375501,8054,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_14,1689337,1679957,73309,23480,319464,6255,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_15,8303496,13073830,139480,32067,2531163,10728,63,2857817,10626,7077632,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_15,833559,3059456,74645,16503,584795,9357,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_16,3963524,6748564,69992,15828,1032699,4510,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_16,1989620,1390206,77594,27302,261386,7052,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_17,4173261,7156147,73069,15268,1034642,7300,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_17,1612703,1377602,64781,14256,259006,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_18,10133328,18756363,93888,16530,3796402,28637,62,3603785,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist5_18,6401426,9430651,118149,32856,2544865,16724,60,2924968,16445,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array5_19,260706516,508201508,824441,111240,85978012,507897,64,86270457,448561,227934489,333744,77195995,<not supported>,<not supported>,<not supported>,<not supported>,480525,<not supported>,<not supported>,44174,1103,130788,2298,<not supported>,206094375,3304,71730199,127,<not supported>,<not supported>,7739,4682
-sortedlist5_19,85886057,126126032,521869,86426,24393151,800163,61,24644804,840987,27317274,120468,21989274,<not supported>,<not supported>,<not supported>,<not supported>,281017,<not supported>,<not supported>,20480,3374,35307,0,<not supported>,36638630,695,23456464,122,<not supported>,<not supported>,27696,150
-array5_20,730788010,1526584988,2220483,340682,229285285,643931,62,231423212,744257,807315135,607701,222036800,<not supported>,<not supported>,<not supported>,<not supported>,1084919,<not supported>,<not supported>,135547,12050,120155,6256,<not supported>,804155389,3967,220779995,1209,<not supported>,<not supported>,18269,2121
-sortedlist5_20,44106101,94367883,330083,40213,19300001,97103,62,20804552,92963,23096388,64558,16074348,<not supported>,<not supported>,<not supported>,<not supported>,65185,<not supported>,<not supported>,8956,329,27364,0,<not supported>,23829881,391,16271785,55,<not supported>,<not supported>,1371,972
-array6_1,91003165,182700254,507079,142035,27968297,102348,61,30140287,86256,108738463,48159,29570161,<not supported>,<not supported>,<not supported>,<not supported>,124969,<not supported>,<not supported>,8684,783,12203,3229,<not supported>,106956180,1527,30152199,101,<not supported>,<not supported>,2814,275
-sortedlist6_1,8798733,15369917,86185,24021,3009961,38050,61,3328369,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_2,1039020,1122232,69785,13156,206766,7508,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_2,1506086,1143005,64534,14113,210121,<not counted>,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_3,6867067,12714777,71531,14519,2144891,9862,62,1684764,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_3,1776621,1662313,69385,25317,316596,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_4,801793,2913181,72300,22463,550591,9504,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_4,1833619,2368341,74396,12575,446659,7376,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_5,6963488,13194897,77629,22198,2385235,10437,62,2495120,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_5,1777435,2243826,68466,11105,425270,8230,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_6,22006869,41112156,287631,53971,9130054,83911,63,9757817,96536,10525582,44979,8326640,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_6,15135616,31107393,136498,17487,6363529,33964,61,6861635,35599,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_7,7536233,13750074,72708,15066,2138660,5874,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_7,1726680,1677633,65685,13241,318777,6579,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_8,1463722,1123422,73015,23953,206526,4995,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_8,1454174,1138257,74002,19647,209168,5676,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_9,7432986,12754663,77535,23922,2075338,6743,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_9,1818371,1665477,71097,18682,317028,6582,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_10,7225068,12847461,73670,12449,2074778,6521,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_10,1681719,1672289,72674,17750,318121,7300,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_11,1432218,1144819,75190,19333,210855,7069,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_11,1398974,1117439,67685,11516,205031,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_12,7031261,10864213,117714,15254,2077662,6884,60,2256878,9423,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_12,1705100,1679873,69474,15373,319028,5992,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_13,1931566,1747842,78729,13958,372327,16082,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_13,1671574,1658717,71863,11561,312886,6575,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_14,7478181,12060487,112725,17986,2142567,7974,62,2287769,10569,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_14,1653569,1674523,64848,10801,318524,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_15,9762805,16255761,79895,14370,2537678,18490,60,1365646,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_15,2399876,3080586,78035,15028,588146,6317,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_16,4181307,6749228,75487,21048,1032358,6148,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_16,1479963,1378993,66649,10676,259100,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_17,4068857,6745346,72093,13269,1033127,4628,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_17,1636355,1380829,67307,11098,259529,5967,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_18,9364088,15744177,139951,23698,3761657,27674,62,4101443,28497,4385846,135669,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist6_18,6298227,10934769,96240,12177,2545433,15673,61,2835862,19066,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array6_19,257745827,551892527,765088,78422,86211410,466413,65,86868786,371275,213875087,290895,82374379,<not supported>,<not supported>,<not supported>,<not supported>,334490,<not supported>,<not supported>,22166,3267,90127,971,<not supported>,224261112,925,83548864,150,<not supported>,<not supported>,9160,4317
-sortedlist6_19,94259518,111252344,471700,82284,34793903,427130,62,38654300,459813,37899037,129154,29865453,<not supported>,<not supported>,<not supported>,<not supported>,160045,<not supported>,<not supported>,14450,658,24728,28,<not supported>,29324363,560,19459568,49,<not supported>,<not supported>,19395,511
-array6_20,715311994,1553422420,1788740,231669,224250692,638536,64,229019479,660657,798199873,396551,220539884,<not supported>,<not supported>,<not supported>,<not supported>,893938,<not supported>,<not supported>,79468,2709,97636,2261,<not supported>,788947649,2521,218894805,581,<not supported>,<not supported>,28223,6058
-sortedlist6_20,27149604,76802874,500419,74516,19613767,103060,62,21260553,90050,23813899,42897,16284064,<not supported>,<not supported>,<not supported>,<not supported>,34409,<not supported>,<not supported>,5674,16,26347,2092,<not supported>,20680664,3883,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_1,93225000,198699333,374136,67107,29168050,118266,60,28665083,119596,101028305,55289,26902489,<not supported>,<not supported>,<not supported>,<not supported>,125959,<not supported>,<not supported>,10624,507,6573,28,<not supported>,113384592,171,30503280,57,<not supported>,<not supported>,3089,214
-sortedlist7_1,7516808,15221193,86654,16413,3007709,17544,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_2,1479556,1129836,68898,17513,208005,6081,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_2,1425603,1117962,74748,18273,205865,5352,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_3,5933581,12590597,76246,23379,2140347,10520,60,1582918,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_3,2172797,1711562,81132,26518,324827,5599,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_4,2291482,2917438,68986,11691,551217,5695,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_4,1875915,2375993,75090,22437,447688,8027,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_5,8024409,14599503,71098,17849,2384160,6284,62,1201735,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_5,1947497,2266164,75590,23551,428795,6044,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_6,20945700,35448624,349872,41745,8697516,58116,61,9859261,56777,10868457,31438,7743361,<not supported>,<not supported>,<not supported>,<not supported>,35294,<not supported>,<not supported>,4489,2759,17052,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_6,13736955,27341596,170217,22281,6353246,38802,62,6719066,34316,7250328,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_7,7558474,14433842,77978,11830,2140764,5776,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_7,1706530,1676048,69467,9832,318953,6791,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_8,1433951,1109541,68039,14965,204479,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_8,1540825,1122532,68620,12135,206680,6536,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_9,7101524,13375426,74565,13914,2077646,5865,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_9,1493158,1682667,68733,13760,319758,7526,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_10,6981096,10712624,113945,18793,2078623,6451,62,2303887,7821,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_10,1656308,1676132,73254,16051,318624,5464,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_11,1425051,1113017,63125,12419,205510,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_11,1531246,1109457,69178,19619,204469,4806,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_12,7206786,13112786,70165,9913,2074774,5770,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_12,1630414,1661990,63225,12003,316031,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_13,1740601,1936348,67497,12956,367164,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_13,1929864,1664039,72233,21440,313564,<not counted>,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_14,7585723,14072646,76132,17885,2140737,5813,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_14,1844113,1678565,72935,16239,319365,6213,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_15,7938780,11502664,145922,19899,2507550,11250,61,2791883,10295,7862621,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_15,2237377,3067750,69399,20504,586424,6098,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_16,2607717,4538854,83499,13591,1037066,9512,61,1196684,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_16,1547875,1391804,68104,16698,261525,5467,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_17,5110571,6693409,89895,32763,1037159,9975,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_17,1754263,1395058,64719,17933,262408,2020,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_18,10036094,18580716,92712,18904,3788197,29379,61,2548882,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist7_18,10632035,12329851,130276,21360,2534537,121404,62,2592731,97651,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array7_19,570194132,1164014905,1994132,337010,184010960,1078572,63,189770156,1007561,534698419,632895,168735977,<not supported>,<not supported>,<not supported>,<not supported>,1145356,<not supported>,<not supported>,111592,19025,274014,9567,<not supported>,459795941,3833,164914842,645,<not supported>,<not supported>,35500,6126
-sortedlist7_19,164088871,243960349,1284540,240092,53295005,783996,61,61148034,644189,69277567,293212,48196220,<not supported>,<not supported>,<not supported>,<not supported>,535304,<not supported>,<not supported>,66938,6001,87197,4877,<not supported>,61818138,2652,39014990,448,<not supported>,<not supported>,28425,2614
-array7_20,702602838,1479785499,2328210,474496,225559244,694649,63,232493918,652580,815333088,534480,223305432,<not supported>,<not supported>,<not supported>,<not supported>,1276908,<not supported>,<not supported>,121057,21540,131765,13631,<not supported>,833569524,2295,225459693,1058,<not supported>,<not supported>,29580,6103
-sortedlist7_20,59333794,70705902,609309,91008,15927700,642563,61,13577554,569170,21541017,70983,17270197,<not supported>,<not supported>,<not supported>,<not supported>,146502,<not supported>,<not supported>,16378,2021,29592,3471,<not supported>,26853121,614,19426809,127,<not supported>,<not supported>,5479,1079
-array8_1,89813088,191628272,325943,58319,29231808,78659,60,30444967,76861,104477577,35056,28149969,<not supported>,<not supported>,<not supported>,<not supported>,76567,<not supported>,<not supported>,6765,27,6145,0,<not supported>,110724528,603,28825593,83,<not supported>,<not supported>,3218,249
-sortedlist8_1,7257097,13147691,80985,24045,3001320,20435,62,2012361,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_2,1414547,1113328,66975,11878,204765,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_2,1448445,1136481,67509,15739,209174,5018,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_3,7191820,9187260,140034,33532,2144631,10674,60,2402543,6956,6933521,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_3,2064311,1692614,89321,30460,321654,5204,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_4,2091663,2912796,69284,16010,550841,8666,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_4,2244486,2392990,73110,16464,450073,6126,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_5,8993576,15036026,87103,19936,2386312,9006,63,1638378,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_5,2462290,2263501,81950,23511,428611,5689,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_6,21714344,36423877,349528,70222,8573592,75653,61,8972660,84315,10374781,37828,8040420,<not supported>,<not supported>,<not supported>,<not supported>,38775,<not supported>,<not supported>,4205,347,15588,1249,<not supported>,5356898,10465,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_6,14844853,22186844,284924,35747,6421385,37542,61,7149768,44385,6964400,25428,4750857,<not supported>,<not supported>,<not supported>,<not supported>,68296,<not supported>,<not supported>,9884,4520,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_7,7423650,11197532,123032,28229,2167038,7126,62,2318318,9444,1903707,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_7,1794149,1686819,82115,25739,320647,5638,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_8,1494015,1122291,74522,24943,206602,5549,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_8,1470228,1111802,62533,13241,204167,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_9,8042035,12045233,69268,23763,2076302,6648,60,2036110,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_9,1612903,1669243,68434,11997,317560,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_10,7288682,12404897,70651,25284,2077138,9070,61,1414946,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_10,1846463,1685406,72195,11843,319674,4697,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_11,1513061,1147856,69190,19538,210840,6976,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_11,1227611,1113243,71926,13352,205248,7049,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_12,7259376,11125506,109870,30775,2078962,6780,62,2300672,8550,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_12,2145832,1578048,93697,29438,318651,15193,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_13,1914930,1978336,80520,21627,373284,6365,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_13,1499279,1676478,69085,20439,315840,7767,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_14,6906499,12906755,90781,21057,2145005,11558,60,2256053,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_14,1976973,1688315,74272,22347,320482,7457,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_15,8290103,16164016,70928,11450,2533399,8356,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_15,3862952,3068915,94474,33914,587890,19511,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_16,3824345,6769429,72250,24065,1035725,4595,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_16,1609206,1402102,64022,11587,263022,4246,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_17,3893369,5931456,74143,13617,1035989,4776,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_17,1615564,1386604,72831,26620,260726,5572,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_18,10063651,12745280,189944,40066,3633195,28959,63,4330833,30015,4745660,47671,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist8_18,6445577,13265382,74882,20598,2542005,15617,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array8_19,698657434,1435430334,2497913,252234,240630855,2214209,65,244843536,2027400,583268160,1051768,217368526,<not supported>,<not supported>,<not supported>,<not supported>,1508940,<not supported>,<not supported>,107733,1922,301000,2481,<not supported>,525466401,3528,216095225,924,<not supported>,<not supported>,67883,7931
-sortedlist8_19,212710058,455995864,1060133,135113,95914590,613591,61,103677654,588839,113354550,343029,77967687,<not supported>,<not supported>,<not supported>,<not supported>,518984,<not supported>,<not supported>,36836,1316,127701,612,<not supported>,111151278,2212,77059759,271,<not supported>,<not supported>,16657,4162
-array8_20,689616535,1525405424,1379988,163186,227709946,566446,64,230018452,534804,807948968,385885,220398758,<not supported>,<not supported>,<not supported>,<not supported>,822122,<not supported>,<not supported>,78678,2455,81685,911,<not supported>,810791160,1391,222975878,1111,<not supported>,<not supported>,15826,4577
-sortedlist8_20,48372466,94999842,407762,47067,20701854,98402,60,18304890,94397,20009526,48892,15942351,<not supported>,<not supported>,<not supported>,<not supported>,90020,<not supported>,<not supported>,9481,541,27456,2414,<not supported>,20893063,2640,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_1,89152407,159437092,572953,129670,29543149,133504,63,31176170,105775,110376573,40954,31110128,<not supported>,<not supported>,<not supported>,<not supported>,84157,<not supported>,<not supported>,11692,4396,10582,1429,<not supported>,97900696,952,28360906,183,<not supported>,<not supported>,6655,725
-sortedlist9_1,7544454,14424346,78418,13162,3008303,20414,60,1136054,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_2,1573928,1121515,67011,11772,206483,3266,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_2,1660282,1115786,74162,24486,205107,4784,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_3,7696743,12668169,110151,21540,2143630,6903,60,2210990,9873,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_3,1817256,1687164,81276,25146,320715,7215,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_4,2356798,2913465,80993,25912,551145,8259,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_4,2450478,2376266,77062,17687,447889,7592,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_5,8536835,12445666,90319,31167,2388677,9335,63,2585584,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_5,2235164,2247344,73531,16088,425176,7086,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_6,21907818,27975502,428332,72883,8023545,78091,61,10241067,59360,11330092,30617,8106538,<not supported>,<not supported>,<not supported>,<not supported>,31421,<not supported>,<not supported>,4453,461,17383,9957,<not supported>,5471854,10846,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_6,18845770,25042993,281048,56230,5091953,177405,61,5431520,147153,7067709,28044,6388922,<not supported>,<not supported>,<not supported>,<not supported>,49805,<not supported>,<not supported>,8043,3340,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_7,10428296,8748136,204843,47260,2071596,13216,59,2408596,11442,8205171,30304,1384214,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_7,1653562,1660432,63269,12401,315684,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_8,2013846,1129516,72576,29233,207450,3868,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_8,1600534,1118040,75370,26426,205836,7290,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_9,9016912,14221800,95613,26791,2076635,6367,61,220357,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_9,1448606,1682036,70297,15534,319223,7472,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_10,7148743,12714357,73724,10951,2075256,6898,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_10,1632408,1669441,67104,12052,317155,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_11,1442131,1139019,67075,13637,209853,5288,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_11,1470589,1112281,67916,17137,204489,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_12,6885648,11984660,70041,17232,2076097,9807,61,1965581,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_12,1868617,1672500,75211,22109,317878,<not counted>,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_13,2185503,1966704,74344,27595,372276,5721,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_13,1761658,1662608,69231,24078,313343,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_14,7522704,14002137,70051,13327,2139866,5710,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_14,1855152,1705011,72681,24616,324935,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_15,9550204,11543388,139824,36774,2539495,39442,60,3246263,17363,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_15,2784575,3112841,82245,32338,587530,18633,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_16,4069222,6325342,83234,23080,1040978,4665,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_16,1450525,1386052,68705,13645,260583,7061,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_17,4256954,6038207,73989,17622,1038495,4559,61,525178,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_17,1667895,1389713,73476,24648,260919,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_18,9916625,19416405,88450,17608,3777076,26659,63,793909,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist9_18,6204439,12775498,84110,17461,2544870,32088,61,2295589,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array9_19,1118657644,2464037491,2800318,383624,408828694,2340326,66,411907936,2364806,937652279,1331247,358533631,<not supported>,<not supported>,<not supported>,<not supported>,2117527,<not supported>,<not supported>,151902,13563,507456,9954,<not supported>,940900056,5630,359017517,731,<not supported>,<not supported>,69723,17769
-sortedlist9_19,371099579,769264635,2087960,300207,146953449,1160867,60,157630789,1194601,186312926,476798,133647156,<not supported>,<not supported>,<not supported>,<not supported>,982442,<not supported>,<not supported>,86254,3610,221833,4221,<not supported>,173014393,4919,119936081,460,<not supported>,<not supported>,23444,9232
-array9_20,706986386,1532655439,1316908,236986,231984733,572710,61,230400136,592583,802034420,318704,224619455,<not supported>,<not supported>,<not supported>,<not supported>,690339,<not supported>,<not supported>,61043,6961,75341,2460,<not supported>,803049744,2475,216200538,721,<not supported>,<not supported>,16743,4853
-sortedlist9_20,45409955,87123480,419922,41297,19516390,101978,60,20294503,121014,23089209,42508,16234102,<not supported>,<not supported>,<not supported>,<not supported>,67052,<not supported>,<not supported>,6546,44,27723,3705,<not supported>,18882505,5537,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_1,90757272,188438681,296774,85698,28780712,76594,61,29847797,71638,108205306,24197,30117669,<not supported>,<not supported>,<not supported>,<not supported>,43818,<not supported>,<not supported>,3554,823,8991,0,<not supported>,111267819,155,30198289,60,<not supported>,<not supported>,1263,351
-sortedlist10_1,13031941,15150953,105394,16794,3010924,158046,62,2958882,42919,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_2,1363556,1142431,75169,23214,210503,7153,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_2,824507,1105393,66010,11084,203534,7314,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_3,7381142,11497936,114223,25265,2145204,6641,62,2372211,8490,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_3,1662824,1677249,74139,18162,318593,5505,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_4,2502706,2927471,77426,29762,552845,8605,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_4,2223455,2397754,73381,15849,451870,4959,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_5,7865777,15593390,78173,23363,2384072,6267,63,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_5,1848175,2229349,69069,11796,422634,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_6,22251968,29102501,414096,80222,8566814,77904,64,10388852,70060,10404442,38166,7484333,<not supported>,<not supported>,<not supported>,<not supported>,52119,<not supported>,<not supported>,4835,312,17293,4638,<not supported>,8635242,5346,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_6,14244733,25417759,200664,29589,6088537,31056,61,6864361,31390,7622256,20278,5162082,<not supported>,<not supported>,<not supported>,<not supported>,54010,<not supported>,<not supported>,43642,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_7,7412011,11857998,108986,25604,2142076,6435,61,2300783,10459,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_7,1597211,1684676,76850,18511,319748,7914,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_8,1525616,1126082,75455,15729,207370,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_8,1552069,1105466,71398,22755,203581,5468,59,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_9,7287891,14132278,78554,12990,2076971,5990,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_9,1714468,1673003,68416,17728,318351,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_10,7202372,10889449,101328,26254,2075787,15292,60,2047999,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_10,1920688,1686042,84447,27828,320333,7520,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_11,1476912,1137397,68784,19861,209342,5127,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_11,1482933,1119119,67220,17939,205446,<not counted>,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_12,6905324,12129470,71777,17718,2078662,10016,62,1641277,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_12,1832854,1701349,73883,14186,322808,6983,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_13,2611386,1981776,82924,23762,375166,6066,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_13,1756422,1671260,73896,20915,314905,6973,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_14,7529096,14051316,69808,11953,2139324,5563,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_14,1779561,1673281,74694,19814,318438,<not counted>,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_15,7484313,14020651,86944,13567,2538682,12835,62,2637818,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_15,2222821,3035616,68921,21449,580582,6063,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_16,4122072,6238560,85886,24540,1035805,5375,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_16,1710433,1391725,75779,25719,261521,6010,62,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_17,4012971,6329210,79313,25304,1035655,4207,61,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_17,1711381,1389901,79357,18061,260535,7158,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_18,9358209,15327445,153437,32847,3759997,27402,62,4137737,27710,4383247,119700,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-sortedlist10_18,6452961,13488396,85499,16434,2542162,15969,60,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not supported>,<not supported>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not counted>,<not counted>,<not counted>,<not counted>,<not supported>,<not supported>,<not counted>,<not counted>
-array10_19,1631051100,3278115108,7114698,660206,570236425,4489812,66,568696013,4518936,1161087242,3300344,490833142,<not supported>,<not supported>,<not supported>,<not supported>,4200100,<not supported>,<not supported>,470176,27761,1093978,25211,<not supported>,1168648105,13088,487485530,2416,<not supported>,<not supported>,87321,19716
-sortedlist10_19,533740208,1275250101,1441154,130444,240280890,1707936,61,235200141,1690820,262577172,610174,185385456,<not supported>,<not supported>,<not supported>,<not supported>,1112597,<not supported>,<not supported>,84647,859,331472,2705,<not supported>,286396300,5148,201148087,324,<not supported>,<not supported>,27418,5398
-array10_20,687678939,1515266688,1185982,229656,227474191,667202,63,224931413,632456,797486825,376787,219588833,<not supported>,<not supported>,<not supported>,<not supported>,734910,<not supported>,<not supported>,69033,12963,81782,6545,<not supported>,795692306,1454,221595730,613,<not supported>,<not supported>,36552,1459
-sortedlist10_20,45678044,98071107,356908,82176,19354219,102923,62,20565744,107840,23361916,73843,16167396,<not supported>,<not supported>,<not supported>,<not supported>,62888,<not supported>,<not supported>,7636,65,27207,1204,<not supported>,21678711,406,14513998,36,<not supported>,<not supported>,2860,742
+Program,cpu-cycles,instructions,cache-references,cache-misses,branch-instructions
+array1_1,10988034,23796433,94763,28552,4587202
+sortedlist1_1,7595380,15972622,90511,26116,3058805
+array1_2,1644202,1141140,83037,21445,210791
+sortedlist1_2,1553546,1116622,68449,27509,207150
+array1_3,7524546,14364746,78141,19665,2146063
+sortedlist1_3,1758385,1690718,66799,16032,322201
+array1_4,2435142,2929809,81551,31550,553931
+sortedlist1_4,2716707,2393889,95167,27110,451738
+array1_5,2077706,1769165,92725,20117,329877
+sortedlist1_5,1664866,1405184,69418,26608,261893
+array1_6,17614708,36843263,136523,27534,7063562
+sortedlist1_6,11281312,24846096,99462,34019,4770490
+array1_7,7432823,14356991,76903,18146,2144571
+sortedlist1_7,1742670,1689956,74851,19526,322675
+array1_8,1784069,1175442,88022,30703,216306
+sortedlist1_8,1582353,1130076,74174,19508,209256
+array1_9,7250839,13923871,74401,22835,2082513
+sortedlist1_9,1833047,1695088,72327,27712,323324
+array1_10,9941904,13953447,121704,38434,2087974
+sortedlist1_10,2524381,1691769,84334,25355,322851
+array1_11,1599683,1154768,75018,25728,213325
+sortedlist1_11,1514365,1133184,72430,21824,209343
+array1_12,7618461,13924839,88978,27731,2083171
+sortedlist1_12,1821250,1695225,75736,25385,322876
+array1_13,1934200,1979989,74991,26748,376110
+sortedlist1_13,1995422,1683024,89591,28574,318156
+array1_14,7680706,14356246,79720,25339,2144592
+sortedlist1_14,1789028,1688692,75076,22401,322420
+array1_15,8808830,16457608,92566,26834,2541294
+sortedlist1_15,2323169,3062098,77559,19077,586146
+array1_16,4029915,6763269,74479,18104,1036008
+sortedlist1_16,1665220,1404276,72362,21152,264767
+array1_17,4269156,6780968,85795,29202,1038988
+sortedlist1_17,1629409,1398929,68430,19001,263815
+array1_18,4817771,9087194,73045,16613,1733913
+sortedlist1_18,4259805,5343639,110372,39162,1015145
+array1_19,8175801,16235343,88541,21439,2832103
+sortedlist1_19,3596293,6225935,75610,17873,1191626
+array1_20,59523789,82268579,390689,76219,13076786
+sortedlist1_20,13464926,17333907,124340,27105,3357287
+array2_1,90177118,200038136,231320,61776,29750385
+sortedlist2_1,9244931,15275921,128528,36700,3016869
+array2_2,1600472,1125027,71402,19608,208316
+sortedlist2_2,1656634,1122461,83066,27579,208038
+array2_3,8223447,14353436,75910,26963,2143706
+sortedlist2_3,1746956,1682981,72383,22689,321315
+array2_4,3515602,2931124,89860,38040,555472
+sortedlist2_4,2143878,2365586,72504,17895,448097
+array2_5,2290055,2914958,73946,17497,549253
+sortedlist2_5,2205561,2231973,81350,32854,421789
+array2_6,21520483,48343309,106311,21347,9285213
+sortedlist2_6,14614621,32689199,102645,34012,6331719
+array2_7,8498668,14395341,109094,37759,2150285
+sortedlist2_7,1878138,1683710,78001,23493,321645
+array2_8,1677239,1119347,79411,21206,207608
+sortedlist2_8,1516647,1115512,71617,18709,206904
+array2_9,8167734,13909863,101293,45608,2080582
+sortedlist2_9,1710587,1679651,72336,17532,321002
+array2_10,7629089,13919134,90113,20845,2081970
+sortedlist2_10,1922506,1692538,78261,30979,322545
+array2_11,1531715,1136038,72180,18550,210837
+sortedlist2_11,1539252,1135820,69080,16733,209874
+array2_12,7652317,13937904,91448,26043,2084868
+sortedlist2_12,1758686,1673178,69998,21296,319616
+array2_13,1876892,1961264,73635,18702,373833
+sortedlist2_13,1877644,1676905,75922,22486,317378
+array2_14,9114520,14360362,92893,33839,2145513
+sortedlist2_14,1732996,1682918,73976,17312,321410
+array2_15,9623357,16469579,111504,33908,2542954
+sortedlist2_15,2291204,3034828,72451,20802,582665
+array2_16,4121275,6792213,80419,20601,1041413
+sortedlist2_16,1790267,1408702,75161,31064,265482
+array2_17,4036349,6768392,71528,19616,1037383
+sortedlist2_17,1637076,1395198,68003,15605,263395
+array2_18,11071812,19796534,120261,31931,3793750
+sortedlist2_18,10308785,13288047,91310,19635,2547956
+array2_19,23556281,35949732,135860,41446,6473284
+sortedlist2_19,8297030,17380507,91277,24729,3356389
+array2_20,103767163,209830409,333370,68852,33804278
+sortedlist2_20,33006727,45754355,165430,32427,8879239
+array3_1,92077922,200047766,222456,54365,29748141
+sortedlist3_1,7542540,15270890,92535,20895,3016153
+array3_2,1510694,1124606,64101,16949,207927
+sortedlist3_2,2120522,1139821,84056,29292,211020
+array3_3,13040582,14421983,123784,44350,2155619
+sortedlist3_3,2530697,1681612,77574,25853,321368
+array3_4,2605675,2929180,86361,29768,554567
+sortedlist3_4,2050101,2378821,73995,26106,449308
+array3_5,8157176,15789302,83145,23744,2391528
+sortedlist3_5,2079175,2254678,78096,25313,428337
+array3_6,23007419,48386459,161408,36335,9291925
+sortedlist3_6,26777316,33233182,166612,32618,6381853
+array3_7,7421991,14335544,73958,18717,2141908
+sortedlist3_7,2216720,1685805,85172,32879,321531
+array3_8,1787308,1124966,82135,27440,208352
+sortedlist3_8,1519915,1129241,75702,23235,208648
+array3_9,7476369,13898439,87558,27597,2078747
+sortedlist3_9,1825490,1668694,74643,18064,318669
+array3_10,7459578,13885018,84285,20384,2076624
+sortedlist3_10,1926190,1689708,80176,30436,322049
+array3_11,1482549,1135018,68817,19358,210184
+sortedlist3_11,1542080,1125543,68488,16853,208666
+array3_12,8395276,13908229,106034,31701,2080614
+sortedlist3_12,1769472,1686344,74431,21867,321449
+array3_13,1882764,1968255,70517,18119,373551
+sortedlist3_13,2182984,1671299,79439,28737,316748
+array3_14,7800913,14379961,95936,20777,2147916
+sortedlist3_14,1973557,1691052,79898,28394,322877
+array3_15,8858465,16441540,82073,19461,2538669
+sortedlist3_15,2475090,3039258,87395,19759,583595
+array3_16,4308575,6799228,87419,31115,1041502
+sortedlist3_16,2053438,1454925,82433,18981,273834
+array3_17,5490372,6777338,92079,30382,1038633
+sortedlist3_17,2296278,1398213,81838,31078,263797
+array3_18,18888493,19907116,174044,56714,3811865
+sortedlist3_18,10009786,13398330,137876,48879,2565892
+array3_19,77586367,158429638,287856,53469,24721843
+sortedlist3_19,15124242,28285886,140535,44789,5459510
+array3_20,358404760,609571619,1586819,271416,94556854
+sortedlist3_20,65939968,79487535,274479,61799,15464689
+array4_1,110011610,199913314,329301,78684,29736480
+sortedlist4_1,11876913,15326926,129270,37722,3026520
+array4_2,1464050,1112778,69671,21266,206572
+sortedlist4_2,1947475,1118621,89658,31043,207253
+array4_3,7480996,14361147,76979,19393,2144518
+sortedlist4_3,1737968,1676139,70512,17071,320460
+array4_4,2331872,2918614,78606,23433,553206
+sortedlist4_4,2008452,2353308,76223,19434,448783
+array4_5,8731922,15770585,101393,29040,2388408
+sortedlist4_5,1997689,2262360,74844,21375,429230
+array4_6,23885905,48371174,155500,34453,9289822
+sortedlist4_6,16206680,32966624,140351,35212,6360119
+array4_7,7382233,14350234,77884,18529,2143480
+sortedlist4_7,1979230,1684987,76034,31642,321673
+array4_8,1508958,1131224,65809,18263,209641
+sortedlist4_8,1658651,1112925,77757,18559,205974
+array4_9,8206337,13917113,100627,39369,2082014
+sortedlist4_9,1941301,1678200,77287,19707,320669
+array4_10,7230294,13902141,81221,23860,2079849
+sortedlist4_10,1889567,1677176,74926,26098,320009
+array4_11,1567412,1150399,72138,17413,213244
+sortedlist4_11,1612519,1126417,74635,25656,208828
+array4_12,7336961,13905087,80996,21466,2079791
+sortedlist4_12,1968158,1688762,80422,35475,321531
+array4_13,1881319,1964609,70385,20783,373002
+sortedlist4_13,1757371,1680117,68204,17000,317960
+array4_14,8461089,14362463,106563,37590,2145508
+sortedlist4_14,1783458,1702410,73108,16493,324103
+array4_15,8226939,16424122,80260,21542,2538157
+sortedlist4_15,3278545,3057478,77910,23560,585846
+array4_16,4013918,6765999,72457,17933,1037155
+sortedlist4_16,1575843,1390924,63557,13577,262487
+array4_17,4111223,6780884,78027,30834,1039115
+sortedlist4_17,1582770,1398977,72967,21742,264378
+array4_18,11127699,19815320,132182,30348,3796647
+sortedlist4_18,6474480,13271902,83576,21496,2545326
+array4_19,143271004,294779639,464368,80861,46467016
+sortedlist4_19,29745360,53855802,161701,45556,10394850
+array4_20,707684556,1530665307,989268,143830,228949108
+sortedlist4_20,71555039,103703799,374249,53612,20400478
+array5_1,94363747,199857880,208053,55531,29714280
+sortedlist5_1,7869729,15278892,91823,24337,3017289
+array5_2,1537265,1126444,62742,18129,208006
+sortedlist5_2,1887150,1145999,79886,18259,212379
+array5_3,7704116,14378883,87118,27562,2147918
+sortedlist5_3,1746182,1683683,71851,19019,321305
+array5_4,2237519,2895118,75029,20643,550369
+sortedlist5_4,2024547,2382369,73699,17322,450398
+array5_5,8763159,15830044,98566,35036,2398778
+sortedlist5_5,2090768,2258249,73719,23000,429007
+array5_6,21504690,48069447,130576,32072,9276540
+sortedlist5_6,15015680,32934729,112807,40292,6370251
+array5_7,7972274,14364187,87884,39182,2145415
+sortedlist5_7,2443099,1692701,85047,34469,323029
+array5_8,1820445,1140867,76819,31978,211318
+sortedlist5_8,1605672,1142917,71751,19850,210885
+array5_9,7834232,13922247,95881,46258,2082380
+sortedlist5_9,1834715,1678616,72410,26928,320177
+array5_10,7511063,13920581,83332,34410,2082054
+sortedlist5_10,2499262,1684578,104173,30751,321206
+array5_11,1536895,1137522,69901,20907,210884
+sortedlist5_11,1523389,1117261,68709,26432,207390
+array5_12,8251934,13951030,101205,36841,2087965
+sortedlist5_12,2481820,1692501,93321,32024,322671
+array5_13,3051478,1967227,90726,36342,374176
+sortedlist5_13,2533027,1688773,99978,31723,319546
+array5_14,8280555,14355829,96779,35152,2144169
+sortedlist5_14,1815175,1682159,73421,24751,321421
+array5_15,9809400,16471160,107398,37108,2543545
+sortedlist5_15,2695789,3123108,88988,26713,595753
+array5_16,4877280,6853357,102616,28522,1052448
+sortedlist5_16,2137318,1411559,86424,29726,265766
+array5_17,4114829,6779549,76327,26531,1038818
+sortedlist5_17,1613058,1386772,71088,17589,262283
+array5_18,13792753,19819855,137790,32730,3797275
+sortedlist5_18,6653181,13294222,86690,23879,2548473
+array5_19,241261495,514505544,609261,105858,84499444
+sortedlist5_19,66248777,141221363,258737,52978,27235159
+array5_20,711883820,1531828351,965325,183901,229007792
+sortedlist5_20,55369908,103785992,314817,62317,20399365
+array6_1,93351048,199877220,249643,69997,29717491
+sortedlist6_1,7502313,15270499,89038,24285,3016197
+array6_2,1800830,1142109,89747,28320,210768
+sortedlist6_2,1540431,1123245,66768,18113,208339
+array6_3,9082896,14372553,106765,28766,2147373
+sortedlist6_3,1802758,1678488,71396,22360,320509
+array6_4,3347172,2928527,96365,43649,554425
+sortedlist6_4,1998936,2374927,74189,17271,448873
+array6_5,8747668,15755848,95934,28720,2387085
+sortedlist6_5,2450035,2284574,87665,32165,433567
+array6_6,22147412,48355812,137191,36922,9286700
+sortedlist6_6,15149481,33197380,124488,39591,6375929
+array6_7,7527299,14393645,76616,22170,2150150
+sortedlist6_7,1901298,1693306,82271,25610,322670
+array6_8,1611907,1131580,69580,23510,209285
+sortedlist6_8,1588351,1140197,75776,20128,210519
+array6_9,8531392,13985534,114523,37729,2094011
+sortedlist6_9,2135127,1692688,74887,31688,322963
+array6_10,7345992,13909329,84202,24793,2080420
+sortedlist6_10,1953348,1688621,80883,34970,322007
+array6_11,1568714,1154065,74126,21166,213180
+sortedlist6_11,1628357,1136947,75173,28234,210585
+array6_12,7860673,13914457,103730,40204,2082272
+sortedlist6_12,1802237,1679088,75185,22732,320250
+array6_13,2900876,1973859,103269,34961,375110
+sortedlist6_13,1882418,1678102,81969,27464,317685
+array6_14,7673788,14357504,87785,28796,2144250
+sortedlist6_14,2178924,1684392,93983,23412,321847
+array6_15,9444167,16491675,103389,25229,2546749
+sortedlist6_15,2517568,3062496,78175,30491,586198
+array6_16,4112969,6800846,74098,20607,1042306
+sortedlist6_16,1605192,1386060,67693,19173,262430
+array6_17,4963709,6779628,114014,40671,1039201
+sortedlist6_17,2007640,1412914,93301,34316,266267
+array6_18,11517948,19801279,141145,35966,3794319
+sortedlist6_18,11233417,13217313,154127,44859,2550100
+array6_19,303204618,550775150,1120111,140636,91225648
+sortedlist6_19,112695945,167322119,471653,80137,32319919
+array6_20,708951614,1531699627,959190,164503,228986425
+sortedlist6_20,57387401,103933438,186138,40645,20406138
+array7_1,91089628,199825631,195010,69885,29713595
+sortedlist7_1,13339081,15277469,107312,45171,3017291
+array7_2,1603322,1130592,70364,24120,209302
+sortedlist7_2,1492540,1126597,72141,17948,208151
+array7_3,7432176,14349579,75172,17711,2142926
+sortedlist7_3,1834823,1695835,79365,31240,322531
+array7_4,2644214,2929714,89950,22608,555133
+sortedlist7_4,3201738,2397890,92436,39938,452275
+array7_5,8142725,15770997,86651,19929,2388319
+sortedlist7_5,2313975,2253276,87391,31941,427856
+array7_6,22471607,48146413,135358,38498,9265442
+sortedlist7_6,27096653,32993410,109406,29801,6364974
+array7_7,7522588,14380346,80140,21874,2148024
+sortedlist7_7,1734297,1681465,69944,19038,321351
+array7_8,1780814,1141900,79678,25604,211405
+sortedlist7_8,1559281,1127943,72850,21998,208279
+array7_9,7817805,13898092,101313,40890,2078809
+sortedlist7_9,1816851,1683970,74710,24319,321620
+array7_10,7217973,13886166,74353,18682,2076513
+sortedlist7_10,1812110,1684419,74275,27940,321622
+array7_11,1685785,1138886,81305,27457,210459
+sortedlist7_11,1728280,1131235,76370,31277,209810
+array7_12,9586218,13899845,127760,23761,2079374
+sortedlist7_12,1775508,1671770,67542,15536,319515
+array7_13,1914848,1972774,71395,17293,374607
+sortedlist7_13,1757837,1674420,68058,17312,317260
+array7_14,7486644,14360594,79023,25992,2145285
+sortedlist7_14,2456217,1701146,95389,30664,324312
+array7_15,8314334,16453241,81352,29485,2540585
+sortedlist7_15,2941271,3108089,98939,31063,594485
+array7_16,4164968,6764044,82452,21191,1036660
+sortedlist7_16,1669690,1396961,72562,25146,263548
+array7_17,4824128,6845907,92041,31233,1050436
+sortedlist7_17,1683788,1400591,76695,26033,264523
+array7_18,10208230,19785478,112354,36853,3791828
+sortedlist7_18,6701684,13277087,88939,26468,2546081
+array7_19,526892479,1150605879,979084,107038,186477085
+sortedlist7_19,128530387,280306232,486173,74123,54244128
+array7_20,710745691,1530947642,1102025,279094,228915477
+sortedlist7_20,46892378,103896652,183433,37733,20400274
+array8_1,113002935,200002531,452048,130394,29743062
+sortedlist8_1,9837741,15243412,86362,23137,3011740
+array8_2,1502053,1123930,69211,20058,208059
+sortedlist8_2,1590605,1121066,66662,22244,207649
+array8_3,7491617,14347248,80359,22671,2142846
+sortedlist8_3,1750768,1679129,68105,16971,320773
+array8_4,2327419,2909100,75921,29416,552537
+sortedlist8_4,2372491,2406256,89211,23783,453880
+array8_5,8239562,15777352,85612,25935,2389598
+sortedlist8_5,2204394,2259575,79457,21156,428660
+array8_6,22434086,48393787,137198,37049,9292746
+sortedlist8_6,20646459,33212226,151508,32646,6378422
+array8_7,7473952,14358374,81427,22582,2144396
+sortedlist8_7,2006867,1678069,81172,25178,320752
+array8_8,1762736,1115222,81270,28416,207147
+sortedlist8_8,2133284,1108468,91967,26538,205726
+array8_9,7236143,13904094,74083,19223,2079610
+sortedlist8_9,1841668,1681516,68822,16610,321203
+array8_10,7205112,13890474,74038,19201,2077176
+sortedlist8_10,2001861,1695451,86286,32016,323059
+array8_11,1568301,1151979,72599,19508,213099
+sortedlist8_11,1556169,1126156,70069,24309,208812
+array8_12,7668506,13937898,101457,28563,2085530
+sortedlist8_12,2071945,1680746,86553,27213,321036
+array8_13,1878346,1961691,70098,18657,373360
+sortedlist8_13,1763676,1671562,71737,24855,316537
+array8_14,8310627,14457030,110712,43386,2160929
+sortedlist8_14,1796038,1693682,69400,17872,323150
+array8_15,10829877,16476379,130992,39044,2544279
+sortedlist8_15,2299540,3055599,73196,18802,585162
+array8_16,4181481,6773852,75809,30844,1037929
+sortedlist8_16,1624115,1407247,72930,17779,265154
+array8_17,4192910,6773665,80373,25015,1038106
+sortedlist8_17,1672152,1395765,70146,17708,263875
+array8_18,17766409,19697941,110104,22005,3782063
+sortedlist8_18,6765093,13282264,92501,25844,2546764
+array8_19,749892328,1448384194,1779435,172704,245868515
+sortedlist8_19,212829086,504179355,513969,83138,97406734
+array8_20,951058540,1537694911,4858847,1185887,230057045
+sortedlist8_20,71730923,104004915,393658,67960,20418328
+array9_1,93287727,199780242,192295,37738,29706393
+sortedlist9_1,8205926,15246457,100876,24888,3012462
+array9_2,1594624,1138093,72474,24974,210177
+sortedlist9_2,1468004,1110202,69886,17976,206020
+array9_3,7602119,14373049,83801,27320,2147042
+sortedlist9_3,3266506,1708432,79936,39190,326529
+array9_4,3591846,2936630,97976,35922,555834
+sortedlist9_4,2082768,2378113,76154,28258,449621
+array9_5,8995843,15787923,96879,42902,2391878
+sortedlist9_5,1997838,2253231,77882,27950,427873
+array9_6,21379184,48381189,126142,28257,9291191
+sortedlist9_6,20906320,33164213,184961,45029,6382259
+array9_7,7846053,14354113,95509,30970,2144416
+sortedlist9_7,1731164,1674871,69761,19095,319981
+array9_8,1755299,1126703,80129,26171,208747
+sortedlist9_8,1578234,1120719,80731,27849,207595
+array9_9,7453919,13927155,92879,30033,2083484
+sortedlist9_9,1810163,1716234,82598,17487,326748
+array9_10,9725945,13939952,140022,37958,2085960
+sortedlist9_10,1733940,1683377,68600,21147,321080
+array9_11,1497950,1142965,74395,24963,211498
+sortedlist9_11,1535003,1125358,71843,19110,208652
+array9_12,7293826,13903007,77989,24151,2080192
+sortedlist9_12,1718456,1672986,64331,17044,319553
+array9_13,2274306,1964493,75671,24486,373010
+sortedlist9_13,1771891,1684599,73421,19272,319107
+array9_14,10183565,14400706,128246,43887,2152027
+sortedlist9_14,1944981,1689550,84044,25826,322157
+array9_15,8348278,16436444,85901,19973,2538098
+sortedlist9_15,2296287,3061167,74077,18008,586107
+array9_16,4499762,6779356,86825,31976,1039016
+sortedlist9_16,1612900,1394506,69643,18590,263619
+array9_17,4698424,6820605,80636,19768,1045933
+sortedlist9_17,1664677,1394319,69597,17063,263126
+array9_18,9567910,19663807,102137,27127,3783923
+sortedlist9_18,7158259,13251659,103638,29014,2545523
+array9_19,1107049169,2426824679,2503668,190731,408771346
+sortedlist9_19,379863199,818575371,1280017,160294,158143383
+array9_20,874962973,1534860781,4368070,784350,229540261
+sortedlist9_20,49291128,103961167,248640,37427,20411569
+array10_1,91667812,199817920,177087,47270,29707627
+sortedlist10_1,8637021,15268761,110976,39367,3016004
+array10_2,1521900,1125238,71721,21245,208618
+sortedlist10_2,1589661,1113421,68526,22554,206542
+array10_3,8014959,14365514,96157,38816,2145394
+sortedlist10_3,1862042,1696910,76545,29363,323580
+array10_4,2516564,2926222,77807,25509,554697
+sortedlist10_4,3193164,2392695,100721,35156,452210
+array10_5,8766567,15771595,111030,41368,2388072
+sortedlist10_5,2984069,2248731,90785,26947,427110
+array10_6,40067188,49099048,472779,85565,9440490
+sortedlist10_6,14912386,33082554,101686,24229,6363069
+array10_7,7786406,14373996,97177,38151,2147562
+sortedlist10_7,1776040,1665789,69831,21985,318587
+array10_8,1567359,1134903,76550,25239,210441
+sortedlist10_8,1841331,1116940,80693,29684,206855
+array10_9,7564192,13901350,84126,37369,2078501
+sortedlist10_9,2930982,1695124,71305,31941,323548
+array10_10,10181454,13920482,125258,48105,2082649
+sortedlist10_10,1795411,1693529,78293,28431,322664
+array10_11,1549818,1135253,71527,24436,210537
+sortedlist10_11,1533577,1121836,71472,26281,208192
+array10_12,7246907,13921481,82148,20688,2083176
+sortedlist10_12,1930175,1677533,76430,26983,320547
+array10_13,1921233,1980992,74671,21894,375765
+sortedlist10_13,1733065,1659435,68852,18934,314678
+array10_14,8083224,14389207,88808,30570,2149351
+sortedlist10_14,2066792,1683852,78556,36376,321330
+array10_15,8678085,16460119,93934,35094,2541942
+sortedlist10_15,2513875,3062956,78896,24664,586451
+array10_16,4156833,6786461,86980,22128,1039899
+sortedlist10_16,2294314,1384522,96246,30408,261764
+array10_17,4059890,6779795,74226,18568,1039250
+sortedlist10_17,1679308,1395012,72405,26063,263511
+array10_18,9381110,19633881,92140,21906,3780917
+sortedlist10_18,8334841,13225393,114562,36170,2540946
+array10_19,1447974853,3279596219,2772714,257995,567179688
+sortedlist10_19,575019501,1262946280,1732805,219985,244511975
+array10_20,917819831,1534881833,4779398,893414,229607779
+sortedlist10_20,50491898,103621022,242746,53648,20387723
+array11_1,101736673,200136328,341552,76761,29762771
+sortedlist11_1,8531905,15274347,119772,42130,3016480
+array11_2,1790559,1148808,94240,32968,212701
+sortedlist11_2,1678355,1141368,83091,32568,210945
+array11_3,7628398,14374949,91486,23882,2147817
+sortedlist11_3,1789675,1697410,77392,17976,323490
+array11_4,3512541,2986611,120340,33814,564590
+sortedlist11_4,2066562,2388574,81609,20174,451165
+array11_5,8314985,15803692,101330,37166,2394348
+sortedlist11_5,2464207,2283402,96579,28637,434463
+array11_6,24195845,48406852,165586,34767,9295316
+sortedlist11_6,15739046,32994038,124648,29983,6352647
+array11_7,7423869,14367085,82199,18879,2146413
+sortedlist11_7,2044522,1699505,97205,30920,324296
+array11_8,1738703,1145314,86517,26002,212067
+sortedlist11_8,1754405,1155138,88794,36083,213703
+array11_9,7280931,13919172,84031,19938,2082294
+sortedlist11_9,2415297,1704423,88434,25241,324707
+array11_10,7262679,13905289,78155,20586,2080283
+sortedlist11_10,1904933,1700927,86042,23761,324201
+array11_11,1906281,1180202,90138,36562,218618
+sortedlist11_11,1664500,1160090,79529,18336,214730
+array11_12,9185639,13943061,104974,30923,2086480
+sortedlist11_12,2156010,1712850,93171,41052,326505
+array11_13,2162698,1992649,81461,19832,378013
+sortedlist11_13,1913606,1680885,82295,19900,318494
+array11_14,7779835,14403928,100196,21805,2152463
+sortedlist11_14,1978209,1692666,89891,24659,323821
+array11_15,9524598,16586432,118889,39215,2562226
+sortedlist11_15,2768846,3071476,84586,23914,587655
+array11_16,4117260,6791972,84588,22043,1040642
+sortedlist11_16,1894653,1414942,85675,32215,267172
+array11_17,4351923,6797174,90560,34861,1042319
+sortedlist11_17,1696700,1411464,83601,25575,265571
+array11_18,14956120,19825703,126884,32585,3797872
+sortedlist11_18,6452702,13180630,82438,17018,2540076
+array11_19,2689920370,5895875649,6308649,471592,1014644269
+sortedlist11_19,1224240519,2270227201,5921758,843919,438400616
+array11_20,762565083,1533962141,2027657,447818,229364344
+sortedlist11_20,63703588,104109481,470511,83494,20436295
+array12_1,98557606,200110348,351218,87584,29753698
+sortedlist12_1,7745293,15152709,115487,38379,3007721
+array12_2,1534494,1144848,78344,23382,211914
+sortedlist12_2,2555445,1162120,104496,41866,214503
+array12_3,9929782,14456099,145006,58418,2161624
+sortedlist12_3,1914653,1732168,85774,40117,328510
+array12_4,2658762,3034537,114962,31604,574553
+sortedlist12_4,2023950,2395854,85171,20890,452561
+array12_5,7982724,15834796,95287,22401,2399071
+sortedlist12_5,2015435,2296591,85817,16694,435313
+array12_6,23970734,48446345,188631,41086,9302077
+sortedlist12_6,14720292,32869217,121770,23488,6354136
+array12_7,8268608,14378585,103279,30922,2147933
+sortedlist12_7,1730916,1706320,82155,23598,324845
+array12_8,1512523,1146898,82090,23102,212239
+sortedlist12_8,1793062,1145022,96808,37086,211315
+array12_9,7316748,13938234,92766,25852,2085258
+sortedlist12_9,1843108,1710259,91750,29097,325692
+array12_10,7448975,13957200,103812,23766,2088516
+sortedlist12_10,1718738,1697370,80366,17550,323956
+array12_11,1519242,1177961,81961,19583,217551
+sortedlist12_11,1883040,1224151,110516,31092,225299
+array12_12,7932059,13919579,105104,39069,2083361
+sortedlist12_12,1699331,1702242,74341,15263,324342
+array12_13,2172619,1986599,91921,31879,376481
+sortedlist12_13,1845683,1690046,87313,21782,319725
+array12_14,8396325,14377699,119251,45170,2147711
+sortedlist12_14,1903562,1706304,95849,20097,325074
+array12_15,12386959,16526975,142221,45062,2553013
+sortedlist12_15,2524555,3075298,90050,32783,589085
+array12_16,5300843,6831685,114318,46360,1047974
+sortedlist12_16,1682107,1410251,84362,30113,265990
+array12_17,4007582,6785731,84672,20511,1040038
+sortedlist12_17,1636722,1410024,86518,18990,266033
+array12_18,9436214,19808247,101078,22400,3795907
+sortedlist12_18,7977182,13325905,128683,40423,2554772
+array12_19,3315895016,7167877350,9724046,996332,1219252777
+sortedlist12_19,1323776841,2581380120,2950488,265809,498609822
+array12_20,688672272,1531402818,660202,90151,228938339
+sortedlist12_20,45398534,103955029,196033,47011,20411166
+array13_1,87374912,199843920,140071,26469,29711597
+sortedlist13_1,7493067,15264001,95429,21199,3015054
+array13_2,1559174,1144138,82647,23068,211882
+sortedlist13_2,1624786,1137671,83125,24143,210189
+array13_3,7802691,14400793,98015,28666,2151442
+sortedlist13_3,1892914,1699394,82764,26836,324437
+array13_4,2415750,2926607,78460,22353,554724
+sortedlist13_4,2163594,2399040,78335,27071,452880
+array13_5,8163399,15811308,94710,22866,2395462
+sortedlist13_5,2053643,2287537,90744,17673,433811
+array13_6,21472298,48346046,113584,21671,9285343
+sortedlist13_6,21189471,33230973,197287,55970,6382509
+array13_7,7808419,14382907,94507,34170,2148206
+sortedlist13_7,1950430,1687397,81305,36541,322213
+array13_8,1654543,1158061,87763,22817,213857
+sortedlist13_8,1614827,1123675,80249,21134,207810
+array13_9,7414225,13943682,94637,24964,2086484
+sortedlist13_9,1836675,1704570,84407,21243,325076
+array13_10,7552454,13921444,92042,29342,2082974
+sortedlist13_10,1921195,1688232,82601,21921,322154
+array13_11,1777228,1175292,88298,32018,217507
+sortedlist13_11,1574880,1170402,84661,22175,216545
+array13_12,8141198,13929882,105641,49681,2084206
+sortedlist13_12,1820830,1698928,84056,21714,323965
+array13_13,2049043,1984853,81738,29616,376560
+sortedlist13_13,1821382,1693041,78373,19882,321545
+array13_14,7599000,14362651,86510,22108,2145496
+sortedlist13_14,1810175,1700440,76627,16966,324565
+array13_15,8515647,16479549,92998,30636,2544907
+sortedlist13_15,2379875,3085013,76964,17295,589683
+array13_16,4070861,6781195,80311,20555,1039793
+sortedlist13_16,1734378,1421659,87655,22712,268146
+array13_17,4058486,6781288,80139,19326,1039259
+sortedlist13_17,1870615,1422581,92571,31985,267932
+array13_18,10156994,19832292,114077,31653,3799312
+sortedlist13_18,7623264,13318593,124569,35951,2553307
+array13_19,6532725906,14066139382,15926630,1626321,2327258668
+sortedlist13_19,2245108562,4133665966,8234288,968959,798722484
+array13_20,753636354,1532166090,1586120,280361,229071843
+sortedlist13_20,99064407,106332706,923057,137953,20836316
+array14_1,108326508,199941768,402901,91138,29731621
+sortedlist14_1,8634516,15283794,118617,30915,3018090
+array14_2,1881915,1145712,88871,20088,212263
+sortedlist14_2,1529369,1129018,79802,19128,208767
+array14_3,7449986,14364984,83608,21478,2145734
+sortedlist14_3,2171906,1702548,82393,23408,324696
+array14_4,2355756,2931173,83916,25032,556303
+sortedlist14_4,2260321,2390544,88277,21442,451888
+array14_5,8963052,15867628,110601,26433,2405386
+sortedlist14_5,2612495,2309001,103065,37901,437419
+array14_6,24210450,48550923,193436,56353,9319917
+sortedlist14_6,24393196,33264547,193671,38502,6388190
+array14_7,8834550,14439214,137402,57581,2158254
+sortedlist14_7,1888095,1691929,78168,22380,323195
+array14_8,1806210,1166209,95063,39116,215584
+sortedlist14_8,1559664,1131135,77951,20370,209020
+array14_9,8067918,13935781,114873,46046,2084850
+sortedlist14_9,2398890,1715925,94351,32494,327285
+array14_10,8363418,13930202,107931,39887,2083418
+sortedlist14_10,1914193,1696613,83114,34146,323638
+array14_11,1700360,1183864,85253,28498,218495
+sortedlist14_11,1717646,1152387,75531,31270,213026
+array14_12,7309778,13919484,87598,19815,2082179
+sortedlist14_12,1985505,1701728,85686,34573,324855
+array14_13,2493415,1980289,88347,22094,376498
+sortedlist14_13,1846247,1698567,84000,20660,321350
+array14_14,7572769,14381625,86503,29592,2148112
+sortedlist14_14,1915900,1708175,82594,24822,325322
+array14_15,13166045,16499520,152185,38698,2548184
+sortedlist14_15,2344758,3070607,80889,19522,588059
+array14_16,4590167,6795087,91619,38320,1041448
+sortedlist14_16,1746900,1408549,88142,23598,265904
+array14_17,4377711,6785569,91412,34631,1040321
+sortedlist14_17,1757515,1416594,78085,30023,266771
+array14_18,12253222,19848565,149897,42590,3801802
+sortedlist14_18,9876461,13315521,104792,34214,2551935
+array14_19,8940568148,18298314820,26549682,2777511,3021372301
+sortedlist14_19,2637104769,5330289316,6711715,488822,1029827843
+array14_20,739370932,1532498006,1609938,238726,229129846
+sortedlist14_20,48347081,103979391,220959,46321,20414266
+array15_1,89978134,199832810,165029,43380,29715296
+sortedlist15_1,8898785,15264758,106934,29905,3015082
+array15_2,1711682,1156234,85296,31335,213748
+sortedlist15_2,1568055,1145997,77041,15301,211830
+array15_3,7473899,14350407,75434,21365,2144365
+sortedlist15_3,2798109,1701796,97433,37863,324241
+array15_4,2566366,2944029,91674,29371,557000
+sortedlist15_4,2080718,2388795,82506,20552,451478
+array15_5,8009219,15779905,90570,17225,2391258
+sortedlist15_5,2206143,2290546,96703,26541,434590
+array15_6,35033836,48474791,283587,52900,9306385
+sortedlist15_6,14845005,33163671,107132,24672,6371230
+array15_7,7454739,14362359,86535,21235,2145758
+sortedlist15_7,1798041,1703361,81538,18607,324695
+array15_8,1932958,1135235,92291,31200,210221
+sortedlist15_8,1583136,1132858,78957,22803,209905
+array15_9,7367709,13899658,86980,21141,2079320
+sortedlist15_9,1798031,1683261,78690,19772,321957
+array15_10,7528409,13924318,90241,25754,2083353
+sortedlist15_10,1845443,1697305,86389,24820,323929
+array15_11,2261680,1192545,102272,25336,220606
+sortedlist15_11,1780463,1168763,80744,30241,216316
+array15_12,7270285,13904531,84190,21320,2079789
+sortedlist15_12,1923284,1700653,83177,34178,323952
+array15_13,2005106,1979844,79829,24305,375436
+sortedlist15_13,1880322,1723337,85995,22021,325374
+array15_14,7622433,14377076,87842,26388,2148069
+sortedlist15_14,1793033,1700719,79719,19300,324577
+array15_15,8278747,16431056,87994,19507,2539927
+sortedlist15_15,3214364,3093194,106251,33603,591904
+array15_16,4915301,6800086,104311,39793,1042860
+sortedlist15_16,1773679,1429016,83727,28639,268923
+array15_17,4348448,6799037,97647,19671,1042325
+sortedlist15_17,1691370,1404469,81719,20160,265438
+array15_18,14724507,19836907,125187,25708,3799777
+sortedlist15_18,10347031,13324907,111818,43044,2553768
+array15_19,13069054458,26728356844,37491711,3024845,4458419593
+sortedlist15_19,4247588987,8496647226,13096309,1397022,1641400497
+array15_20,704682810,1531595105,1174159,175258,228970929
+sortedlist15_20,51940126,104321217,300728,73100,20473716

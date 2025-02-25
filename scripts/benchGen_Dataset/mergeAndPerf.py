@@ -3,11 +3,15 @@ import argparse
 import subprocess
 import csv
 
-perf_events = """cpu-cycles
+perf_events = """
+cpu-cycles
 instructions
 cache-references
 cache-misses
 branch-instructions
+"""
+
+"""
 branch-misses
 page-faults
 branch-loads
@@ -34,15 +38,16 @@ dTLB-store-misses
 dTLB-prefetches
 dTLB-prefetch-misses
 iTLB-loads
-iTLB-load-misses"""
+iTLB-load-misses
+"""
 
 def runPerf(executable_path):
-    os.makedirs('results', exist_ok=True)
-    with open('results/bg_results.csv', 'a', newline='') as f:
+    with open('code/benchgen/results/bg_results.csv', 'a', newline='') as f:
         csv_writer = csv.writer(f, delimiter=',')
         events_list = perf_events.strip().split('\n')
-        if not os.path.exists('results/bg_results.csv') or os.stat('results/bg_results.csv').st_size == 0:
+        if not os.path.exists('code/benchgen/results/bg_results.csv') or os.stat('code/benchgen/results/bg_results.csv').st_size == 0:
             csv_writer.writerow(["Program"] + events_list)
+            
         
         if os.path.exists(executable_path):
             perf_command = ["perf", "stat", "-o", "temp.txt", "-x,"]
@@ -68,14 +73,16 @@ def mergeAndPerf(programs):
         executable_path = os.path.join(program_path, executable)
         runPerf(executable_path)
         output_name = program_path.split('/')[-1]
-        output_path = f"results/{output_name}.txt"
+        output_path = f"code/benchgen/results/code/{output_name}.txt"
         with open(output_path, 'w', encoding='utf-8') as outfile:
             srcdir = os.path.join(program_path, 'src')
             for filename in sorted(os.listdir(srcdir)):
                 if filename.endswith(".c") or filename.endswith(".h"):
                     file_path = os.path.join(srcdir, filename)
                     with open(file_path, 'r', encoding='utf-8') as infile:
+                        outfile.write(f'```{filename}\n')
                         outfile.write(infile.read() + '\n')
+                        outfile.write('```\n')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compile, merge all source files and extract perf data given a list of programs")
