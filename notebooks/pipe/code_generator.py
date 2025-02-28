@@ -107,9 +107,10 @@ class CodeGeneration:
             suboutput_list = self.output.split("<Program>")
 
             for subprogram in (suboutput_list):
+              if "</Program>" in subprogram:
                 program = subprogram.split("</Program>")[0]
 
-                if((program.count('{') + program.count('}')%2==0)):
+                if program.count('{') == program.count('}'):
                         final_program = program
 
             self.program = final_program

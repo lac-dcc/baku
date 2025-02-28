@@ -6,6 +6,7 @@ from data_loader import DataLoader
 from code_generator import CodeGeneration
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUploadclass 
+
 class GenerationPipeline:
     def __init__(
             self,
@@ -104,6 +105,26 @@ class GenerationPipeline:
 
         return created_folder.get('id'),random_name
 
+    def find_folder(self, parent_folder_id: str, folder_name: str):
+        try:
+            drive_service = build('drive', 'v3')
+
+            query = f"'{parent_folder_id}' in parents and name = '{folder_name}' and mimeType = 'application/vnd.google-apps.folder'"
+            
+            results = drive_service.files().list(
+                q=query,
+                fields='files(id, name)'
+            ).execute()
+
+            folders = results.get('files', [])
+            
+            if folders:
+                return folders[0]['id'], folders[0]['name']
+            else:
+                return None, None
+
+        except Exception as e:
+            raise f"Folder coulnd't been founded: {e}"
 
 
     def single_code_generation(self, max_len: int, static: bool = False, id: int = 0) -> float:#Single Program Generation
@@ -157,9 +178,9 @@ class GenerationPipeline:
         current_max_length = first_max_length#Begin with some length
         time_array = np.array([])
 
-        for i in range(max_lenght_pow):
+        for _ in range(max_lenght_pow):
 
-            for j in range(sample):
+            for _ in range(sample):
                 time_temp = self.single_code_generation(current_max_length) #time spent
 
                 time_array = np.append(time_array,time_temp)
@@ -218,7 +239,7 @@ class GenerationPipeline:
                     if i==0:
                         last_code_id = 'None'
                     else:
-                      last_code_id = f'{folder_name}{i-1}'
+                        last_code_id = f'{folder_name}{i}'
 
                     i = i + 1
 
@@ -230,7 +251,6 @@ class GenerationPipeline:
                     self.models_chain.save()
 
 
-                    last_code_id = f'{folder_name}{i-1}'
                     self.upload_chain_file_to_drive(program,folder_id,folder_name,i)
 
 
@@ -240,7 +260,7 @@ class GenerationPipeline:
                     print("Program Generated:\n" + program)
 
             #folder_id,num_regression,time_spent,mean_time_program,std_time,compilation
-            rows_chain = [folder_name,0,ac_time,0,0,"False"]
+            rows_chain = [folder_name,i,ac_time,0,0,"False"]
             self.chains_data.new_row(rows_chain)
             self.chains_data.save()
 
@@ -248,6 +268,105 @@ class GenerationPipeline:
         except Exception as e:
             print(f"ERRO: {e}")
 
-    def chain_sampling():
-        return 0
-        #empty for now
+    def chain_sampling(self,first_max_length=512,max_lenght_pow=1,sample=3,iterations=6):
+
+        current_max_length = first_max_length#Begin with some length
+        time_array = np.array([])
+        iterations = iterations + 1
+
+        for _ in range(max_lenght_pow):
+
+            for _ in range(sample):
+                time_temp = self.chain_code_generation(current_max_length,iterations) #time spent
+
+                time_array = np.append(time_array,time_temp)
+
+
+            sampling_output = [self.model_name,
+                                 np.mean(time_array),
+                                 np.std(time_array),
+                                 sample,
+                                 current_max_length
+                                ,np.min(time_array),
+                                 np.max(time_array)]
+
+
+            self.sampling_data.new_row(sampling_output)
+            self.sampling_data.save()
+
+            time_array = np.empty(0)
+
+            current_max_length *= 2 #make it double beacause could grow better
+
+        print("Sampling Done!")
+        
+    def continue_chain(self, folder_chain: str , max_len: int, n: int = 1) -> float:
+        try:
+            chain_values = self.chains_data.get_row('folder_id',folder_chain)
+            
+            base_code = """ int f(int a) {
+                    return 0;
+                    }"""
+                    
+            with open(f'/content/drive/My Drive/Colab_Notebooks/Baku/codes/{folder_chain}/{folder_chain}{chain_values[0]}.c', 'r') as f:
+                base_code = f.read()
+            
+            ac_time = chain_values[1]
+            i = chain_values[0]
+            last_code_id = ''
+            folder_id,folder_name = self.find_folder('1y_BZ7M_Rpq7q4TEoRQiGMkfDWhR0okan',folder_chain)
+            for _ in range(n):
+                input_value,input_id = self.input_data.random_row_string(self.ignore_coluns)
+
+                generator = CodeGeneration(
+                model=self.model,
+                model_name=self.model_name,
+                tokenizer=self.tokenizer,
+                data=self.models_data,
+                input_str=input_value,
+                input_id=input_id,
+                max_length=max_len,
+                base_code=base_code,
+                topology=self.topology
+                )
+
+                generator.generate_code()
+
+                program = generator.program_extratcion()
+
+                output_list = generator.get_output_list()
+
+
+                if(output_list[4] > 0):
+                    if i==0:
+                        last_code_id = 'None'
+                    else:
+                        last_code_id = f'{folder_name}{i}'
+
+                    i = i + 1
+
+                    output_list.append(last_code_id)
+                    output_list.append(folder_name)
+                    output_list[2] = f'{folder_name}{i}'
+
+                    self.models_chain.new_row(output_list)
+                    self.models_chain.save()
+
+
+                    self.upload_chain_file_to_drive(program,folder_id,folder_name,i)
+
+
+                    ac_time = ac_time + output_list[1]
+                    base_code = program
+
+                    print("Program Generated:\n" + program)
+
+            #folder_id,num_regression,time_spent,mean_time_program,std_time,compilation
+            rows_chain = [folder_name,i,ac_time,0,0,"False"]
+            self.chains_data.new_row(rows_chain)
+            self.chains_data.save()
+
+            return ac_time
+        except Exception as e:
+            print(f"ERRO: {e}")
+            
