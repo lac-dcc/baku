@@ -1,0 +1,2 @@
+LOOP(remove CALL(A))
+

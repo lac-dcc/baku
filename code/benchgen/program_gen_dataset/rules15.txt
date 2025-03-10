@@ -1,0 +1,4 @@
+A = new LOOP(remove);
+B = CALL(IF(CALL(C), CALL(D)));
+C = remove;
+D = insert;
