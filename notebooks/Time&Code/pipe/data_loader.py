@@ -1,5 +1,3 @@
-import pandas as pd
-
 class DataLoader:
     def __init__(self, data_path:str):
         try:
@@ -10,14 +8,14 @@ class DataLoader:
             raise Exception("Data couldn't be loaded.")
 
 
-    def save(self):
+    def save(self):#Save the modified csv
         try:
             self.dataframe.to_csv(self.data_path, index=False)
             print("All data updated.")
         except:
             raise Exception("Data couldn't be uploaded.")
 
-    def column_values(self,column_name):
+    def column_values(self,column_name):#Get a list of values in a column
         try:
             return self.dataframe[column_name].values
         except:
@@ -33,11 +31,11 @@ class DataLoader:
       self.dataframe = pd.concat([self.dataframe, new_row], ignore_index=True)
 
     def get_row(self, column: str, key: any):#Get all row using a key
-        row = self.dataframe.set_index(column).loc[[key]]  
+        row = self.dataframe.set_index(column).loc[[key]]  # [[key]] to ensure good research
         values = row.values.flatten().tolist()
         return values
 
-    def static_row_string(self,id,ignore_columns=""):#chose a value to generate
+    def static_row_string(self,id,ignore_columns=""):#Chose a value to generate
         if(id==0):
             return "Impossible to pick the value."
 
@@ -52,7 +50,7 @@ class DataLoader:
             static = static.to_string(index=False)
             return static
 
-    def random_row_string(self,ignore_columns=""):
+    def random_row_string(self,ignore_columns=""):#Random pick value to generates
         random = self.dataframe.sample()
         id = random.get('id').values[0]
 

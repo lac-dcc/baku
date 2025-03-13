@@ -105,27 +105,6 @@ class GenerationPipeline:
 
         return created_folder.get('id'),random_name
 
-    def find_folder(self, parent_folder_id: str, folder_name: str):
-        try:
-            drive_service = build('drive', 'v3')
-
-            query = f"'{parent_folder_id}' in parents and name = '{folder_name}' and mimeType = 'application/vnd.google-apps.folder'"
-            
-            results = drive_service.files().list(
-                q=query,
-                fields='files(id, name)'
-            ).execute()
-
-            folders = results.get('files', [])
-            
-            if folders:
-                return folders[0]['id'], folders[0]['name']
-            else:
-                return None, None
-
-        except Exception as e:
-            raise f"Folder coulnd't been founded: {e}"
-
 
     def single_code_generation(self, max_len: int, static: bool = False, id: int = 0) -> float:#Single Program Generation
         try:
@@ -268,11 +247,11 @@ class GenerationPipeline:
         except Exception as e:
             print(f"ERRO: {e}")
 
-    def chain_sampling(self,first_max_length=512,max_lenght_pow=1,sample=3,iterations=6):
+    def chain_sampling(self,first_max_length=1024,max_lenght_pow=1,sample=12,iterations=6):
 
         current_max_length = first_max_length#Begin with some length
         time_array = np.array([])
-        iterations = iterations + 1
+        iterations = random.randint(1,15)
 
         for _ in range(max_lenght_pow):
 
@@ -299,18 +278,42 @@ class GenerationPipeline:
             current_max_length *= 2 #make it double beacause could grow better
 
         print("Sampling Done!")
-        
+
+
+    def find_folder(self, parent_folder_id: str, folder_name: str):
+        try:
+            drive_service = build('drive', 'v3')
+
+            query = f"'{parent_folder_id}' in parents and name = '{folder_name}' and mimeType = 'application/vnd.google-apps.folder'"
+
+            results = drive_service.files().list(
+                q=query,
+                fields='files(id, name)'
+            ).execute()
+
+            folders = results.get('files', [])
+
+            if folders:
+                return folders[0]['id'], folders[0]['name']
+            else:
+                return None, None
+
+        except Exception as e:
+            raise f"Folder coulnd't been founded: {e}"
+
     def continue_chain(self, folder_chain: str , max_len: int, n: int = 1) -> float:
         try:
             chain_values = self.chains_data.get_row('folder_id',folder_chain)
-            
+
+            chain_values[0] = 5
+
             base_code = """ int f(int a) {
                     return 0;
                     }"""
-                    
+
             with open(f'/content/drive/My Drive/Colab_Notebooks/Baku/codes/{folder_chain}/{folder_chain}{chain_values[0]}.c', 'r') as f:
                 base_code = f.read()
-            
+
             ac_time = chain_values[1]
             i = chain_values[0]
             last_code_id = ''
@@ -369,4 +372,3 @@ class GenerationPipeline:
             return ac_time
         except Exception as e:
             print(f"ERRO: {e}")
-            
