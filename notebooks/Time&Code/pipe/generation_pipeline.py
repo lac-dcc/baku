@@ -305,8 +305,6 @@ class GenerationPipeline:
         try:
             chain_values = self.chains_data.get_row('folder_id',folder_chain)
 
-            chain_values[0] = 5
-
             base_code = """ int f(int a) {
                     return 0;
                     }"""
