@@ -1,0 +1,16 @@
+id,type,value
+1,control_flow,"add a conditional statement with a statement inside"
+2,control_flow,“add a nested conditional statement with a non trivial condition and a statement inside”
+3,control_flow,“add a dead conditional statement with a statement inside”
+4,control_flow,"“add a dead nested conditional statement with a non trivial condition and a statement inside"
+5,control_flow,"“add a loop with a complex condition and statement inside"
+6,control_flow,“add a dead loop with a complex condition and statement inside”
+7,control_flow,“add a nested loop with a complex condition and a statement inside”
+8,control_flow,“add a dead nested loop with a complex condition and a statement inside”
+9,conditionals,“make a condition more complicated”
+10,conditionals,“make a dead condition more complicated”
+11,aggregates/pointers,“add array code”
+12,aggregates/pointers,“add pointers code”
+13,aggregates/pointers,“add struct code usage”
+14,function_arguments,"add function arguments to a function thats already exists and no default arguments"
+

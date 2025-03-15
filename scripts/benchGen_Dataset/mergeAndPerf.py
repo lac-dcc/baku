@@ -42,10 +42,10 @@ iTLB-load-misses
 """
 
 def runPerf(executable_path):
-    with open('code/benchgen/results/bg_results.csv', 'a', newline='') as f:
+    with open('../../code/benchgen/results/bg_results.csv', 'a', newline='') as f:
         csv_writer = csv.writer(f, delimiter=',')
         events_list = perf_events.strip().split('\n')
-        if not os.path.exists('code/benchgen/results/bg_results.csv') or os.stat('code/benchgen/results/bg_results.csv').st_size == 0:
+        if not os.path.exists('../../code/benchgen/results/bg_results.csv') or os.stat('../../code/benchgen/results/bg_results.csv').st_size == 0:
             csv_writer.writerow(["Program"] + events_list)
             
         

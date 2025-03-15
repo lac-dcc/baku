@@ -2,17 +2,22 @@ import pandas as pd
 import json
 import glob
 import os
+import random
 
 # Load the CSV file containing perf event statistics
-csv_file = "code/benchgen/results/bg_results.csv"  # Update with your actual CSV filename
+csv_file = "../../code/benchgen/results/bg_results.csv"  # Update with your actual CSV filename
 df = pd.read_csv(csv_file)
 
 # List all .txt files containing modularized C code
-txt_files = {os.path.basename(f).replace(".txt", ""): f for f in glob.glob("code/benchgen/results/code/*.txt")}
-print(txt_files)
+txt_files = {os.path.basename(f).replace(".txt", ""): f for f in glob.glob("../../code/benchgen/results/code/*.txt")}
 
-# Create the final dataset
+# Create the finals datasets
+training_dataset = []
+testing_dataset = []
+eval_dataset = []
+
 dataset = []
+
 
 for idx, row in df.iterrows():
     program_name = row['Program']  # Get the program name from the CSV
@@ -64,18 +69,36 @@ Generate a C program optimized for the following Linux `perf` statistics:
     5. Enclose the code between <Program> tags.
     6. If modularized, include a ### File: <filename> tag before each code snippet.
 
-- **Output Format**:
+- **Output**:
     <Program>
     {formatted_code.strip()}
     </Program>
 """
 
     # Add the entry to the dataset
-    dataset.append({"input": input_text.strip(), "output": formatted_code.strip()})
+    dataset.append({"text": input_text.strip()})
+
+
+n=200
+random.shuffle(dataset)
+chunks = [dataset[i:i + n] for i in range(0, len(dataset), n)]
+training_dataset = chunks[0]
+testing_dataset = chunks[1]
+eval_dataset = chunks[2]
+
 
 # Save the dataset as JSONL
-with open("dataset.jsonl", "w", encoding="utf-8") as jsonl_file:
-    for entry in dataset:
+with open("../../data/fine_tunning/training.jsonl", "w", encoding="utf-8") as jsonl_file:
+    for entry in training_dataset:
         jsonl_file.write(json.dumps(entry) + "\n")
+        
+with open("../../data/fine_tunning/testing.jsonl", "w", encoding="utf-8") as jsonl_file:
+    for entry in testing_dataset:
+        jsonl_file.write(json.dumps(entry) + "\n")
+        
+with open("../../data/fine_tunning/evaluating.jsonl", "w", encoding="utf-8") as jsonl_file:
+    for entry in eval_dataset:
+        jsonl_file.write(json.dumps(entry) + "\n")
+        
 
-print("✅ JSONL file successfully created!")
+print("✅ JSONL files successfully created!")
