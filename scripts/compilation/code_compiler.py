@@ -29,7 +29,7 @@ if __name__ == "__main__":
         if result.returncode != 0:
             print(f"Error compiling '{file}':")
             print(result.stderr)
-            # TODO: Registrar o arquivo como não compilado em uma lista
+            # TODO: Register the file as not compiled in the data
             sys.exit(1)
         else:
             print(f"Compiled '{file}' to '{output}'")

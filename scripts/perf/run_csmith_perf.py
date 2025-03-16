@@ -1,11 +1,11 @@
-# para executar: python3 run_csmith_perf.py <numero de programas> --output_dir csmith_programs --perf_results_dir perf_results --compiler gcc -f O2
+#execution: python3 run_csmith_perf.py <numero de programas> --output_dir csmith_programs --perf_results_dir perf_results --compiler gcc -f O2
 
 import subprocess
 import csv
 import os
 import argparse
 
-# Lista de eventos do perf
+#perf events list
 perf_events = """cpu-cycles
 instructions
 cache-references
@@ -39,25 +39,25 @@ dTLB-prefetch-misses
 iTLB-loads
 iTLB-load-misses"""
 
-#gerar programas com CSmith
+#generate CSmith programs 
 def generate_csmith_program(output_file):
     try:
         subprocess.run(["csmith", "-o", output_file], check=True)
         return True
     except subprocess.CalledProcessError:
-        print(f"Erro ao gerar o programa: {output_file}")
+        print(f"Could't generate the program. Erro: {output_file}")
         return False
 
-#compilar programas com gcc
+#compile the programns with gcc
 def compile_program(source_file, binary_file, compiler, flags):
     try:
         subprocess.run([compiler, "-w"] + flags + ["-o", binary_file, source_file], check=True)
         return True
     except subprocess.CalledProcessError:
-        print(f"Erro ao compilar o programa: {source_file}")
+        print(f"Could't compile the program. Erro: {source_file}")
         return False
 
-#medir desempenho com perf
+#measure perf performance stats
 def measure_performance(binary_file, events_list):
     try:
         perf_command = ["perf", "stat", "-o", "temp.txt", "-x,"]
@@ -71,16 +71,16 @@ def measure_performance(binary_file, events_list):
                     perf_data.append(line.split(",")[0].strip())
             return perf_data
     except subprocess.TimeoutExpired:
-        print(f"Programa excedeu o tempo limite: {binary_file}")
+        print(f"Program exceded time limit: {binary_file}")
         return None
     except subprocess.CalledProcessError:
-        print(f"Erro ao medir desempenho do programa: {binary_file}")
+        print(f"Could't get the program performance. Erro: {binary_file}")
         return None
     finally:
         if os.path.exists("temp.txt"):
             os.remove("temp.txt")
 
-#salvar o codig em um CSV
+#save code in csv
 def save_code_to_csv(csv_writer, program_name, program_path):
     try:
         with open(program_path, "r") as code_file:
@@ -95,47 +95,47 @@ def main(num_programs, output_dir, perf_results_dir, compiler, flags):
 
     events_list = perf_events.strip().split("\n")
 
-    #Abre o arquivo CSV para salvar os resultados do perf
+    #read CSV to save the perf stats
     with open(os.path.join(perf_results_dir, "results.csv"), "w", newline="") as perf_csvfile:
         perf_csv_writer = csv.writer(perf_csvfile, delimiter=",")
         perf_csv_writer.writerow(["Program"] + events_list)
 
-        #abre o arquivo CSV para salvar os codigos fonte
+        #read CSV with the main code
         with open(os.path.join(perf_results_dir, "source_codes.csv"), "w", newline="") as code_csvfile:
             code_csv_writer = csv.writer(code_csvfile, delimiter=",")
             code_csv_writer.writerow(["Program", "Source Code"])
 
             for i in range(1, num_programs + 1):
-                print(f"Processando programa {i}...")
+                print(f"Processing program {i}...")
 
-                #Gerar o programa 
+                #Program generation
                 c_file = os.path.join(output_dir, f"program_{i}.c")
                 if not generate_csmith_program(c_file):
                     continue
 
-                #Salvar o codigo fonte no CSV
+                #Save the code in CSV
                 save_code_to_csv(code_csv_writer, f"program_{i}.c", c_file)
 
-                #Compilar o programa
+                #Compile the program
                 binary_file = os.path.join(output_dir, f"program_{i}.out")
                 if not compile_program(c_file, binary_file, compiler, flags):
                     continue
 
-                #Medir desempenho com perf
+                #Measure the perf performance
                 perf_data = measure_performance(binary_file, events_list)
                 if perf_data:
                     perf_csv_writer.writerow(perf_data)
 
-    print(f"Concluído! Resultados salvos em {os.path.join(perf_results_dir, 'results.csv')}")
-    print(f"Códigos-fonte salvos em {os.path.join(perf_results_dir, 'source_codes.csv')}")
+    print(f"Done! Results uploaded to {os.path.join(perf_results_dir, 'results.csv')}")
+    print(f"Code uploaded to {os.path.join(perf_results_dir, 'source_codes.csv')}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Gerar programas com CSmith e medir desempenho com perf.")
-    parser.add_argument("num_programs", type=int, help="Número de programas a serem gerados.")
-    parser.add_argument("--output_dir", default="csmith_programs", help="Diretório para salvar os programas gerados.")
-    parser.add_argument("--perf_results_dir", default="perf_results", help="Diretório para salvar os resultados do perf.")
-    parser.add_argument("--compiler", default="gcc", help="Compilador a ser usado (por exemplo, gcc ou clang).")
-    parser.add_argument("-f", "--flags", nargs="*", help="Flags de compilação.")
+    parser = argparse.ArgumentParser(description="Generate programs with CSmith and measure performance on perf.")
+    parser.add_argument("num_programs", type=int, help="Programs amount to be generated.")
+    parser.add_argument("--output_dir", default="csmith_programs", help="Directory to upload the programs generated.")
+    parser.add_argument("--perf_results_dir", default="perf_results", help="Directory to upload the perf results.")
+    parser.add_argument("--compiler", default="gcc", help="Compiler in use (such as, gcc or clang).")
+    parser.add_argument("-f", "--flags", nargs="*", help="Compilation flags.")
     args = parser.parse_args()
 
     flags = [f"-{flag}" for flag in args.flags] if args.flags else []

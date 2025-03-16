@@ -67,7 +67,7 @@ def runPerf(executable_path):
 
 def mergeAndPerf(programs):
     for program_path in programs:
-        # Executa make no diretório de entrada
+        #Execute make in the directory
         subprocess.run(["make", "-C", program_path], check=True)
         executable = program_path.split('/')[-1]
         executable_path = os.path.join(program_path, executable)

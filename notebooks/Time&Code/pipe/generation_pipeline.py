@@ -4,10 +4,11 @@ import random
 import os
 from data_loader import DataLoader
 from code_generator import CodeGeneration
-from googleapiclient.discovery import build
-from googleapiclient.http import MediaFileUploadclass 
+#Drive usage
+#from googleapiclient.discovery import build
+#from googleapiclient.http import MediaFileUploadclass 
 
-class GenerationPipeline:
+class GenerationPipeline: #TODO: setup the file generation to local as well
     def __init__(
             self,
             model: object,
@@ -39,7 +40,7 @@ class GenerationPipeline:
 
     def upload_single_file_to_drive(self,code_name,program):#Upload file to drive for colab
         try:
-            folder_id = '1y_BZ7M_Rpq7q4TEoRQiGMkfDWhR0okan'
+            folder_id = '' #need to add the folder id
             local_file_path = f"/content/{code_name}.c"
 
 
@@ -105,6 +106,26 @@ class GenerationPipeline:
 
         return created_folder.get('id'),random_name
 
+    def find_folder(self, parent_folder_id: str, folder_name: str):
+        try:
+            drive_service = build('drive', 'v3')
+
+            query = f"'{parent_folder_id}' in parents and name = '{folder_name}' and mimeType = 'application/vnd.google-apps.folder'"
+
+            results = drive_service.files().list(
+                q=query,
+                fields='files(id, name)'
+            ).execute()
+
+            folders = results.get('files', [])
+
+            if folders:
+                return folders[0]['id'], folders[0]['name']
+            else:
+                return None, None
+
+        except Exception as e:
+            raise f"Folder coulnd't been founded: {e}"
 
     def single_code_generation(self, max_len: int, static: bool = False, id: int = 0) -> float:#Single Program Generation
         try:
@@ -280,26 +301,7 @@ class GenerationPipeline:
         print("Sampling Done!")
 
 
-    def find_folder(self, parent_folder_id: str, folder_name: str):
-        try:
-            drive_service = build('drive', 'v3')
 
-            query = f"'{parent_folder_id}' in parents and name = '{folder_name}' and mimeType = 'application/vnd.google-apps.folder'"
-
-            results = drive_service.files().list(
-                q=query,
-                fields='files(id, name)'
-            ).execute()
-
-            folders = results.get('files', [])
-
-            if folders:
-                return folders[0]['id'], folders[0]['name']
-            else:
-                return None, None
-
-        except Exception as e:
-            raise f"Folder coulnd't been founded: {e}"
 
     def continue_chain(self, folder_chain: str , max_len: int, n: int = 1) -> float:
         try:
