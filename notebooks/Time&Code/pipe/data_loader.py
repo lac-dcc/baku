@@ -33,6 +33,14 @@ class DataLoader:
       new_row = pd.DataFrame([dict(zip(self.dataframe.columns, new_values))])
 
       self.dataframe = pd.concat([self.dataframe, new_row], ignore_index=True)
+      
+    def update_row(self,index: str, new_values:list):
+        if len(new_values) != len(self.dataframe.columns):
+            raise ValueError("The number of values does not match the number of columns.")
+        self.dataframe = self.dataframe.set_index(index) 
+        self.dataframe.loc[new_values[0]] = new_values[1:]
+        self.dataframe = self.dataframe.reset_index()
+
 
     def get_row(self, column: str, key: any):#Get all row using a key
         row = self.dataframe.set_index(column).loc[[key]]  # [[key]] to ensure good research

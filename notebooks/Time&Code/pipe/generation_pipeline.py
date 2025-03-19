@@ -366,7 +366,7 @@ class GenerationPipeline: #TODO: setup the file generation to local as well
 
             #folder_id,num_regression,time_spent,mean_time_program,std_time,compilation
             rows_chain = [folder_name,i,ac_time,0,0,"False"]
-            self.chains_data.new_row(rows_chain)
+            self.chains_data.update_row("folder_id",rows_chain)
             self.chains_data.save()
 
             return ac_time
