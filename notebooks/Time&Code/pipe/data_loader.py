@@ -1,3 +1,7 @@
+import pandas
+import numpy as np
+
+
 class DataLoader:
     def __init__(self, data_path:str):
         try:
