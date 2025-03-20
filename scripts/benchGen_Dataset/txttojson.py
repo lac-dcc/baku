@@ -53,30 +53,15 @@ for idx, row in df.iterrows():
     input_text = f"""
 Generate a C program optimized for the following Linux `perf` statistics:
 {events_list}
-
-- **Requirements**:
-    1. The program must contain a main function that receives the data and invokes the processing logic.
-    2. Address performance bottlenecks (e.g., cache misses, branch mispredictions) using:
-    - Loop unrolling, SIMD intrinsics (AVX/SSE), memory alignment.
-    - Data structure optimizations (e.g., cache-friendly layouts).
-    3. **Fuzzer-Specific Constraints**:
-    - Process raw bytes from `const uint8_t* data` and `size_t size` as input.
-    - Avoid undefined behavior: validate buffer bounds, sanitize inputs.
-    - Exclude I/O operations (e.g., `printf`, file access).
-    4. Code Style:
-    - Zero comments or explanations.
-    - Use preprocessor directives only when critical (e.g., `#include <stdint.h>`).
-    5. Enclose the code between <Program> tags.
-    6. If modularized, include a ### File: <filename> tag before each code snippet.
-
-- **Output**:
-    <Program>
-    {formatted_code.strip()}
-    </Program>
 """
+    reponse_text =  f"""
+        <Program>
+            {formatted_code.strip()}
+        </Program>
+    """
 
     # Add the entry to the dataset
-    dataset.append({"text": input_text.strip()})
+    dataset.append({"instruction": input_text.strip(), "response": formatted_code.strip()})
 
 
 n=200
