@@ -259,8 +259,8 @@ class GenerationPipeline: #TODO: setup the file generation to local as well
 
                     print("Program Generated:\n" + program)
 
-            #folder_id,num_regression,time_spent,mean_time_program,std_time,compilation
-            rows_chain = [folder_name,i,ac_time,0,0,"False"]
+            #folder_id,num_regression,time_spent,mean_time_program,std_time,compilation,model_name
+            rows_chain = [folder_name,i,ac_time,0,0,"False",self.model_name]
             self.chains_data.new_row(rows_chain)
             self.chains_data.save()
 
@@ -268,7 +268,7 @@ class GenerationPipeline: #TODO: setup the file generation to local as well
         except Exception as e:
             print(f"ERRO: {e}")
 
-    def chain_sampling(self,first_max_length=1024,max_lenght_pow=1,sample=12,iterations=6):
+    def chain_sampling(self,first_max_length=1024,max_lenght_pow=1,sample=12):
 
         current_max_length = first_max_length#Begin with some length
         time_array = np.array([])
