@@ -179,3 +179,4 @@ cython_debug/
 # Compiled programs and object files
 *.out
 *.o
+*/output

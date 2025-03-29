@@ -1,3 +1,4 @@
+#include<stdio.h> 
 
 int f(int a) {
     struct code {
@@ -6,3 +7,8 @@ int f(int a) {
     code.value = a;
     return code.value;
 }
+
+    void main(){
+        printf("%d",f(7));
+    }
+    

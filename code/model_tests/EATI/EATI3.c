@@ -1,3 +1,4 @@
+#include<stdio.h> 
 
 int f(int a) {
         if (a > 5) {
@@ -10,3 +11,7 @@ int f(int a) {
                 }
         }
 }
+    void main(){
+        printf("%d",f(7));
+    }
+    

@@ -1,3 +1,4 @@
+#include<stdio.h> 
 
             
 // Function to perform some operation
@@ -31,3 +32,7 @@ int f(int a) {
 }
 
             
+    void main(){
+        printf("%d",f(7));
+    }
+    
