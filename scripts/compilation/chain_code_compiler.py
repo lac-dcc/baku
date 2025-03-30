@@ -31,52 +31,65 @@ def get_compilable_code(folder,file):
     file_write.write(code)
     file_write.close()
 
-def compilation(optimizer,folder,file):
+def get_available_gcc_versions():
+    versions = []
+    try:
+       
+        result = subprocess.run(["compgen", "-c", "gcc-"], capture_output=True, text=True, shell=True)
+        if result.returncode == 0:
+            versions = [v for v in result.stdout.split() if v.startswith('gcc-') and v[4].isdigit()]
+        
+        
+        result = subprocess.run(["gcc", "--version"], capture_output=True, text=True)
+        if result.returncode == 0:
+            versions.append("gcc")  
+    except Exception as e:
+        print(f"Erro: {e}")
+    
+    return sorted(list(set(versions)))
 
+def compilation(compiler, version, optimizer, folder, file):
     compilation_df = DataLoader('../../data/Time&Code/compilation.csv')
-
+    
     if not os.path.isfile(folder+'/'+file):
         print(f"File '{file}' not found.")
         sys.exit(1)
 
-
     if not has_main_function(folder+'/'+file):
-        get_compilable_code(folder,file)
+        get_compilable_code(folder, file)
     
-    output = file.replace(".c", ".out")
-
-    opt_flags = ["-O0", "-O1", "-O2", "-O3", "-Os", "-Ofast"]
-
-
-    if optimizer not in opt_flags:
-        print(f"WARNING: Invalid optimizer flag '{optimizer} (using -O0)'.")
-        print("Valid flags are: -O0, -O1, -O2, -O3, -Os, -Ofast")
+    output = file.replace(".c", f".{version}.out")
 
     try:
-        for n in range(1,11):
-            result = subprocess.run(["gcc", optimizer, folder+'/'+file, "-o", folder+'/output/'+output],
-                                    capture_output=True, text=True)
+        bin_array = []
+        for _ in range(10):
+            cmd = [compiler] if version == "default" else [f"{compiler}-{version}"]
+            cmd.extend([optimizer, folder+'/'+file, "-o", folder+'/output/'+output])
+            
+            result = subprocess.run(cmd, capture_output=True, text=True)
 
             if result.returncode != 0:
-                print(f"Error compiling '{file}':")
+                print(f"Error compiling '{file}' with {compiler} {version}:")
                 print(result.stderr)
-                # TODO: Register the file as not compiled in the data, in n-nth repetitions, why it was not copiled and more
                 sys.exit(1)
             else:
-                print(f"Compiled '{file}' to '{output}' -> {optimizer}")
+                print(f"Compiled '{file}' to '{output}' -> {compiler}-{version} {optimizer}")
                 bin_size = get_binary_size(folder+'/output/'+output)
-                row=[folder[23:],file,optimizer,bin_size]
-                compilation_df.new_row(row)
+                bin_array.append(bin_size)
                 print(f"Binary Size: {bin_size}")
-            
+        
+        min_bin = min(bin_array)
+        max_bin = max(bin_array)
+        mean = sum(bin_array) / len(bin_array)
+
+        row = [folder[23:], file, f"{compiler}",f"{version}", optimizer, min_bin, max_bin, mean]
+        compilation_df.new_row(row)
         compilation_df.save()
     except Exception as e:
         print(f"Unexpected error: {e}")
         sys.exit(1)
 
-
-if __name__ == "__main__":
-
+def main():
     if len(sys.argv) < 2:
         print("Usage: python chain_code_compiler.py <file_folder>")
         sys.exit(1)
@@ -87,18 +100,25 @@ if __name__ == "__main__":
         print(f"Folder '{file_folder}' not found.")
         sys.exit(1)
 
-    for folder, dirs, files in os.walk(file_folder):
-        opt_flags = ["-O0", "-O1", "-O2", "-O3", "-Os", "-Ofast"]
-        print(files)
-        files.sort()        
-        print(files)
+    COMPILERS = {
+        "gcc": ["9", "10", "11", "12"]
+    }
+
+    OPT_FLAGS = ["-O0", "-O1", "-O2", "-O3", "-Os", "-Ofast"]
+
+    for folder, _, files in os.walk(file_folder):
+        files.sort()
         if not os.path.exists(folder+"/output"):
             os.makedirs(folder+"/output")
             for file in files:
-                for opt in opt_flags: 
-                    print(f"File:{file}")
-                    compilation(opt,folder,file)
+                for compiler, versions in COMPILERS.items():
+                    for version in versions:
+                        for opt in OPT_FLAGS:
+                            print(f"File:{file} - Compiler: {compiler}-{version} - Opt: {opt}")
+                            compilation(compiler, version, opt, folder, file)
         else:
             print("Code had already been compiled. Delete the past *.out for run the script again.")
             break
 
+if __name__ == "__main__":
+    main()
