@@ -71,7 +71,8 @@ def compilation(compiler, version, optimizer, folder, file):
             if result.returncode != 0:
                 print(f"Error compiling '{file}' with {compiler} {version}:")
                 print(result.stderr)
-                sys.exit(1)
+                #TODO: write the compilation errors
+                return
             else:
                 print(f"Compiled '{file}' to '{output}' -> {compiler}-{version} {optimizer}")
                 bin_size = get_binary_size(folder+'/output/'+output)
@@ -82,7 +83,7 @@ def compilation(compiler, version, optimizer, folder, file):
         max_bin = max(bin_array)
         mean = sum(bin_array) / len(bin_array)
 
-        row = [folder[23:], file, f"{compiler}",f"{version}", optimizer, min_bin, max_bin, mean]
+        row = [folder[17:], file, f"{compiler}",f"{version}", optimizer, min_bin, max_bin, mean]
         compilation_df.new_row(row)
         compilation_df.save()
     except Exception as e:
@@ -116,9 +117,6 @@ def main():
                         for opt in OPT_FLAGS:
                             print(f"File:{file} - Compiler: {compiler}-{version} - Opt: {opt}")
                             compilation(compiler, version, opt, folder, file)
-        else:
-            print("Code had already been compiled. Delete the past *.out for run the script again.")
-            break
 
 if __name__ == "__main__":
     main()

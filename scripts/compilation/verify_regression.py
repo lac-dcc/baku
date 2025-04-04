@@ -22,63 +22,72 @@ def write_results_to_file(results, filename="regression_results.txt"):
 
 
 def verify_sample_results(df, file, folder, compiler, version, opt):
-    if not df.empty:
-        min_size = df["bin_min_size"].iloc[0]
-        max_size = df["bin_max_size"].iloc[0]
-        mean_size = df["bin_mean_size"].iloc[0]
-        if min_size != max_size or max_size != mean_size or min_size != mean_size:
-            return f"Regression found in samples (dead code): {folder} | {file} | {compiler}-{version} | {opt}"
-    return None
+    min_size = df["bin_min_size"].iloc[0]
+    max_size = df["bin_max_size"].iloc[0]
+    mean_size = df["bin_mean_size"].iloc[0]
+
+    if min_size != max_size or max_size != mean_size or min_size != mean_size:
+        return True,f"Regression found in samples (dead code): {folder} | {file} | {compiler}-{version} | {opt}"
+    return False,""
 
 def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
-    if not os_df.empty and not other_df.empty:
-        os_min = os_df["bin_min_size"].iloc[0]
-        os_max = os_df["bin_max_size"].iloc[0]
-        os_mean = os_df["bin_mean_size"].iloc[0]
+    os_min = os_df["bin_min_size"].iloc[0]
+    os_max = os_df["bin_max_size"].iloc[0]
+    os_mean = os_df["bin_mean_size"].iloc[0]
+    
+    other_min = other_df["bin_min_size"].iloc[0]
+    other_max = other_df["bin_max_size"].iloc[0]
+    other_mean = other_df["bin_mean_size"].iloc[0]
+    
+    if os_min > other_min or os_max > other_max or os_mean > other_mean:
+        return True,f"Regression found (-Os worse than {opt}): {folder} | {file} | {compiler}-{version}"
         
-        other_min = other_df["bin_min_size"].iloc[0]
-        other_max = other_df["bin_max_size"].iloc[0]
-        other_mean = other_df["bin_mean_size"].iloc[0]
-        
-        if os_min > other_min or os_max > other_max or os_mean > other_mean:
-            return f"Regression found (-Os worse than {opt}): {folder} | {file} | {compiler}-{version}"
-    return None
+    return False,""
 
 def regression_search(folder, file, compiler, version):
     OPT_FLAGS = ["-O0", "-O1", "-O2", "-O3", "-Ofast"]
     
     try:
-        compilation_df = pd.read_csv("../../data/Time&Code/compilation.csv")
-        folder_id = folder[23:] 
+        csv_path = "../../data/Time&Code/compilation.csv"
+        compilation_df = pd.read_csv(csv_path)
+        folder_id = folder[17:]
+
         
         base_query = (
-            (compilation_df["folder_id"] == folder_id) &
-            (compilation_df["file"] == file) &
-            (compilation_df["compiler"] == compiler) &
-            (compilation_df["version"] == version)
+            (compilation_df['folder_id'] == str(folder_id)) &
+            (compilation_df['file'] == str(file)) &
+            (compilation_df['compiler'] == str(compiler)) &
+            (compilation_df['version'] == int(version)) 
         )
         
-        compilation_Os = compilation_df[base_query & (compilation_df["optimization"] == "-Os")]
+
+        os_query = base_query & (compilation_df['optimization'] == "-Os") 
+        compilation_Os = compilation_df[os_query]
         
-        result = verify_sample_results(compilation_Os, file, folder, compiler, version, "-Os")
+        if compilation_Os.empty:
+            return False, f"No -Os data found for {file}"
+        
+        result,result_str = verify_sample_results(compilation_Os, file, folder, compiler, version, "-Os")
         if result:
-            return result
+            return result,result_str
         
         for opt in OPT_FLAGS:
             current_df = compilation_df[base_query & (compilation_df["optimization"] == opt)]
-        
-            result = verify_sample_results(current_df, file, folder, compiler, version, opt)
+
+            result,result_str = compare_samples(compilation_Os, current_df, file, folder, compiler, version, opt)
             if result:
-                return result
+                return result,result_str
+        
+            result,result_str = verify_sample_results(current_df, file, folder, compiler, version, opt)
+            if result:
+
+                return result,result_str
             
-            result = compare_samples(compilation_Os, current_df, file, folder, compiler, version, opt)
-            if result:
-                return result
         
-        return ""
+        return False,""
     
     except Exception as e:
-        return f"Error processing {folder}/{file} with {compiler}-{version}: {str(e)}"
+        return False,f"Error processing {folder}/{file} with {compiler}-{version}: {str(e)}"
 
 def main():
     if len(sys.argv) < 2:
@@ -103,10 +112,10 @@ def main():
                     for compiler in COMPILERS:
                         for version in VERSIONS:
                             print(f"\nChecking: {file} with {compiler}-{version} in {folder}")
-                            result = regression_search(folder, file, compiler, version)
+                            result,result_str = regression_search(folder, file, compiler, version)
                             if result:
-                                results.append(result)
-                                print("==> Regression detected:", result)
+                                results.append(result_str)
+                                print("==> Regression detected:", result_str)
                             else:
                                 print("==> No regression found")
 
