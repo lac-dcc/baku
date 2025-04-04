@@ -2,6 +2,8 @@ import sys
 import os
 import pandas as pd
 from datetime import datetime
+sys.path.append("../classes")
+from data_loader import DataLoader
 
 def write_results_to_file(results, filename="regression_results.txt"):
     with open(filename, 'w') as f:
@@ -114,8 +116,22 @@ def main():
                             print(f"\nChecking: {file} with {compiler}-{version} in {folder}")
                             result,result_str = regression_search(folder, file, compiler, version)
                             if result:
-                                results.append(result_str)
-                                print("==> Regression detected:", result_str)
+                                chains_csv = pd.read_csv("../../data/Time&Code/chains.csv")
+
+                                rows_csv = chains_csv[(chains_csv["folder_id"] == folder[17:])]
+                                rows_chain = (rows_csv.values).flatten()
+                                if len(rows_chain) > 0:
+                                    rows_chain[5] = True
+
+                                    chains_csv = chains_csv.set_index("folder_id") 
+                                    chains_csv.loc[rows_chain[0]] = rows_chain[1:]
+                                    chains_csv = chains_csv.reset_index()
+
+                                    chains_csv.to_csv("../../data/Time&Code/chains.csv", index=False)
+
+                                    results.append(f"{result_str} | seconds used: {rows_chain[2]}")
+                                    print("==> Regression detected:", result_str)
+
                             else:
                                 print("==> No regression found")
 

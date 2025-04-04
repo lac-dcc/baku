@@ -47,7 +47,7 @@ class DataLoader:
         values = row.values.flatten().tolist()
         return values
 
-    def static_row_string(self,id,ignore_columns=""):#Chose a value to generate
+    def static_row_string(self,id,ignore_columns=""):#Choose a value to generate
         if(id==0):
             return "Impossible to pick the value."
 
