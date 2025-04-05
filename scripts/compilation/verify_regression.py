@@ -32,6 +32,7 @@ def verify_sample_results(df, file, folder, compiler, version, opt):
 
     if min_size != max_size or max_size != mean_size or min_size != mean_size:
         return True,f"Regression found in samples (dead code): {folder} | {file} | {compiler}-{version} | {opt}"
+    
     return False,""
 
 def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
@@ -127,7 +128,8 @@ def main():
                                 for _,row in code_chains_csv.iterrows() :
                                     if row["code_name"] != name_code:
                                         time_spent = time_spent + row["seconds"]
-                                    else: 
+                                    else:
+                                         
                                         break
 
                                 rows_csv = chains_csv[(chains_csv["folder_id"] == folder[17:])]
@@ -145,6 +147,8 @@ def main():
 
                                     results.append([f"{result_str} | Seconds until this regression: {time_spent}",time_spent])
                                     print("==> Regression detected:", result_str)
+                                else:
+                                    print("==> No regression found")
 
                             else:
                                 print("==> No regression found")

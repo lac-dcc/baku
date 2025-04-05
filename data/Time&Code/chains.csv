@@ -15,8 +15,8 @@ DBAS,8,182.2582085132599,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 OBPM,11,297.32716035842896,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 XOAJ,8,126.67056202888487,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 CPXI,10,233.6498091220856,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
-MWLR,9,200.6534268856049,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
-YGRJ,9,170.5496780872345,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+MWLR,9,200.6534268856049,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
+YGRJ,9,170.5496780872345,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 LXKD,10,229.49383020401,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 DXVZ,10,205.00539422035217,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
 VILI,11,379.38144159317017,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
@@ -29,13 +29,13 @@ EVAK,9,444.0180549621582,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 ITZF,12,559.0596761703491,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 UELJ,14,468.59643721580505,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 PKLP,9,455.1479296684265,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
-PVIG,9,469.37275648117065,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+PVIG,9,469.37275648117065,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 BSXZ,12,586.3142969608307,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 OYNX,14,540.4015655517578,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
 DIIR,14,642.9087932109833,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 HWUU,12,575.2959830760956,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 ILPY,11,276.6772656440735,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
-LUKD,10,308.8326916694641,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+LUKD,10,308.8326916694641,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 SVMC,10,275.415269613266,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 SURK,17,571.2371077537537,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
 FAAU,17,601.9319045543671,0,0,True,meta-llama/Meta-Llama-3.1-8B-Instruct
