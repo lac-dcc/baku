@@ -10,14 +10,16 @@ def write_results_to_file(results, filename="regression_results.txt"):
         f.write("Regression Analysis Report\n")
         f.write(f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write("="*60 + "\n\n")
-        
+
+        results.sort(key=lambda tup: tup[1])
+
         if not results:
             f.write("No regressions found in any test cases.\n")
             return
         
         f.write(f"Found {len(results)} regression(s):\n\n")
         for i, result in enumerate(results, 1):
-            f.write(f"{i}. {result}\n")
+            f.write(f"{i}. {result[0]}\n")
         
         f.write("\n" + "="*60 + "\n")
         f.write("End of report\n")
@@ -117,6 +119,16 @@ def main():
                             result,result_str = regression_search(folder, file, compiler, version)
                             if result:
                                 chains_csv = pd.read_csv("../../data/Time&Code/chains.csv")
+                                code_chains_csv = pd.read_csv("../../data/Time&Code/model_chain_programs.csv")
+
+                                time_spent = 0
+                                name_code = file.split(".")[0]
+
+                                for _,row in code_chains_csv.iterrows() :
+                                    if row["code_name"] != name_code:
+                                        time_spent = time_spent + row["seconds"]
+                                    else: 
+                                        break
 
                                 rows_csv = chains_csv[(chains_csv["folder_id"] == folder[17:])]
                                 rows_chain = (rows_csv.values).flatten()
@@ -127,9 +139,11 @@ def main():
                                     chains_csv.loc[rows_chain[0]] = rows_chain[1:]
                                     chains_csv = chains_csv.reset_index()
 
+
+
                                     chains_csv.to_csv("../../data/Time&Code/chains.csv", index=False)
 
-                                    results.append(f"{result_str} | seconds used: {rows_chain[2]}")
+                                    results.append([f"{result_str} | Seconds until this regression: {time_spent}",time_spent])
                                     print("==> Regression detected:", result_str)
 
                             else:

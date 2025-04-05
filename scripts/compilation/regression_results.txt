@@ -1,325 +1,325 @@
 Regression Analysis Report
-Generated on: 2025-04-04 16:17:56
+Generated on: 2025-04-05 17:09:46
 ============================================================
 
 Found 316 regression(s):
 
-1. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK1.c | gcc-9 | seconds used: 444.0180549621582
-2. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK1.c | gcc-10 | seconds used: 444.0180549621582
-3. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK1.c | gcc-11 | seconds used: 444.0180549621582
-4. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK1.c | gcc-12 | seconds used: 444.0180549621582
-5. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK2.c | gcc-9 | seconds used: 444.0180549621582
-6. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK2.c | gcc-10 | seconds used: 444.0180549621582
-7. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK2.c | gcc-11 | seconds used: 444.0180549621582
-8. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK2.c | gcc-12 | seconds used: 444.0180549621582
-9. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK5.c | gcc-9 | seconds used: 444.0180549621582
-10. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK5.c | gcc-10 | seconds used: 444.0180549621582
-11. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK5.c | gcc-11 | seconds used: 444.0180549621582
-12. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK5.c | gcc-12 | seconds used: 444.0180549621582
-13. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK6.c | gcc-9 | seconds used: 444.0180549621582
-14. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK6.c | gcc-10 | seconds used: 444.0180549621582
-15. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK6.c | gcc-11 | seconds used: 444.0180549621582
-16. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK6.c | gcc-12 | seconds used: 444.0180549621582
-17. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK7.c | gcc-9 | seconds used: 444.0180549621582
-18. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK7.c | gcc-10 | seconds used: 444.0180549621582
-19. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK7.c | gcc-11 | seconds used: 444.0180549621582
-20. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK7.c | gcc-12 | seconds used: 444.0180549621582
-21. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK8.c | gcc-9 | seconds used: 444.0180549621582
-22. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK8.c | gcc-10 | seconds used: 444.0180549621582
-23. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK8.c | gcc-11 | seconds used: 444.0180549621582
-24. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK8.c | gcc-12 | seconds used: 444.0180549621582
-25. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK9.c | gcc-9 | seconds used: 444.0180549621582
-26. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK9.c | gcc-10 | seconds used: 444.0180549621582
-27. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK9.c | gcc-11 | seconds used: 444.0180549621582
-28. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK9.c | gcc-12 | seconds used: 444.0180549621582
-29. Regression found (-Os worse than -O0): ../../code/codes/LXKD | LXKD1.c | gcc-9 | seconds used: 229.49383020401
-30. Regression found (-Os worse than -O0): ../../code/codes/LXKD | LXKD2.c | gcc-9 | seconds used: 229.49383020401
-31. Regression found (-Os worse than -O0): ../../code/codes/LXKD | LXKD3.c | gcc-9 | seconds used: 229.49383020401
-32. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM1.c | gcc-9 | seconds used: 174.88288187980652
-33. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM2.c | gcc-9 | seconds used: 174.88288187980652
-34. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM3.c | gcc-9 | seconds used: 174.88288187980652
-35. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM4.c | gcc-9 | seconds used: 174.88288187980652
-36. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM5.c | gcc-9 | seconds used: 174.88288187980652
-37. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM6.c | gcc-9 | seconds used: 174.88288187980652
-38. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM7.c | gcc-9 | seconds used: 174.88288187980652
-39. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM8.c | gcc-9 | seconds used: 174.88288187980652
-40. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM9.c | gcc-9 | seconds used: 174.88288187980652
-41. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC1.c | gcc-9 | seconds used: 275.415269613266
-42. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC1.c | gcc-10 | seconds used: 275.415269613266
-43. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC1.c | gcc-11 | seconds used: 275.415269613266
-44. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC1.c | gcc-12 | seconds used: 275.415269613266
-45. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC10.c | gcc-10 | seconds used: 275.415269613266
-46. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC10.c | gcc-11 | seconds used: 275.415269613266
-47. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC10.c | gcc-12 | seconds used: 275.415269613266
-48. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC2.c | gcc-9 | seconds used: 275.415269613266
-49. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC2.c | gcc-10 | seconds used: 275.415269613266
-50. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC2.c | gcc-11 | seconds used: 275.415269613266
-51. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC2.c | gcc-12 | seconds used: 275.415269613266
-52. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC3.c | gcc-9 | seconds used: 275.415269613266
-53. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC3.c | gcc-10 | seconds used: 275.415269613266
-54. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC3.c | gcc-11 | seconds used: 275.415269613266
-55. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC3.c | gcc-12 | seconds used: 275.415269613266
-56. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC5.c | gcc-9 | seconds used: 275.415269613266
-57. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC5.c | gcc-10 | seconds used: 275.415269613266
-58. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC5.c | gcc-11 | seconds used: 275.415269613266
-59. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC5.c | gcc-12 | seconds used: 275.415269613266
-60. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC6.c | gcc-9 | seconds used: 275.415269613266
-61. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC6.c | gcc-10 | seconds used: 275.415269613266
-62. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC6.c | gcc-11 | seconds used: 275.415269613266
-63. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC6.c | gcc-12 | seconds used: 275.415269613266
-64. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC7.c | gcc-9 | seconds used: 275.415269613266
-65. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC7.c | gcc-10 | seconds used: 275.415269613266
-66. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC7.c | gcc-11 | seconds used: 275.415269613266
-67. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC7.c | gcc-12 | seconds used: 275.415269613266
-68. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC8.c | gcc-9 | seconds used: 275.415269613266
-69. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC8.c | gcc-10 | seconds used: 275.415269613266
-70. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC8.c | gcc-11 | seconds used: 275.415269613266
-71. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC8.c | gcc-12 | seconds used: 275.415269613266
-72. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC9.c | gcc-9 | seconds used: 275.415269613266
-73. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC9.c | gcc-10 | seconds used: 275.415269613266
-74. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC9.c | gcc-11 | seconds used: 275.415269613266
-75. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC9.c | gcc-12 | seconds used: 275.415269613266
-76. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ1.c | gcc-9 | seconds used: 126.67056202888487
-77. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ2.c | gcc-9 | seconds used: 126.67056202888487
-78. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ3.c | gcc-9 | seconds used: 126.67056202888487
-79. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ4.c | gcc-9 | seconds used: 126.67056202888487
-80. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ5.c | gcc-9 | seconds used: 126.67056202888487
-81. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ6.c | gcc-9 | seconds used: 126.67056202888487
-82. Regression found (-Os worse than -O0): ../../code/codes/VRFF | VRFF1.c | gcc-9 | seconds used: 202.03631448745728
-83. Regression found (-Os worse than -O0): ../../code/codes/VRFF | VRFF2.c | gcc-9 | seconds used: 202.03631448745728
-84. Regression found (-Os worse than -O0): ../../code/codes/ABTA | ABTA2.c | gcc-9 | seconds used: 238.2113814353943
-85. Regression found (-Os worse than -O0): ../../code/codes/ABTA | ABTA3.c | gcc-9 | seconds used: 238.2113814353943
-86. Regression found (-Os worse than -O0): ../../code/codes/ABTA | ABTA4.c | gcc-9 | seconds used: 238.2113814353943
-87. Regression found (-Os worse than -O0): ../../code/codes/ITZF | ITZF1.c | gcc-9 | seconds used: 559.0596761703491
-88. Regression found (-Os worse than -O0): ../../code/codes/ITZF | ITZF2.c | gcc-9 | seconds used: 559.0596761703491
-89. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT1.c | gcc-9 | seconds used: 255.30969667434687
-90. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT2.c | gcc-9 | seconds used: 255.30969667434687
-91. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT3.c | gcc-9 | seconds used: 255.30969667434687
-92. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT4.c | gcc-9 | seconds used: 255.30969667434687
-93. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT5.c | gcc-9 | seconds used: 255.30969667434687
-94. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT6.c | gcc-9 | seconds used: 255.30969667434687
-95. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT7.c | gcc-9 | seconds used: 255.30969667434687
-96. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT8.c | gcc-9 | seconds used: 255.30969667434687
-97. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO1.c | gcc-9 | seconds used: 336.1512944698334
-98. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO2.c | gcc-9 | seconds used: 336.1512944698334
-99. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO3.c | gcc-9 | seconds used: 336.1512944698334
-100. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO4.c | gcc-9 | seconds used: 336.1512944698334
-101. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO5.c | gcc-9 | seconds used: 336.1512944698334
-102. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO6.c | gcc-9 | seconds used: 336.1512944698334
-103. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO7.c | gcc-9 | seconds used: 336.1512944698334
-104. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO8.c | gcc-9 | seconds used: 336.1512944698334
-105. Regression found (-Os worse than -O0): ../../code/codes/YNAQ | YNAQ1.c | gcc-9 | seconds used: 172.27649593353271
-106. Regression found (-Os worse than -O0): ../../code/codes/YNAQ | YNAQ2.c | gcc-9 | seconds used: 172.27649593353271
-107. Regression found (-Os worse than -O0): ../../code/codes/YNAQ | YNAQ3.c | gcc-9 | seconds used: 172.27649593353271
-108. Regression found (-Os worse than -O0): ../../code/codes/TOJF | TOJF1.c | gcc-9 | seconds used: 240.47524118423465
-109. Regression found (-Os worse than -O0): ../../code/codes/VILI | VILI1.c | gcc-9 | seconds used: 379.38144159317017
-110. Regression found (-Os worse than -O0): ../../code/codes/VILI | VILI2.c | gcc-9 | seconds used: 379.38144159317017
-111. Regression found (-Os worse than -O0): ../../code/codes/VILI | VILI3.c | gcc-9 | seconds used: 379.38144159317017
-112. Regression found (-Os worse than -O0): ../../code/codes/UELJ | UELJ1.c | gcc-9 | seconds used: 468.59643721580505
-113. Regression found (-Os worse than -O0): ../../code/codes/UELJ | UELJ2.c | gcc-9 | seconds used: 468.59643721580505
-114. Regression found (-Os worse than -O2): ../../code/codes/UELJ | UELJ2.c | gcc-12 | seconds used: 468.59643721580505
-115. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS1.c | gcc-9 | seconds used: 182.2582085132599
-116. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS2.c | gcc-9 | seconds used: 182.2582085132599
-117. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS6.c | gcc-9 | seconds used: 182.2582085132599
-118. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS7.c | gcc-9 | seconds used: 182.2582085132599
-119. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS8.c | gcc-9 | seconds used: 182.2582085132599
-120. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI1.c | gcc-9 | seconds used: 133.4942877292633
-121. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI2.c | gcc-9 | seconds used: 133.4942877292633
-122. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI3.c | gcc-9 | seconds used: 133.4942877292633
-123. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI4.c | gcc-9 | seconds used: 133.4942877292633
-124. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI5.c | gcc-9 | seconds used: 133.4942877292633
-125. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI6.c | gcc-9 | seconds used: 133.4942877292633
-126. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI7.c | gcc-9 | seconds used: 133.4942877292633
-127. Regression found (-Os worse than -O0): ../../code/codes/SURK | SURK1.c | gcc-9 | seconds used: 571.2371077537537
-128. Regression found (-Os worse than -O0): ../../code/codes/SURK | SURK2.c | gcc-9 | seconds used: 571.2371077537537
-129. Regression found (-Os worse than -O0): ../../code/codes/SURK | SURK3.c | gcc-9 | seconds used: 571.2371077537537
-130. Regression found (-Os worse than -O0): ../../code/codes/SURK | SURK4.c | gcc-9 | seconds used: 571.2371077537537
-131. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO1.c | gcc-9 | seconds used: 307.59717631340027
-132. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO2.c | gcc-9 | seconds used: 307.59717631340027
-133. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO3.c | gcc-9 | seconds used: 307.59717631340027
-134. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO9.c | gcc-10 | seconds used: 307.59717631340027
-135. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO9.c | gcc-11 | seconds used: 307.59717631340027
-136. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO9.c | gcc-12 | seconds used: 307.59717631340027
-137. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM1.c | gcc-9 | seconds used: 297.32716035842896
-138. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM2.c | gcc-9 | seconds used: 297.32716035842896
-139. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM3.c | gcc-9 | seconds used: 297.32716035842896
-140. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM4.c | gcc-9 | seconds used: 297.32716035842896
-141. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM5.c | gcc-9 | seconds used: 297.32716035842896
-142. Regression found (-Os worse than -O0): ../../code/codes/MAXP | MAXP1.c | gcc-9 | seconds used: 124.62997317314148
-143. Regression found (-Os worse than -O0): ../../code/codes/MAXP | MAXP2.c | gcc-9 | seconds used: 124.62997317314148
-144. Regression found (-Os worse than -O0): ../../code/codes/MAXP | MAXP3.c | gcc-9 | seconds used: 124.62997317314148
-145. Regression found (-Os worse than -O0): ../../code/codes/MAXP | MAXP4.c | gcc-9 | seconds used: 124.62997317314148
-146. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU1.c | gcc-9 | seconds used: 575.2959830760956
-147. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU11.c | gcc-9 | seconds used: 575.2959830760956
-148. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU11.c | gcc-10 | seconds used: 575.2959830760956
-149. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU11.c | gcc-11 | seconds used: 575.2959830760956
-150. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU11.c | gcc-12 | seconds used: 575.2959830760956
-151. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU12.c | gcc-9 | seconds used: 575.2959830760956
-152. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU12.c | gcc-10 | seconds used: 575.2959830760956
-153. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU12.c | gcc-11 | seconds used: 575.2959830760956
-154. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU12.c | gcc-12 | seconds used: 575.2959830760956
-155. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU2.c | gcc-9 | seconds used: 575.2959830760956
-156. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU3.c | gcc-9 | seconds used: 575.2959830760956
-157. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU7.c | gcc-9 | seconds used: 575.2959830760956
-158. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU8.c | gcc-9 | seconds used: 575.2959830760956
-159. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU9.c | gcc-9 | seconds used: 575.2959830760956
-160. Regression found (-Os worse than -O0): ../../code/codes/ILPY | ILPY1.c | gcc-9 | seconds used: 276.6772656440735
-161. Regression found (-Os worse than -O0): ../../code/codes/ILPY | ILPY2.c | gcc-9 | seconds used: 276.6772656440735
-162. Regression found (-Os worse than -O0): ../../code/codes/ILPY | ILPY3.c | gcc-9 | seconds used: 276.6772656440735
-163. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME1.c | gcc-9 | seconds used: 319.4789516925812
-164. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME2.c | gcc-9 | seconds used: 319.4789516925812
-165. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME3.c | gcc-9 | seconds used: 319.4789516925812
-166. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME4.c | gcc-9 | seconds used: 319.4789516925812
-167. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME7.c | gcc-9 | seconds used: 319.4789516925812
-168. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME7.c | gcc-10 | seconds used: 319.4789516925812
-169. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME7.c | gcc-11 | seconds used: 319.4789516925812
-170. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME7.c | gcc-12 | seconds used: 319.4789516925812
-171. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME8.c | gcc-9 | seconds used: 319.4789516925812
-172. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME8.c | gcc-10 | seconds used: 319.4789516925812
-173. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME8.c | gcc-11 | seconds used: 319.4789516925812
-174. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME8.c | gcc-12 | seconds used: 319.4789516925812
-175. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME9.c | gcc-9 | seconds used: 319.4789516925812
-176. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME9.c | gcc-10 | seconds used: 319.4789516925812
-177. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME9.c | gcc-11 | seconds used: 319.4789516925812
-178. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME9.c | gcc-12 | seconds used: 319.4789516925812
-179. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP1.c | gcc-9 | seconds used: 455.1479296684265
-180. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP2.c | gcc-9 | seconds used: 455.1479296684265
-181. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP3.c | gcc-9 | seconds used: 455.1479296684265
-182. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP9.c | gcc-9 | seconds used: 455.1479296684265
-183. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP9.c | gcc-10 | seconds used: 455.1479296684265
-184. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP9.c | gcc-11 | seconds used: 455.1479296684265
-185. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP9.c | gcc-12 | seconds used: 455.1479296684265
-186. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ1.c | gcc-9 | seconds used: 128.5877890586853
-187. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ2.c | gcc-9 | seconds used: 128.5877890586853
-188. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ2.c | gcc-10 | seconds used: 128.5877890586853
-189. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ2.c | gcc-11 | seconds used: 128.5877890586853
-190. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ2.c | gcc-12 | seconds used: 128.5877890586853
-191. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ3.c | gcc-9 | seconds used: 128.5877890586853
-192. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ3.c | gcc-10 | seconds used: 128.5877890586853
-193. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ3.c | gcc-11 | seconds used: 128.5877890586853
-194. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ3.c | gcc-12 | seconds used: 128.5877890586853
-195. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ4.c | gcc-9 | seconds used: 128.5877890586853
-196. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ4.c | gcc-10 | seconds used: 128.5877890586853
-197. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ4.c | gcc-11 | seconds used: 128.5877890586853
-198. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ4.c | gcc-12 | seconds used: 128.5877890586853
-199. Regression found (-Os worse than -O0): ../../code/codes/FMSN | FMSN1.c | gcc-12 | seconds used: 657.2728221416473
-200. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN10.c | gcc-10 | seconds used: 657.2728221416473
-201. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN10.c | gcc-11 | seconds used: 657.2728221416473
-202. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN10.c | gcc-12 | seconds used: 657.2728221416473
-203. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN11.c | gcc-10 | seconds used: 657.2728221416473
-204. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN11.c | gcc-11 | seconds used: 657.2728221416473
-205. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN11.c | gcc-12 | seconds used: 657.2728221416473
-206. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN12.c | gcc-10 | seconds used: 657.2728221416473
-207. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN12.c | gcc-11 | seconds used: 657.2728221416473
-208. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN12.c | gcc-12 | seconds used: 657.2728221416473
-209. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN13.c | gcc-10 | seconds used: 657.2728221416473
-210. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN13.c | gcc-11 | seconds used: 657.2728221416473
-211. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN13.c | gcc-12 | seconds used: 657.2728221416473
-212. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN14.c | gcc-10 | seconds used: 657.2728221416473
-213. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN14.c | gcc-11 | seconds used: 657.2728221416473
-214. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN14.c | gcc-12 | seconds used: 657.2728221416473
-215. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN16.c | gcc-10 | seconds used: 657.2728221416473
-216. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN16.c | gcc-11 | seconds used: 657.2728221416473
-217. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN16.c | gcc-12 | seconds used: 657.2728221416473
-218. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN17.c | gcc-10 | seconds used: 657.2728221416473
-219. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN17.c | gcc-11 | seconds used: 657.2728221416473
-220. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN17.c | gcc-12 | seconds used: 657.2728221416473
-221. Regression found (-Os worse than -O0): ../../code/codes/FMSN | FMSN2.c | gcc-12 | seconds used: 657.2728221416473
-222. Regression found (-Os worse than -O0): ../../code/codes/FMSN | FMSN3.c | gcc-12 | seconds used: 657.2728221416473
-223. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN4.c | gcc-10 | seconds used: 657.2728221416473
-224. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN4.c | gcc-11 | seconds used: 657.2728221416473
-225. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN4.c | gcc-12 | seconds used: 657.2728221416473
-226. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN5.c | gcc-10 | seconds used: 657.2728221416473
-227. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN5.c | gcc-11 | seconds used: 657.2728221416473
-228. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN5.c | gcc-12 | seconds used: 657.2728221416473
-229. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN6.c | gcc-10 | seconds used: 657.2728221416473
-230. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN6.c | gcc-11 | seconds used: 657.2728221416473
-231. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN6.c | gcc-12 | seconds used: 657.2728221416473
-232. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN7.c | gcc-10 | seconds used: 657.2728221416473
-233. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN7.c | gcc-11 | seconds used: 657.2728221416473
-234. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN7.c | gcc-12 | seconds used: 657.2728221416473
-235. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN8.c | gcc-10 | seconds used: 657.2728221416473
-236. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN8.c | gcc-11 | seconds used: 657.2728221416473
-237. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN8.c | gcc-12 | seconds used: 657.2728221416473
-238. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN9.c | gcc-10 | seconds used: 657.2728221416473
-239. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN9.c | gcc-11 | seconds used: 657.2728221416473
-240. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN9.c | gcc-12 | seconds used: 657.2728221416473
-241. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI1.c | gcc-9 | seconds used: 233.6498091220856
-242. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI2.c | gcc-9 | seconds used: 233.6498091220856
-243. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI3.c | gcc-9 | seconds used: 233.6498091220856
-244. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI4.c | gcc-9 | seconds used: 233.6498091220856
-245. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI5.c | gcc-9 | seconds used: 233.6498091220856
-246. Regression found (-Os worse than -O0): ../../code/codes/ZUJA | ZUJA1.c | gcc-9 | seconds used: 293.64683270454407
-247. Regression found (-Os worse than -O0): ../../code/codes/ZUJA | ZUJA2.c | gcc-9 | seconds used: 293.64683270454407
-248. Regression found (-Os worse than -O0): ../../code/codes/DIIR | DIIR12.c | gcc-9 | seconds used: 642.9087932109833
-249. Regression found (-Os worse than -O0): ../../code/codes/DIIR | DIIR13.c | gcc-9 | seconds used: 642.9087932109833
-250. Regression found (-Os worse than -O0): ../../code/codes/DIIR | DIIR14.c | gcc-9 | seconds used: 642.9087932109833
-251. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU1.c | gcc-9 | seconds used: 601.9319045543671
-252. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU10.c | gcc-9 | seconds used: 601.9319045543671
-253. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU10.c | gcc-10 | seconds used: 601.9319045543671
-254. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU10.c | gcc-11 | seconds used: 601.9319045543671
-255. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU10.c | gcc-12 | seconds used: 601.9319045543671
-256. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU11.c | gcc-9 | seconds used: 601.9319045543671
-257. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU11.c | gcc-10 | seconds used: 601.9319045543671
-258. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU11.c | gcc-11 | seconds used: 601.9319045543671
-259. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU11.c | gcc-12 | seconds used: 601.9319045543671
-260. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU12.c | gcc-9 | seconds used: 601.9319045543671
-261. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU12.c | gcc-10 | seconds used: 601.9319045543671
-262. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU12.c | gcc-11 | seconds used: 601.9319045543671
-263. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU12.c | gcc-12 | seconds used: 601.9319045543671
-264. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU9.c | gcc-9 | seconds used: 601.9319045543671
-265. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR1.c | gcc-9 | seconds used: 741.2062406539917
-266. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR2.c | gcc-9 | seconds used: 741.2062406539917
-267. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR3.c | gcc-9 | seconds used: 741.2062406539917
-268. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR4.c | gcc-9 | seconds used: 741.2062406539917
-269. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR5.c | gcc-9 | seconds used: 741.2062406539917
-270. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS1.c | gcc-9 | seconds used: 234.99495244026184
-271. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS8.c | gcc-10 | seconds used: 234.99495244026184
-272. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS8.c | gcc-11 | seconds used: 234.99495244026184
-273. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS8.c | gcc-12 | seconds used: 234.99495244026184
-274. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS9.c | gcc-10 | seconds used: 234.99495244026184
-275. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS9.c | gcc-11 | seconds used: 234.99495244026184
-276. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS9.c | gcc-12 | seconds used: 234.99495244026184
-277. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ1.c | gcc-9 | seconds used: 586.3142969608307
-278. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ1.c | gcc-10 | seconds used: 586.3142969608307
-279. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ1.c | gcc-11 | seconds used: 586.3142969608307
-280. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ1.c | gcc-12 | seconds used: 586.3142969608307
-281. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ10.c | gcc-9 | seconds used: 586.3142969608307
-282. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ10.c | gcc-10 | seconds used: 586.3142969608307
-283. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ10.c | gcc-11 | seconds used: 586.3142969608307
-284. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ10.c | gcc-12 | seconds used: 586.3142969608307
-285. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ11.c | gcc-9 | seconds used: 586.3142969608307
-286. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ11.c | gcc-10 | seconds used: 586.3142969608307
-287. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ11.c | gcc-11 | seconds used: 586.3142969608307
-288. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ11.c | gcc-12 | seconds used: 586.3142969608307
-289. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ12.c | gcc-9 | seconds used: 586.3142969608307
-290. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ12.c | gcc-10 | seconds used: 586.3142969608307
-291. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ12.c | gcc-11 | seconds used: 586.3142969608307
-292. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ12.c | gcc-12 | seconds used: 586.3142969608307
-293. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ2.c | gcc-9 | seconds used: 586.3142969608307
-294. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ2.c | gcc-10 | seconds used: 586.3142969608307
-295. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ2.c | gcc-11 | seconds used: 586.3142969608307
-296. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ2.c | gcc-12 | seconds used: 586.3142969608307
-297. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ5.c | gcc-10 | seconds used: 586.3142969608307
-298. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ5.c | gcc-11 | seconds used: 586.3142969608307
-299. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ5.c | gcc-12 | seconds used: 586.3142969608307
-300. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ6.c | gcc-9 | seconds used: 586.3142969608307
-301. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ6.c | gcc-10 | seconds used: 586.3142969608307
-302. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ6.c | gcc-11 | seconds used: 586.3142969608307
-303. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ6.c | gcc-12 | seconds used: 586.3142969608307
-304. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ7.c | gcc-9 | seconds used: 586.3142969608307
-305. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ7.c | gcc-10 | seconds used: 586.3142969608307
-306. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ7.c | gcc-11 | seconds used: 586.3142969608307
-307. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ7.c | gcc-12 | seconds used: 586.3142969608307
-308. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ8.c | gcc-9 | seconds used: 586.3142969608307
-309. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ8.c | gcc-10 | seconds used: 586.3142969608307
-310. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ8.c | gcc-11 | seconds used: 586.3142969608307
-311. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ8.c | gcc-12 | seconds used: 586.3142969608307
-312. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ9.c | gcc-9 | seconds used: 586.3142969608307
-313. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ9.c | gcc-10 | seconds used: 586.3142969608307
-314. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ9.c | gcc-11 | seconds used: 586.3142969608307
-315. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ9.c | gcc-12 | seconds used: 586.3142969608307
-316. Regression found (-Os worse than -O0): ../../code/codes/FNTB | FNTB1.c | gcc-9 | seconds used: 122.16006994247437
+1. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI1.c | gcc-9 | Seconds until this regression: 0
+2. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI2.c | gcc-9 | Seconds until this regression: 39.996912240982056
+3. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI3.c | gcc-9 | Seconds until this regression: 53.57597589492798
+4. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI4.c | gcc-9 | Seconds until this regression: 71.14784932136536
+5. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI5.c | gcc-9 | Seconds until this regression: 89.68982243537903
+6. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI6.c | gcc-9 | Seconds until this regression: 110.78635740280151
+7. Regression found (-Os worse than -O0): ../../code/codes/FAZI | FAZI7.c | gcc-9 | Seconds until this regression: 119.84724235534668
+8. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ1.c | gcc-9 | Seconds until this regression: 133.4942877292633
+9. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ2.c | gcc-9 | Seconds until this regression: 170.369202375412
+10. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ2.c | gcc-10 | Seconds until this regression: 170.369202375412
+11. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ2.c | gcc-11 | Seconds until this regression: 170.369202375412
+12. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ2.c | gcc-12 | Seconds until this regression: 170.369202375412
+13. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ3.c | gcc-9 | Seconds until this regression: 197.6260802745819
+14. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ3.c | gcc-10 | Seconds until this regression: 197.6260802745819
+15. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ3.c | gcc-11 | Seconds until this regression: 197.6260802745819
+16. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ3.c | gcc-12 | Seconds until this regression: 197.6260802745819
+17. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ4.c | gcc-9 | Seconds until this regression: 221.39758896827698
+18. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ4.c | gcc-10 | Seconds until this regression: 221.39758896827698
+19. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ4.c | gcc-11 | Seconds until this regression: 221.39758896827698
+20. Regression found (-Os worse than -O0): ../../code/codes/TPBQ | TPBQ4.c | gcc-12 | Seconds until this regression: 221.39758896827698
+21. Regression found (-Os worse than -O0): ../../code/codes/VRFF | VRFF1.c | gcc-9 | Seconds until this regression: 262.0820767879486
+22. Regression found (-Os worse than -O0): ../../code/codes/VRFF | VRFF2.c | gcc-9 | Seconds until this regression: 298.9338581562042
+23. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS1.c | gcc-9 | Seconds until this regression: 464.1183912754059
+24. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS8.c | gcc-10 | Seconds until this regression: 658.2687919139862
+25. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS8.c | gcc-11 | Seconds until this regression: 658.2687919139862
+26. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS8.c | gcc-12 | Seconds until this regression: 658.2687919139862
+27. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS9.c | gcc-10 | Seconds until this regression: 679.1329164505005
+28. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS9.c | gcc-11 | Seconds until this regression: 679.1329164505005
+29. Regression found (-Os worse than -O0): ../../code/codes/OJNS | OJNS9.c | gcc-12 | Seconds until this regression: 679.1329164505005
+30. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM1.c | gcc-9 | Seconds until this regression: 699.1133437156677
+31. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM2.c | gcc-9 | Seconds until this regression: 737.3020203113556
+32. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM3.c | gcc-9 | Seconds until this regression: 768.4664397239685
+33. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM4.c | gcc-9 | Seconds until this regression: 772.4103627204895
+34. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM5.c | gcc-9 | Seconds until this regression: 787.0439944267273
+35. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM6.c | gcc-9 | Seconds until this regression: 798.7777881622314
+36. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM7.c | gcc-9 | Seconds until this regression: 828.3846397399902
+37. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM8.c | gcc-9 | Seconds until this regression: 839.1677660942078
+38. Regression found (-Os worse than -O0): ../../code/codes/BRAM | BRAM9.c | gcc-9 | Seconds until this regression: 859.1317746639252
+39. Regression found (-Os worse than -O0): ../../code/codes/YNAQ | YNAQ1.c | gcc-9 | Seconds until this regression: 873.9962255954742
+40. Regression found (-Os worse than -O0): ../../code/codes/YNAQ | YNAQ2.c | gcc-9 | Seconds until this regression: 888.4088830947876
+41. Regression found (-Os worse than -O0): ../../code/codes/YNAQ | YNAQ3.c | gcc-9 | Seconds until this regression: 897.5824677944183
+42. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO1.c | gcc-9 | Seconds until this regression: 1046.272721529007
+43. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO2.c | gcc-9 | Seconds until this regression: 1084.3553731441498
+44. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO3.c | gcc-9 | Seconds until this regression: 1121.5190556049347
+45. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO4.c | gcc-9 | Seconds until this regression: 1131.4841120243073
+46. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO5.c | gcc-9 | Seconds until this regression: 1157.9345438480377
+47. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO6.c | gcc-9 | Seconds until this regression: 1175.2681059837341
+48. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO7.c | gcc-9 | Seconds until this regression: 1202.6490840911865
+49. Regression found (-Os worse than -O0): ../../code/codes/YQXO | YQXO8.c | gcc-9 | Seconds until this regression: 1208.9459655284882
+50. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT1.c | gcc-9 | Seconds until this regression: 1382.4240159988403
+51. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT2.c | gcc-9 | Seconds until this regression: 1419.920752286911
+52. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT3.c | gcc-9 | Seconds until this regression: 1424.275643825531
+53. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT4.c | gcc-9 | Seconds until this regression: 1443.5341572761536
+54. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT5.c | gcc-9 | Seconds until this regression: 1468.635216474533
+55. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT6.c | gcc-9 | Seconds until this regression: 1487.394772529602
+56. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT7.c | gcc-9 | Seconds until this regression: 1499.2318832874298
+57. Regression found (-Os worse than -O0): ../../code/codes/ONFT | ONFT8.c | gcc-9 | Seconds until this regression: 1520.696608543396
+58. Regression found (-Os worse than -O0): ../../code/codes/TOJF | TOJF1.c | gcc-9 | Seconds until this regression: 1637.7337126731873
+59. Regression found (-Os worse than -O0): ../../code/codes/MAXP | MAXP1.c | gcc-9 | Seconds until this regression: 1878.2089538574219
+60. Regression found (-Os worse than -O0): ../../code/codes/MAXP | MAXP2.c | gcc-9 | Seconds until this regression: 1916.3601405620575
+61. Regression found (-Os worse than -O0): ../../code/codes/MAXP | MAXP3.c | gcc-9 | Seconds until this regression: 1945.9163491725922
+62. Regression found (-Os worse than -O0): ../../code/codes/MAXP | MAXP4.c | gcc-9 | Seconds until this regression: 1958.5730574131012
+63. Regression found (-Os worse than -O0): ../../code/codes/FNTB | FNTB1.c | gcc-9 | Seconds until this regression: 2002.8389270305634
+64. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO1.c | gcc-9 | Seconds until this regression: 2124.9989969730377
+65. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO2.c | gcc-9 | Seconds until this regression: 2163.6941833496094
+66. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO3.c | gcc-9 | Seconds until this regression: 2200.6573843955994
+67. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO9.c | gcc-10 | Seconds until this regression: 2296.9242832660675
+68. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO9.c | gcc-11 | Seconds until this regression: 2296.9242832660675
+69. Regression found (-Os worse than -O0): ../../code/codes/TKQO | TKQO9.c | gcc-12 | Seconds until this regression: 2296.9242832660675
+70. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS1.c | gcc-9 | Seconds until this regression: 2432.596173286438
+71. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS2.c | gcc-9 | Seconds until this regression: 2471.52046251297
+72. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS6.c | gcc-9 | Seconds until this regression: 2556.585952281952
+73. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS7.c | gcc-9 | Seconds until this regression: 2579.7201297283173
+74. Regression found (-Os worse than -O0): ../../code/codes/DBAS | DBAS8.c | gcc-9 | Seconds until this regression: 2591.018610715866
+75. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM1.c | gcc-9 | Seconds until this regression: 2614.854381799698
+76. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM2.c | gcc-9 | Seconds until this regression: 2654.497696876526
+77. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM3.c | gcc-9 | Seconds until this regression: 2693.020620584488
+78. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM4.c | gcc-9 | Seconds until this regression: 2724.4131190776825
+79. Regression found (-Os worse than -O0): ../../code/codes/OBPM | OBPM5.c | gcc-9 | Seconds until this regression: 2752.2623858451843
+80. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ1.c | gcc-9 | Seconds until this regression: 2912.181542158127
+81. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ2.c | gcc-9 | Seconds until this regression: 2919.264285326004
+82. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ3.c | gcc-9 | Seconds until this regression: 2923.6349692344666
+83. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ4.c | gcc-9 | Seconds until this regression: 2956.821702003479
+84. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ5.c | gcc-9 | Seconds until this regression: 2971.654827594757
+85. Regression found (-Os worse than -O0): ../../code/codes/XOAJ | XOAJ6.c | gcc-9 | Seconds until this regression: 2987.7057247161865
+86. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI1.c | gcc-9 | Seconds until this regression: 3038.8521041870117
+87. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI2.c | gcc-9 | Seconds until this regression: 3054.4663944244385
+88. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI3.c | gcc-9 | Seconds until this regression: 3090.8869919776917
+89. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI4.c | gcc-9 | Seconds until this regression: 3112.3637166023254
+90. Regression found (-Os worse than -O0): ../../code/codes/CPXI | CPXI5.c | gcc-9 | Seconds until this regression: 3142.559063911438
+91. Regression found (-Os worse than -O0): ../../code/codes/LXKD | LXKD1.c | gcc-9 | Seconds until this regression: 3643.7050182819366
+92. Regression found (-Os worse than -O0): ../../code/codes/LXKD | LXKD2.c | gcc-9 | Seconds until this regression: 3659.407211303711
+93. Regression found (-Os worse than -O0): ../../code/codes/LXKD | LXKD3.c | gcc-9 | Seconds until this regression: 3696.287363767624
+94. Regression found (-Os worse than -O0): ../../code/codes/VILI | VILI1.c | gcc-9 | Seconds until this regression: 4078.204242706299
+95. Regression found (-Os worse than -O0): ../../code/codes/VILI | VILI2.c | gcc-9 | Seconds until this regression: 4159.943264722824
+96. Regression found (-Os worse than -O0): ../../code/codes/VILI | VILI3.c | gcc-9 | Seconds until this regression: 4165.922960519791
+97. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR1.c | gcc-9 | Seconds until this regression: 4457.585684299469
+98. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR2.c | gcc-9 | Seconds until this regression: 4471.07238650322
+99. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR3.c | gcc-9 | Seconds until this regression: 4473.84485912323
+100. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR4.c | gcc-9 | Seconds until this regression: 4551.520939588547
+101. Regression found (-Os worse than -O0): ../../code/codes/JEOR | JEOR5.c | gcc-9 | Seconds until this regression: 4624.848200559616
+102. Regression found (-Os worse than -O0): ../../code/codes/ZUJA | ZUJA1.c | gcc-9 | Seconds until this regression: 5198.791924953461
+103. Regression found (-Os worse than -O0): ../../code/codes/ZUJA | ZUJA2.c | gcc-9 | Seconds until this regression: 5277.6024169921875
+104. Regression found (-Os worse than -O0): ../../code/codes/FMSN | FMSN1.c | gcc-12 | Seconds until this regression: 5492.438757658005
+105. Regression found (-Os worse than -O0): ../../code/codes/FMSN | FMSN2.c | gcc-12 | Seconds until this regression: 5572.745422363281
+106. Regression found (-Os worse than -O0): ../../code/codes/FMSN | FMSN3.c | gcc-12 | Seconds until this regression: 5578.483152627945
+107. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN4.c | gcc-10 | Seconds until this regression: 5649.748493432999
+108. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN4.c | gcc-11 | Seconds until this regression: 5649.748493432999
+109. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN4.c | gcc-12 | Seconds until this regression: 5649.748493432999
+110. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN5.c | gcc-10 | Seconds until this regression: 5679.099544048309
+111. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN5.c | gcc-11 | Seconds until this regression: 5679.099544048309
+112. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN5.c | gcc-12 | Seconds until this regression: 5679.099544048309
+113. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN6.c | gcc-10 | Seconds until this regression: 5744.6520047187805
+114. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN6.c | gcc-11 | Seconds until this regression: 5744.6520047187805
+115. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN6.c | gcc-12 | Seconds until this regression: 5744.6520047187805
+116. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN7.c | gcc-10 | Seconds until this regression: 5762.9851977825165
+117. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN7.c | gcc-11 | Seconds until this regression: 5762.9851977825165
+118. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN7.c | gcc-12 | Seconds until this regression: 5762.9851977825165
+119. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN8.c | gcc-10 | Seconds until this regression: 5826.850244998932
+120. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN8.c | gcc-11 | Seconds until this regression: 5826.850244998932
+121. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN8.c | gcc-12 | Seconds until this regression: 5826.850244998932
+122. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN9.c | gcc-10 | Seconds until this regression: 5851.850531101227
+123. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN9.c | gcc-11 | Seconds until this regression: 5851.850531101227
+124. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN9.c | gcc-12 | Seconds until this regression: 5851.850531101227
+125. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN10.c | gcc-10 | Seconds until this regression: 5873.761062860489
+126. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN10.c | gcc-11 | Seconds until this regression: 5873.761062860489
+127. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN10.c | gcc-12 | Seconds until this regression: 5873.761062860489
+128. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN11.c | gcc-10 | Seconds until this regression: 5931.495728731155
+129. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN11.c | gcc-11 | Seconds until this regression: 5931.495728731155
+130. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN11.c | gcc-12 | Seconds until this regression: 5931.495728731155
+131. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN12.c | gcc-10 | Seconds until this regression: 5968.5612161159515
+132. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN12.c | gcc-11 | Seconds until this regression: 5968.5612161159515
+133. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN12.c | gcc-12 | Seconds until this regression: 5968.5612161159515
+134. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN13.c | gcc-10 | Seconds until this regression: 6001.75287437439
+135. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN13.c | gcc-11 | Seconds until this regression: 6001.75287437439
+136. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN13.c | gcc-12 | Seconds until this regression: 6001.75287437439
+137. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN14.c | gcc-10 | Seconds until this regression: 6014.399998426437
+138. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN14.c | gcc-11 | Seconds until this regression: 6014.399998426437
+139. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN14.c | gcc-12 | Seconds until this regression: 6014.399998426437
+140. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN16.c | gcc-10 | Seconds until this regression: 6092.62234044075
+141. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN16.c | gcc-11 | Seconds until this regression: 6092.62234044075
+142. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN16.c | gcc-12 | Seconds until this regression: 6092.62234044075
+143. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN17.c | gcc-10 | Seconds until this regression: 6114.31972193718
+144. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN17.c | gcc-11 | Seconds until this regression: 6114.31972193718
+145. Regression found (-Os worse than -O3): ../../code/codes/FMSN | FMSN17.c | gcc-12 | Seconds until this regression: 6114.31972193718
+146. Regression found (-Os worse than -O0): ../../code/codes/ABTA | ABTA2.c | gcc-9 | Seconds until this regression: 6230.0182547569275
+147. Regression found (-Os worse than -O0): ../../code/codes/ABTA | ABTA3.c | gcc-9 | Seconds until this regression: 6235.92289185524
+148. Regression found (-Os worse than -O0): ../../code/codes/ABTA | ABTA4.c | gcc-9 | Seconds until this regression: 6255.513787031174
+149. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME1.c | gcc-9 | Seconds until this regression: 6387.922961235046
+150. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME2.c | gcc-9 | Seconds until this regression: 6466.98345041275
+151. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME3.c | gcc-9 | Seconds until this regression: 6476.040951490402
+152. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME4.c | gcc-9 | Seconds until this regression: 6482.379366397858
+153. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME7.c | gcc-9 | Seconds until this regression: 6568.535741567612
+154. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME7.c | gcc-10 | Seconds until this regression: 6568.535741567612
+155. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME7.c | gcc-11 | Seconds until this regression: 6568.535741567612
+156. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME7.c | gcc-12 | Seconds until this regression: 6568.535741567612
+157. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME8.c | gcc-9 | Seconds until this regression: 6629.694804906845
+158. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME8.c | gcc-10 | Seconds until this regression: 6629.694804906845
+159. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME8.c | gcc-11 | Seconds until this regression: 6629.694804906845
+160. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME8.c | gcc-12 | Seconds until this regression: 6629.694804906845
+161. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME9.c | gcc-9 | Seconds until this regression: 6647.638220787048
+162. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME9.c | gcc-10 | Seconds until this regression: 6647.638220787048
+163. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME9.c | gcc-11 | Seconds until this regression: 6647.638220787048
+164. Regression found (-Os worse than -O0): ../../code/codes/VMME | VMME9.c | gcc-12 | Seconds until this regression: 6647.638220787048
+165. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK1.c | gcc-9 | Seconds until this regression: 6707.401912927628
+166. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK1.c | gcc-10 | Seconds until this regression: 6707.401912927628
+167. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK1.c | gcc-11 | Seconds until this regression: 6707.401912927628
+168. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK1.c | gcc-12 | Seconds until this regression: 6707.401912927628
+169. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK2.c | gcc-9 | Seconds until this regression: 6785.547349452972
+170. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK2.c | gcc-10 | Seconds until this regression: 6785.547349452972
+171. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK2.c | gcc-11 | Seconds until this regression: 6785.547349452972
+172. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK2.c | gcc-12 | Seconds until this regression: 6785.547349452972
+173. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK5.c | gcc-9 | Seconds until this regression: 6930.265021085739
+174. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK5.c | gcc-10 | Seconds until this regression: 6930.265021085739
+175. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK5.c | gcc-11 | Seconds until this regression: 6930.265021085739
+176. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK5.c | gcc-12 | Seconds until this regression: 6930.265021085739
+177. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK6.c | gcc-9 | Seconds until this regression: 6970.496864795685
+178. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK6.c | gcc-10 | Seconds until this regression: 6970.496864795685
+179. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK6.c | gcc-11 | Seconds until this regression: 6970.496864795685
+180. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK6.c | gcc-12 | Seconds until this regression: 6970.496864795685
+181. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK7.c | gcc-9 | Seconds until this regression: 7024.361141204834
+182. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK7.c | gcc-10 | Seconds until this regression: 7024.361141204834
+183. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK7.c | gcc-11 | Seconds until this regression: 7024.361141204834
+184. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK7.c | gcc-12 | Seconds until this regression: 7024.361141204834
+185. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK8.c | gcc-9 | Seconds until this regression: 7073.450220584869
+186. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK8.c | gcc-10 | Seconds until this regression: 7073.450220584869
+187. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK8.c | gcc-11 | Seconds until this regression: 7073.450220584869
+188. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK8.c | gcc-12 | Seconds until this regression: 7073.450220584869
+189. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK9.c | gcc-9 | Seconds until this regression: 7096.939284086227
+190. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK9.c | gcc-10 | Seconds until this regression: 7096.939284086227
+191. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK9.c | gcc-11 | Seconds until this regression: 7096.939284086227
+192. Regression found (-Os worse than -O0): ../../code/codes/EVAK | EVAK9.c | gcc-12 | Seconds until this regression: 7096.939284086227
+193. Regression found (-Os worse than -O0): ../../code/codes/ITZF | ITZF1.c | gcc-9 | Seconds until this regression: 7151.419967889786
+194. Regression found (-Os worse than -O0): ../../code/codes/ITZF | ITZF2.c | gcc-9 | Seconds until this regression: 7231.719546556473
+195. Regression found (-Os worse than -O0): ../../code/codes/UELJ | UELJ1.c | gcc-9 | Seconds until this regression: 7710.479644060135
+196. Regression found (-Os worse than -O0): ../../code/codes/UELJ | UELJ2.c | gcc-9 | Seconds until this regression: 7789.962240695953
+197. Regression found (-Os worse than -O2): ../../code/codes/UELJ | UELJ2.c | gcc-12 | Seconds until this regression: 7789.962240695953
+198. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP1.c | gcc-9 | Seconds until this regression: 8179.07608127594
+199. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP2.c | gcc-9 | Seconds until this regression: 8258.465482234955
+200. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP3.c | gcc-9 | Seconds until this regression: 8265.186793088913
+201. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP9.c | gcc-9 | Seconds until this regression: 8594.314666032791
+202. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP9.c | gcc-10 | Seconds until this regression: 8594.314666032791
+203. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP9.c | gcc-11 | Seconds until this regression: 8594.314666032791
+204. Regression found (-Os worse than -O0): ../../code/codes/PKLP | PKLP9.c | gcc-12 | Seconds until this regression: 8594.314666032791
+205. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ1.c | gcc-9 | Seconds until this regression: 9103.596767425537
+206. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ1.c | gcc-10 | Seconds until this regression: 9103.596767425537
+207. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ1.c | gcc-11 | Seconds until this regression: 9103.596767425537
+208. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ1.c | gcc-12 | Seconds until this regression: 9103.596767425537
+209. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ2.c | gcc-9 | Seconds until this regression: 9183.183268547058
+210. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ2.c | gcc-10 | Seconds until this regression: 9183.183268547058
+211. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ2.c | gcc-11 | Seconds until this regression: 9183.183268547058
+212. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ2.c | gcc-12 | Seconds until this regression: 9183.183268547058
+213. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ5.c | gcc-10 | Seconds until this regression: 9341.035632610321
+214. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ5.c | gcc-11 | Seconds until this regression: 9341.035632610321
+215. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ5.c | gcc-12 | Seconds until this regression: 9341.035632610321
+216. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ6.c | gcc-9 | Seconds until this regression: 9421.309674501419
+217. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ6.c | gcc-10 | Seconds until this regression: 9421.309674501419
+218. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ6.c | gcc-11 | Seconds until this regression: 9421.309674501419
+219. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ6.c | gcc-12 | Seconds until this regression: 9421.309674501419
+220. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ7.c | gcc-9 | Seconds until this regression: 9426.029456853867
+221. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ7.c | gcc-10 | Seconds until this regression: 9426.029456853867
+222. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ7.c | gcc-11 | Seconds until this regression: 9426.029456853867
+223. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ7.c | gcc-12 | Seconds until this regression: 9426.029456853867
+224. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ8.c | gcc-9 | Seconds until this regression: 9498.722342967987
+225. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ8.c | gcc-10 | Seconds until this regression: 9498.722342967987
+226. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ8.c | gcc-11 | Seconds until this regression: 9498.722342967987
+227. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ8.c | gcc-12 | Seconds until this regression: 9498.722342967987
+228. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ9.c | gcc-9 | Seconds until this regression: 9565.40565252304
+229. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ9.c | gcc-10 | Seconds until this regression: 9565.40565252304
+230. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ9.c | gcc-11 | Seconds until this regression: 9565.40565252304
+231. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ9.c | gcc-12 | Seconds until this regression: 9565.40565252304
+232. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ10.c | gcc-9 | Seconds until this regression: 9583.446304321289
+233. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ10.c | gcc-10 | Seconds until this regression: 9583.446304321289
+234. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ10.c | gcc-11 | Seconds until this regression: 9583.446304321289
+235. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ10.c | gcc-12 | Seconds until this regression: 9583.446304321289
+236. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ11.c | gcc-9 | Seconds until this regression: 9645.914624452591
+237. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ11.c | gcc-10 | Seconds until this regression: 9645.914624452591
+238. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ11.c | gcc-11 | Seconds until this regression: 9645.914624452591
+239. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ11.c | gcc-12 | Seconds until this regression: 9645.914624452591
+240. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ12.c | gcc-9 | Seconds until this regression: 9667.305609464645
+241. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ12.c | gcc-10 | Seconds until this regression: 9667.305609464645
+242. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ12.c | gcc-11 | Seconds until this regression: 9667.305609464645
+243. Regression found (-Os worse than -O0): ../../code/codes/BSXZ | BSXZ12.c | gcc-12 | Seconds until this regression: 9667.305609464645
+244. Regression found (-Os worse than -O0): ../../code/codes/DIIR | DIIR12.c | gcc-9 | Seconds until this regression: 10769.824260473251
+245. Regression found (-Os worse than -O0): ../../code/codes/DIIR | DIIR13.c | gcc-9 | Seconds until this regression: 10788.531373977661
+246. Regression found (-Os worse than -O0): ../../code/codes/DIIR | DIIR14.c | gcc-9 | Seconds until this regression: 10850.377595186234
+247. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU1.c | gcc-9 | Seconds until this regression: 10873.221423149109
+248. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU2.c | gcc-9 | Seconds until this regression: 10952.449854850769
+249. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU3.c | gcc-9 | Seconds until this regression: 10955.387967824936
+250. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU7.c | gcc-9 | Seconds until this regression: 11119.561109542847
+251. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU8.c | gcc-9 | Seconds until this regression: 11190.37278008461
+252. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU9.c | gcc-9 | Seconds until this regression: 11213.466493368149
+253. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU11.c | gcc-9 | Seconds until this regression: 11344.065226078033
+254. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU11.c | gcc-10 | Seconds until this regression: 11344.065226078033
+255. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU11.c | gcc-11 | Seconds until this regression: 11344.065226078033
+256. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU11.c | gcc-12 | Seconds until this regression: 11344.065226078033
+257. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU12.c | gcc-9 | Seconds until this regression: 11423.127704381943
+258. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU12.c | gcc-10 | Seconds until this regression: 11423.127704381943
+259. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU12.c | gcc-11 | Seconds until this regression: 11423.127704381943
+260. Regression found (-Os worse than -O0): ../../code/codes/HWUU | HWUU12.c | gcc-12 | Seconds until this regression: 11423.127704381943
+261. Regression found (-Os worse than -O0): ../../code/codes/ILPY | ILPY1.c | gcc-9 | Seconds until this regression: 11448.517406225204
+262. Regression found (-Os worse than -O0): ../../code/codes/ILPY | ILPY2.c | gcc-9 | Seconds until this regression: 11457.807796239853
+263. Regression found (-Os worse than -O0): ../../code/codes/ILPY | ILPY3.c | gcc-9 | Seconds until this regression: 11464.95984840393
+264. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC1.c | gcc-9 | Seconds until this regression: 12034.027363538742
+265. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC1.c | gcc-10 | Seconds until this regression: 12034.027363538742
+266. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC1.c | gcc-11 | Seconds until this regression: 12034.027363538742
+267. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC1.c | gcc-12 | Seconds until this regression: 12034.027363538742
+268. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC2.c | gcc-9 | Seconds until this regression: 12049.431893587112
+269. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC2.c | gcc-10 | Seconds until this regression: 12049.431893587112
+270. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC2.c | gcc-11 | Seconds until this regression: 12049.431893587112
+271. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC2.c | gcc-12 | Seconds until this regression: 12049.431893587112
+272. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC3.c | gcc-9 | Seconds until this regression: 12054.817335128784
+273. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC3.c | gcc-10 | Seconds until this regression: 12054.817335128784
+274. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC3.c | gcc-11 | Seconds until this regression: 12054.817335128784
+275. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC3.c | gcc-12 | Seconds until this regression: 12054.817335128784
+276. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC5.c | gcc-9 | Seconds until this regression: 12065.455313444138
+277. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC5.c | gcc-10 | Seconds until this regression: 12065.455313444138
+278. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC5.c | gcc-11 | Seconds until this regression: 12065.455313444138
+279. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC5.c | gcc-12 | Seconds until this regression: 12065.455313444138
+280. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC6.c | gcc-9 | Seconds until this regression: 12088.507767915726
+281. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC6.c | gcc-10 | Seconds until this regression: 12088.507767915726
+282. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC6.c | gcc-11 | Seconds until this regression: 12088.507767915726
+283. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC6.c | gcc-12 | Seconds until this regression: 12088.507767915726
+284. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC7.c | gcc-9 | Seconds until this regression: 12111.493393659592
+285. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC7.c | gcc-10 | Seconds until this regression: 12111.493393659592
+286. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC7.c | gcc-11 | Seconds until this regression: 12111.493393659592
+287. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC7.c | gcc-12 | Seconds until this regression: 12111.493393659592
+288. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC8.c | gcc-9 | Seconds until this regression: 12169.758873224258
+289. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC8.c | gcc-10 | Seconds until this regression: 12169.758873224258
+290. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC8.c | gcc-11 | Seconds until this regression: 12169.758873224258
+291. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC8.c | gcc-12 | Seconds until this regression: 12169.758873224258
+292. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC9.c | gcc-9 | Seconds until this regression: 12211.790031671524
+293. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC9.c | gcc-10 | Seconds until this regression: 12211.790031671524
+294. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC9.c | gcc-11 | Seconds until this regression: 12211.790031671524
+295. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC9.c | gcc-12 | Seconds until this regression: 12211.790031671524
+296. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC10.c | gcc-10 | Seconds until this regression: 12271.845618486404
+297. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC10.c | gcc-11 | Seconds until this regression: 12271.845618486404
+298. Regression found (-Os worse than -O0): ../../code/codes/SVMC | SVMC10.c | gcc-12 | Seconds until this regression: 12271.845618486404
+299. Regression found (-Os worse than -O0): ../../code/codes/SURK | SURK1.c | gcc-9 | Seconds until this regression: 12309.442633152008
+300. Regression found (-Os worse than -O0): ../../code/codes/SURK | SURK2.c | gcc-9 | Seconds until this regression: 12389.794072151184
+301. Regression found (-Os worse than -O0): ../../code/codes/SURK | SURK3.c | gcc-9 | Seconds until this regression: 12408.559406995773
+302. Regression found (-Os worse than -O0): ../../code/codes/SURK | SURK4.c | gcc-9 | Seconds until this regression: 12415.83264374733
+303. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU1.c | gcc-9 | Seconds until this regression: 12880.679740905762
+304. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU9.c | gcc-9 | Seconds until this regression: 13276.100943803787
+305. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU10.c | gcc-9 | Seconds until this regression: 13294.394066810608
+306. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU10.c | gcc-10 | Seconds until this regression: 13294.394066810608
+307. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU10.c | gcc-11 | Seconds until this regression: 13294.394066810608
+308. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU10.c | gcc-12 | Seconds until this regression: 13294.394066810608
+309. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU11.c | gcc-9 | Seconds until this regression: 13318.267209529877
+310. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU11.c | gcc-10 | Seconds until this regression: 13318.267209529877
+311. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU11.c | gcc-11 | Seconds until this regression: 13318.267209529877
+312. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU11.c | gcc-12 | Seconds until this regression: 13318.267209529877
+313. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU12.c | gcc-9 | Seconds until this regression: 13346.232916355133
+314. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU12.c | gcc-10 | Seconds until this regression: 13346.232916355133
+315. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU12.c | gcc-11 | Seconds until this regression: 13346.232916355133
+316. Regression found (-Os worse than -O0): ../../code/codes/FAAU | FAAU12.c | gcc-12 | Seconds until this regression: 13346.232916355133
 
 ============================================================
 End of report
