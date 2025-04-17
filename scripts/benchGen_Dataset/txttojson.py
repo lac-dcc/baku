@@ -53,6 +53,11 @@ for idx, row in df.iterrows():
     input_text = f"""
 Generate a C program optimized for the following Linux `perf` statistics:
 {events_list}
+
+- **Requirements**:
+    1. Code Style:
+    - Zero comments or explanations.
+    2. Enclose the code between <Program> tags.
 """
     reponse_text =  f"""
         <Program>
