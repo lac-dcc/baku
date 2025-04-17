@@ -18,32 +18,10 @@ class CodeGeneration:
         self.base_code = base_code
 
         if topology == "performance":
-            self.template =  f"""
-        Generate a C program optimized for the following Linux `perf` statistics:
-        {self.input_str}
+            self.template = self.input_str
 
-        - **Requirements**:
-            1. The program must contain a main function that receives the data and invokes the processing logic.
-            2. Address performance bottlenecks (e.g., cache misses, branch mispredictions) using:
-            - Loop unrolling, SIMD intrinsics (AVX/SSE), memory alignment.
-            - Data structure optimizations (e.g., cache-friendly layouts).
-            3. **Fuzzer-Specific Constraints**:
-            - Process raw bytes from `const uint8_t* data` and `size_t size` as input.
-            - Avoid undefined behavior: validate buffer bounds, sanitize inputs.
-            - Exclude I/O operations (e.g., `printf`, file access).
-            4. Code Style:
-            - Zero comments or explanations.
-            - Use preprocessor directives only when critical (e.g., `#include <stdint.h>`).
-            5. Enclose the code between <Program> tags.
-
-        - **Output Format**:
-            <Program>
-            // C code here
-            </Program>
-        """
-
-        else:
-             self.template = f"""
+        elif topology == "regression": 
+            self.template = f"""
         Complete the following C code, {self.input_str}:
         {self.base_code}
 
@@ -56,6 +34,7 @@ class CodeGeneration:
             {self.base_code}
             </Program>
         """
+            
 
         self.dif_seconds = 0
         self.ouput = ""
