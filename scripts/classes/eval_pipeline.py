@@ -1,60 +1,60 @@
 import numpy as np
 import string
+import pandas as pd
 import random
 import os
 from datasets import load_dataset, DatasetDict, Dataset #Dataset loader
 from data_loader import DataLoader
 from code_generator import CodeGeneration
-#Drive usage
-#from googleapiclient.discovery import build
-#from googleapiclient.http import MediaFileUploadclass 
+from drive_folder import Drive
 
-class TestPipeline: #TODO: setup the file generation to local as well
+class CompilationEvalPipeline: #TODO: setup the file generation to local as well
     def __init__(
             self,
             model: object,
             model_name: str,
             tokenizer: object,
-            sampling_data_path: str,
-            models_data_path: str,
-            folder_id: str,
+            parent_folder_id: str,
+            parent_folder_name: str,
+            child_folder: str,
             dataset: Dataset,
-            topology: str = "performance"  # Nome corrigido
+            topology: str = "performance"  
         ):
         self.model = model
         self.model_name = model_name
         self.tokenizer = tokenizer
-        self.folder_id = folder_id
         self.dataset = dataset
-        self.models_data = DataLoader(models_data_path)
-        self.sampling_data = DataLoader(sampling_data_path)
-
         self.topology = topology
-
-    def upload_single_file_to_drive(self,code_name,program):#Upload file to drive for colab
+        
         try:
-            folder_id = self.folder_id 
-            local_file_path = f"/content/{code_name}.c"
+            folder_id, folder_name = Drive.find_folder(parent_folder_id,child_folder)
+            if folder_id == None or folder_name == None:
+                folder_id, folder_name = Drive.create_folder(parent_folder_id,child_folder)
+        
+            self.folder_id = folder_id
+            
+            print(parent_folder_name,folder_id,folder_name)
 
-
-            with open(local_file_path, "w") as file:
-             file.write(program)
-
-
-            file_metadata = {
-                'name': f'{code_name}.c',
-                'parents': [folder_id]
-            }
-
-            media = MediaFileUpload(local_file_path, mimetype='text/plain')
-            service = build('drive', 'v3')
-            uploaded_file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
-
-            print(f"File uploaded successfully. File ID: {uploaded_file.get('id')}")
+            sampling_path = parent_folder_name+folder_name+"/"+"sampling.csv"
+            models_path = parent_folder_name+folder_name+"/"+"models_codes.csv"
+            
+            sampling = pd.DataFrame(columns=["model","mean_seconds","std_seconds","sample_size"
+                                            ,"max_length","lower_value","higher_value"])
+            sampling.to_csv(sampling_path,index=False)
+            
+            models = pd.DataFrame(columns=["model_name","seconds","code_name","caracteristcs"
+                                            ,"length"])
+            models.to_csv(models_path,index=False)
+            
+            
+            self.models_data = DataLoader(models_path)
+            self.sampling_data = DataLoader(sampling_path)
         except Exception as e:
-            print(f"File could not be uploaded. ERROR: {e}")
-    
-    def single_code_generation(self, max_len: int, dataset_flag: str = "train", i: int = 0) -> float:#Single Program Generation
+            raise f"Folder coulnd't been created: {e}"
+
+        
+         
+    def eval_code_generation(self, max_len: int, dataset_flag: str = "train", i: int = 0,model_type="base") -> float:#Single Program Generation
         try:
                 
             generator = CodeGeneration(
@@ -75,14 +75,18 @@ class TestPipeline: #TODO: setup the file generation to local as well
             output_list = generator.get_output_list()
 
             if(output_list[4] > 0):
-                self.upload_single_file_to_drive(output_list[2],program)#Save generation
+                code_folder = f"code_{model_type}"
+                code_folder_id, code_folder_name = Drive.find_folder(self.folder_id,code_folder)
+                
+                if code_folder_id == None or code_folder_name == None:
+                    code_folder_id, code_folder = Drive.create_folder(self.folder_id,code_folder)
+                
+                Drive.upload_single_file_to_drive(code_folder_id,output_list[2],program)#Save generation
 
             self.models_data.new_row(output_list)
             self.models_data.save()
 
             print("Program Generated:\n" + program)
-            
-            
             
             return output_list[1]
 
@@ -92,10 +96,8 @@ class TestPipeline: #TODO: setup the file generation to local as well
 
 
 
-    def single_sampling(self, max_len: int, dataset_flag: str = "train", i: int = 0):#Simulate different generation for time measure
+    def eval_code_sampling(self, max_len: int, dataset_flag: str = "train", i: int = 0, model_type="base"):#Simulate different generation for time measure
 
-
-        # model,mean_seconds,std_seconds,sample_size,max_length,lower_value,higher_value
         j = 0
         
         time_array = np.array()
@@ -109,7 +111,7 @@ class TestPipeline: #TODO: setup the file generation to local as well
             tokenizer=self.tokenizer,
             data=self.models_data,
             input_str=item["instruction"],
-            input_id=None,
+            input_id=j,
             max_length=max_len,
             topology=self.topology
             )
@@ -122,7 +124,14 @@ class TestPipeline: #TODO: setup the file generation to local as well
 
             
             if(output_list[4] > 0):
-                self.upload_single_file_to_drive(output_list[2],program)#Save generation
+                
+                code_folder = f"code_{model_type}"
+                code_folder_id, code_folder_name = Drive.find_folder(self.folder_id,code_folder)
+                
+                if code_folder_id == None or code_folder_name == None:
+                    code_folder_id, code_folder = Drive.create_folder(self.folder_id,code_folder) 
+                    
+                Drive.upload_single_file_to_drive(code_folder_id,output_list[2],program)#Save generation
 
             time_array = np.append(time_array,output_list[1])
             self.models_data.new_row(output_list)
@@ -132,7 +141,6 @@ class TestPipeline: #TODO: setup the file generation to local as well
             
             if j >= i: break
             
-
 
         sampling_output = [self.model_name,
                                 np.mean(time_array),

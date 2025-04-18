@@ -4,9 +4,7 @@ import random
 import os
 from data_loader import DataLoader
 from code_generator import CodeGeneration
-#Drive usage
-#from googleapiclient.discovery import build
-#from googleapiclient.http import MediaFileUploadclass 
+from drive_folder import Drive
 
 class GenerationPipeline: #TODO: setup the file generation to local as well
     def __init__(
@@ -37,95 +35,6 @@ class GenerationPipeline: #TODO: setup the file generation to local as well
             self.ignore_coluns = ['id','type']
 
         self.topology = topology
-
-    def upload_single_file_to_drive(self,code_name,program):#Upload file to drive for colab
-        try:
-            folder_id = '' #need to add the folder id
-            local_file_path = f"/content/{code_name}.c"
-
-
-            with open(local_file_path, "w") as file:
-             file.write(program)
-
-
-            file_metadata = {
-                'name': f'{code_name}.c',
-                'parents': [folder_id]
-            }
-
-            media = MediaFileUpload(local_file_path, mimetype='text/plain')
-            service = build('drive', 'v3')
-            uploaded_file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
-
-            print(f"File uploaded successfully. File ID: {uploaded_file.get('id')}")
-        except Exception as e:
-            print(f"File could not be uploaded. ERROR: {e}")
-
-    def upload_chain_file_to_drive(self,program,folder_id,folder_name,n):#Upload file to drive for colab
-        try:
-            local_file_path = f"/content/{folder_name}{n}.c"
-
-
-            with open(local_file_path, "w") as file:
-             file.write(program)
-
-
-            file_metadata = {
-                'name': f'{folder_name}{n}.c',
-                'parents': [folder_id]
-            }
-
-            media = MediaFileUpload(local_file_path, mimetype='text/plain')
-            service = build('drive', 'v3')
-            uploaded_file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
-
-            print(f"File uploaded successfully. File ID: {uploaded_file.get('id')}")
-        except Exception as e:
-            print(f"File could not be uploaded. ERROR: {e}")
-
-
-    def folder_generator(self,parent_folder_id,size=4):
-        chars=string.ascii_uppercase
-        random_name = ''.join(random.choice(chars) for _ in range(size))
-        while random_name in self.chains_data.column_values('folder_id'):
-            random_name = ''.join(random.choice(chars) for _ in range(size))
-
-        folder_metadata = {
-            'name': random_name,
-            'mimeType': 'application/vnd.google-apps.folder'
-        }
-
-        if parent_folder_id:
-            folder_metadata['parents'] = [parent_folder_id]
-
-        service = build('drive', 'v3')
-        created_folder = service.files().create(
-            body=folder_metadata,
-            fields='id'
-        ).execute()
-
-        return created_folder.get('id'),random_name
-
-    def find_folder(self, parent_folder_id: str, folder_name: str):
-        try:
-            drive_service = build('drive', 'v3')
-
-            query = f"'{parent_folder_id}' in parents and name = '{folder_name}' and mimeType = 'application/vnd.google-apps.folder'"
-
-            results = drive_service.files().list(
-                q=query,
-                fields='files(id, name)'
-            ).execute()
-
-            folders = results.get('files', [])
-
-            if folders:
-                return folders[0]['id'], folders[0]['name']
-            else:
-                return None, None
-
-        except Exception as e:
-            raise f"Folder coulnd't been founded: {e}"
 
     def single_code_generation(self, max_len: int, static: bool = False, id: int = 0) -> float:#Single Program Generation
         try:
@@ -161,7 +70,7 @@ class GenerationPipeline: #TODO: setup the file generation to local as well
             output_list = generator.get_output_list()
 
             if(output_list[4] > 0):
-                self.upload_single_file_to_drive(output_list[2],program)#Save generation
+                Drive.upload_single_file_to_drive("folder_id",output_list[2],program)#Save generation
 
             self.models_data.new_row(output_list)
             self.models_data.save()
@@ -212,7 +121,7 @@ class GenerationPipeline: #TODO: setup the file generation to local as well
                     }"""
             i = 0
             last_code_id = ''
-            folder_id,folder_name = self.folder_generator('1y_BZ7M_Rpq7q4TEoRQiGMkfDWhR0okan')
+            folder_id,folder_name = Drive.folder_generator('folder_id')
             for _ in range(n):
                 input_value,input_id = self.input_data.random_row_string(self.ignore_coluns)
 
@@ -251,7 +160,7 @@ class GenerationPipeline: #TODO: setup the file generation to local as well
                     self.models_chain.save()
 
 
-                    self.upload_chain_file_to_drive(program,folder_id,folder_name,i)
+                    Drive.upload_chain_file_to_drive(program,folder_id,folder_name,i)
 
 
                     ac_time = ac_time + output_list[1]
@@ -317,7 +226,7 @@ class GenerationPipeline: #TODO: setup the file generation to local as well
             ac_time = chain_values[1]
             i = chain_values[0]
             last_code_id = ''
-            folder_id,folder_name = self.find_folder('1y_BZ7M_Rpq7q4TEoRQiGMkfDWhR0okan',folder_chain)
+            folder_id,folder_name = Drive.find_folder('folder_id',folder_chain)
             for _ in range(n):
                 input_value,input_id = self.input_data.random_row_string(self.ignore_coluns)
 
@@ -356,7 +265,7 @@ class GenerationPipeline: #TODO: setup the file generation to local as well
                     self.models_chain.save()
 
 
-                    self.upload_chain_file_to_drive(program,folder_id,folder_name,i)
+                    Drive.upload_chain_file_to_drive(program,folder_id,folder_name,i)
 
 
                     ac_time = ac_time + output_list[1]
