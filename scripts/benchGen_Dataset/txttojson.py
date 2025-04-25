@@ -54,10 +54,7 @@ for idx, row in df.iterrows():
 Generate a C program optimized for the following Linux `perf` statistics:
 {events_list}
 
-- **Requirements**:
-    1. Code Style:
-    - Zero comments or explanations.
-    2. Enclose the code between <Program> tags.
+Enclose the code between <Program> tags.
 """
     reponse_text =  f"""
         <Program>
@@ -69,7 +66,7 @@ Generate a C program optimized for the following Linux `perf` statistics:
     dataset.append({"instruction": input_text.strip(), "response": formatted_code.strip()})
 
 
-n=200
+n=250
 random.shuffle(dataset)
 chunks = [dataset[i:i + n] for i in range(0, len(dataset), n)]
 training_dataset = chunks[0]

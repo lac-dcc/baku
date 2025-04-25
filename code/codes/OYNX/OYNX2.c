@@ -1,3 +1,4 @@
+#include<stdio.h> 
 
 int f(int a) {
         if (a > 0)
@@ -9,3 +10,8 @@ int f(int a) {
         return -a;
         }
         }
+
+    void main(){
+        printf("%d",f(7));
+    }
+    

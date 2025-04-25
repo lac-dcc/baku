@@ -1,13 +1,32 @@
 import sys
 import os
 import subprocess
+from pathlib import Path
 sys.path.append("../classes")
 from data_loader import DataLoader
 
 # TODO: 1. Test diff versions  3. Test clang vs gcc 
 
 def get_binary_size(file_path):
-    return os.path.getsize(file_path) if os.path.exists(file_path) else 0
+    if not os.path.exists(file_path):
+        return 0
+    try:
+        result = subprocess.run(['size', file_path], capture_output=True, text=True, check=True)
+        lines = result.stdout.splitlines()
+        
+        if len(lines) < 2:
+            return 0
+        
+        parts = lines[1].split()
+
+        return int(parts[0])
+    
+    except subprocess.CalledProcessError as e:
+        print(f"Erro ao executar o comando 'size': {e.stderr}")
+        return 0
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+        return 0
 
 def has_main_function(file_path):
     with open(file_path, "r") as f:
