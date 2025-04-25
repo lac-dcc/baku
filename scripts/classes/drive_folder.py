@@ -120,3 +120,57 @@ class Drive:
             return created_folder.get('id'),folder_name
         except Exception as e:
             raise f"Folder coulnd't been created: {e}"
+
+    @staticmethod
+    def create_folder_model(parent_folder_id: str, folder_name: str):
+        try:
+            drive_service = build('drive', 'v3')
+
+            folder_metadata = {
+                'name': folder_name,
+                'mimeType': 'application/vnd.google-apps.folder'
+            }
+
+            if parent_folder_id:
+                folder_metadata['parents'] = [parent_folder_id]
+
+            service = build('drive', 'v3')
+            
+            created_folder = service.files().create(
+                body=folder_metadata,
+                fields='id'
+            ).execute()
+
+                
+            csv_contents = [
+                "model,mean_seconds,std_seconds,sample_size,max_length,lower_value,higher_value",
+                "model_name,seconds,code_name,caracteristcs,length",
+                "folder_name"
+            ]
+            
+            csv_names = ["sampling", "model_codes", "folders"]
+
+            for content, name in zip(csv_contents, csv_names):
+                local_path = f"/content/{name}.csv"
+                
+                with open(local_path, "w") as f:
+                    f.write(content)
+                
+                # Upload para o Drive
+                file_metadata = {
+                    'name': f'{name}.csv',
+                    'parents': [created_folder['id']]
+                }
+                
+                media = MediaFileUpload(local_path, mimetype='text/csv')
+                
+                service.files().create(
+                    body=file_metadata,
+                    media_body=media,
+                    fields='id'
+                ).execute()
+            
+
+            return created_folder.get('id'),folder_name
+        except Exception as e:
+            raise f"Folder coulnd't been created: {e}"

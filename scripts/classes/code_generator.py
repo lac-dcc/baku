@@ -61,14 +61,21 @@ class CodeGeneration:
         if (self.program_name == "") or (self.program == ""):
             program = self.program_extratcion()
 
-        if(self.base_code in self.program):#Do not accept base code as a generated code
-
             len_program = len(self.tokenizer.encode(self.program)) #count the amount of tokens in the program
-            return [self.model_name,
-                    self.dif_seconds,
-                    self.program_name,
-                    self.input_id,
-                    -1]
+            
+            if len_program>0:
+                return [self.model_name,
+                        self.dif_seconds,
+                        self.program_name,
+                        self.input_id,
+                        len_program]
+            else:
+                return [self.model_name,
+                        self.dif_seconds,
+                        self.program_name,
+                        self.input_id,
+                        -1] 
+                
 
         len_program = len(self.tokenizer.encode(self.program)) #count the amount of tokens in the program
         return [self.model_name,
