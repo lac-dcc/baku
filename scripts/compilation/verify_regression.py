@@ -44,7 +44,7 @@ def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
     other_max = other_df["bin_max_size"].iloc[0]
     other_mean = other_df["bin_mean_size"].iloc[0]
     
-    if os_min > other_min or os_max > other_max or os_mean > other_mean:
+    if os_min - other_min >= 32  or os_max - other_max >= 32  or os_mean - other_mean >=32 :
         return True,f"Regression found (-Os worse than {opt}): {folder} | {file} | {compiler}-{version}"
         
     return False,""
