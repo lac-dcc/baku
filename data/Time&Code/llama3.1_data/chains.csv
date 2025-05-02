@@ -1,0 +1,10 @@
+folder_id,num_regression,time_spent,mean_time_program,std_time,regression,model_name
+AAMU,10,449.0704536437988,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+EZVG,8,327.49602699279785,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+NDVV,11,451.8480777740479,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+URSQ,5,446.14976954460144,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+LMNZ,12,580.1063373088837,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+SUFM,8,555.0813186168671,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+OWQO,6,405.9772083759308,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+NCUB,10,508.6595685482025,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct
+DNSH,11,626.4838209152222,0,0,False,meta-llama/Meta-Llama-3.1-8B-Instruct

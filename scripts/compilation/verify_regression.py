@@ -49,11 +49,11 @@ def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
         
     return False,""
 
-def regression_search(folder, file, compiler, version):
+def regression_search(folder, file, compiler, version, compilation_path):
     OPT_FLAGS = ["-O0", "-O1", "-O2", "-O3", "-Ofast"]
     
     try:
-        csv_path = "../../data/Time&Code/compilation.csv"
+        csv_path = compilation_path
         compilation_df = pd.read_csv(csv_path)
         folder_id = folder[17:]
 
@@ -96,14 +96,20 @@ def regression_search(folder, file, compiler, version):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python verify_regression.py <file_folder>")
+        print("Usage: python verify_regression.py <file_folder> <chains_data> <model_programs_data> <compilation_data>")
         sys.exit(1)
 
     file_folder = sys.argv[1]
+    chains_path = sys.argv[2]
+    model_programs_path = sys.argv[3]
+    compilation_path = sys.argv[4]
+
 
     if not os.path.isdir(file_folder):
         print(f"Folder '{file_folder}' not found.")
         sys.exit(1)
+
+    
 
     COMPILERS = ["gcc"]
     VERSIONS = ["9", "10", "11", "12"]
@@ -117,10 +123,10 @@ def main():
                     for compiler in COMPILERS:
                         for version in VERSIONS:
                             print(f"\nChecking: {file} with {compiler}-{version} in {folder}")
-                            result,result_str = regression_search(folder, file, compiler, version)
+                            result,result_str = regression_search(folder, file, compiler, version,compilation_path)
                             if result:
-                                chains_csv = pd.read_csv("../../data/Time&Code/chains.csv")
-                                code_chains_csv = pd.read_csv("../../data/Time&Code/model_chain_programs.csv")
+                                chains_csv = pd.read_csv(chains_path)
+                                code_chains_csv = pd.read_csv(model_programs_path)
 
                                 time_spent = 0
                                 name_code = file.split(".")[0]
@@ -143,7 +149,7 @@ def main():
 
 
 
-                                    chains_csv.to_csv("../../data/Time&Code/chains.csv", index=False)
+                                    chains_csv.to_csv(chains_path, index=False)
 
                                     results.append([f"{result_str} | Seconds until this regression: {time_spent}",time_spent])
                                     print("==> Regression detected:", result_str)
