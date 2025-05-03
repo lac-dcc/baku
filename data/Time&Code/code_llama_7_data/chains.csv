@@ -1,7 +1,0 @@
-folder_id,num_regression,time_spent,mean_time_program,std_time,regression,model_name
-RIVQ,1,869.4066867828369,0,0,False,meta-llama/CodeLlama-7b-hf
-GGEC,1,862.7863526344299,0,0,False,meta-llama/CodeLlama-7b-hf
-QPRP,1,859.2947869300842,0,0,False,meta-llama/CodeLlama-7b-hf
-OQXX,1,864.4089708328247,0,0,False,meta-llama/CodeLlama-7b-hf
-BKPC,1,890.5201411247253,0,0,False,meta-llama/CodeLlama-7b-hf
-KVHS,1,850.2618594169617,0,0,False,meta-llama/CodeLlama-7b-hf

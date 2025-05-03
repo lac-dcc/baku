@@ -3,9 +3,9 @@ import os
 import pandas as pd
 from datetime import datetime
 sys.path.append("../classes")
-from data_loader import DataLoader
 
-def write_results_to_file(results, filename="regression_results.txt"):
+def write_results_to_file(results, model_name):
+    filename = f'{model_name}_results.txt'
     with open(filename, 'w') as f:
         f.write("Regression Analysis Report\n")
         f.write(f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
@@ -44,7 +44,7 @@ def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
     other_max = other_df["bin_max_size"].iloc[0]
     other_mean = other_df["bin_mean_size"].iloc[0]
     
-    if os_min - other_min >= 32  or os_max - other_max >= 32  or os_mean - other_mean >=32 :
+    if os_min - other_min >= 32  or os_max - other_max >= 32  or os_mean - other_mean >= 32 :
         return True,f"Regression found (-Os worse than {opt}): {folder} | {file} | {compiler}-{version}"
         
     return False,""
@@ -53,11 +53,11 @@ def regression_search(folder, file, compiler, version, compilation_path):
     OPT_FLAGS = ["-O0", "-O1", "-O2", "-O3", "-Ofast"]
     
     try:
-        csv_path = compilation_path
-        compilation_df = pd.read_csv(csv_path)
-        folder_id = folder[17:]
+        compilation_df = pd.read_csv(compilation_path)
 
-        
+
+        folder_id = folder.split('/')[5]
+
         base_query = (
             (compilation_df['folder_id'] == str(folder_id)) &
             (compilation_df['file'] == str(file)) &
@@ -95,15 +95,13 @@ def regression_search(folder, file, compiler, version, compilation_path):
         return False,f"Error processing {folder}/{file} with {compiler}-{version}: {str(e)}"
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python verify_regression.py <file_folder> <chains_data> <model_programs_data> <compilation_data>")
+    if len(sys.argv) < 4:
+        print("Usage: python verify_regression.py <file_folder> <data_path> <model_name>")
         sys.exit(1)
 
     file_folder = sys.argv[1]
-    chains_path = sys.argv[2]
-    model_programs_path = sys.argv[3]
-    compilation_path = sys.argv[4]
-
+    data_path = sys.argv[2]
+    model_name = sys.argv[3]
 
     if not os.path.isdir(file_folder):
         print(f"Folder '{file_folder}' not found.")
@@ -115,7 +113,6 @@ def main():
     VERSIONS = ["9", "10", "11", "12"]
 
     results = []
-
     for folder, _, files in os.walk(file_folder):
         if "output" not in folder:  # Skip output directories
             for file in sorted(files):
@@ -123,22 +120,21 @@ def main():
                     for compiler in COMPILERS:
                         for version in VERSIONS:
                             print(f"\nChecking: {file} with {compiler}-{version} in {folder}")
-                            result,result_str = regression_search(folder, file, compiler, version,compilation_path)
+                            result,result_str = regression_search(folder, file, compiler, version,data_path+'compilation.csv')
                             if result:
-                                chains_csv = pd.read_csv(chains_path)
-                                code_chains_csv = pd.read_csv(model_programs_path)
-
                                 time_spent = 0
+                                chains_csv = pd.read_csv(data_path+'chains.csv')
+                                
                                 name_code = file.split(".")[0]
 
-                                for _,row in code_chains_csv.iterrows() :
-                                    if row["code_name"] != name_code:
-                                        time_spent = time_spent + row["seconds"]
-                                    else:
-                                         
+                                for _,chain in chains_csv.iterrows() :
+                                    if chain['folder_id'] == name_code[:4]:
+                                        time_spent = time_spent + int(name_code[4:]) * (chain['time_spent']/30)
                                         break
+                                    else:
+                                        time_spent = time_spent + chain['time_spent'] 
 
-                                rows_csv = chains_csv[(chains_csv["folder_id"] == folder[17:])]
+                                rows_csv = chains_csv[(chains_csv["folder_id"] == folder.split('/')[5])]
                                 rows_chain = (rows_csv.values).flatten()
                                 if len(rows_chain) > 0:
                                     rows_chain[5] = True
@@ -149,7 +145,7 @@ def main():
 
 
 
-                                    chains_csv.to_csv(chains_path, index=False)
+                                    chains_csv.to_csv(data_path+'chains.csv', index=False)
 
                                     results.append([f"{result_str} | Seconds until this regression: {time_spent}",time_spent])
                                     print("==> Regression detected:", result_str)
@@ -159,9 +155,9 @@ def main():
                             else:
                                 print("==> No regression found")
 
-    write_results_to_file(results)
+    write_results_to_file(results,model_name)
     print("\n" + "="*60)
-    print("Analysis complete. Results saved to regression_results.txt")
+    print(f"Analysis complete. Results saved to {model_name}_results.txt")
     print(f"Total regressions found: {len(results)}")
 
 if __name__ == "__main__":

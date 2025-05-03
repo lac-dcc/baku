@@ -1,7 +1,6 @@
 import sys
 import os
 import subprocess
-from pathlib import Path
 sys.path.append("../classes")
 from data_loader import DataLoader
 
@@ -67,8 +66,8 @@ def get_available_gcc_versions():
     
     return sorted(list(set(versions)))
 
-def compilation(compiler, version, optimizer, folder, file):
-    compilation_df = DataLoader('../../data/Time&Code/compilation.csv')
+def compilation(compiler, version, optimizer, folder, file, compiler_path):
+    compilation_df = DataLoader(compiler_path)
     
     if not os.path.isfile(folder+'/'+file):
         print(f"File '{file}' not found.")
@@ -87,11 +86,12 @@ def compilation(compiler, version, optimizer, folder, file):
             
             result = subprocess.run(cmd, capture_output=True, text=True)
 
+            print(result.returncode)
+
             if result.returncode != 0:
                 print(f"Error compiling '{file}' with {compiler} {version}:")
                 print(result.stderr)
-                #TODO: write the compilation errors
-                return
+                return False
             else:
                 print(f"Compiled '{file}' to '{output}' -> {compiler}-{version} {optimizer}")
                 bin_size = get_binary_size(folder+'/output/'+output)
@@ -102,19 +102,24 @@ def compilation(compiler, version, optimizer, folder, file):
         max_bin = max(bin_array)
         mean = sum(bin_array) / len(bin_array)
 
-        row = [folder[17:], file, f"{compiler}",f"{version}", optimizer, min_bin, max_bin, mean]
+        row = [folder.split('/')[5], file, f"{compiler}",f"{version}", optimizer, min_bin, max_bin, mean]
         compilation_df.new_row(row)
         compilation_df.save()
+
+        return True
     except Exception as e:
         print(f"Unexpected error: {e}")
         sys.exit(1)
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python chain_code_compiler.py <file_folder>")
+    if len(sys.argv) < 5:
+        print("Usage: python chain_code_compiler.py <file_folder> <compilation_csv_path> <model_name> <size>")
         sys.exit(1)
 
     file_folder = sys.argv[1]
+    compiler_path = sys.argv[2]
+    model_name = sys.argv[3]
+    size = sys.argv[4]
 
     if not os.path.isdir(file_folder):
         print(f"Folder '{file_folder}' not found.")
@@ -126,16 +131,30 @@ def main():
 
     OPT_FLAGS = ["-O0", "-O1", "-O2", "-O3", "-Os", "-Ofast"]
 
+    run = 0
+    total = 0
+    print("passou aq 2")
+
     for folder, _, files in os.walk(file_folder):
         files.sort()
         if not os.path.exists(folder+"/output"):
             os.makedirs(folder+"/output")
             for file in files:
+                total = total + 1
+                compiled = False
                 for compiler, versions in COMPILERS.items():
                     for version in versions:
                         for opt in OPT_FLAGS:
                             print(f"File:{file} - Compiler: {compiler}-{version} - Opt: {opt}")
-                            compilation(compiler, version, opt, folder, file)
+                            result = compilation(compiler, version, opt, folder, file, compiler_path)
+                            compiled = compiled or result
+                if compiled: 
+                    run = run + 1
+
+    cm = DataLoader("../../data/TimeCode/compiled_models.csv")
+    cm.new_row([model_name,size,run, total, run/total])
+    cm.save()
+
 
 if __name__ == "__main__":
     main()

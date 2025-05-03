@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 
 class DataLoader:
@@ -71,3 +70,7 @@ class DataLoader:
 
         random = random.to_string(index=False)
         return random,id
+
+    def get_size(self):
+        return len(self.dataframes.index)
+
