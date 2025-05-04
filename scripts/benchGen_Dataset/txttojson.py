@@ -5,7 +5,7 @@ import os
 import random
 
 # Load the CSV file containing perf event statistics
-csv_file = "../../code/benchgen/results/bg_results.csv"  # Update with your actual CSV filename
+csv_file = "../../code/benchgen/results/bg_results.csv"  
 df = pd.read_csv(csv_file)
 
 # List all .txt files containing modularized C code
