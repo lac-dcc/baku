@@ -26,8 +26,8 @@ dTLB-loads
 dTLB-store-misses"""
 
 COMPILATION_TIMEOUT = 30    
-EXECUTION_TIMEOUT = 5       
-PERF_TIMEOUT = 3           
+EXECUTION_TIMEOUT = 10       
+PERF_TIMEOUT = 10           
 
 class TimeoutException(Exception):
     pass
@@ -119,14 +119,10 @@ def run_perf_stat(folder_with_classes, compiler, flags):
                                                     timeout=PERF_TIMEOUT)
                                         
                                 except (subprocess.TimeoutExpired, TimeoutException) as e:
-                                    print(f"\t\t Timeout running {program} with {entry} ({e})")
-                                    row = [class_name, program, entry] + ["timeout"] * len(events_list)
-                                    csv_writer.writerow(row)
+                                    print(f"\t\t Timeout running {program} with {entry}")
                                     continue
                                 except subprocess.CalledProcessError as e:
-                                    print(f"\t\t Error running {program} with {entry}: {e}")
-                                    row = [class_name, program, entry] + ["error"] * len(events_list)
-                                    csv_writer.writerow(row)
+                                    print(f"\t\t Error running {program} with {entry}")
                                     continue
                                 
                                 # Processa resultados apenas se chegou até aqui
