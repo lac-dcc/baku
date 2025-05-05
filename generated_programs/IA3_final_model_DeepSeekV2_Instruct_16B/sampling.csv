@@ -1,0 +1,2 @@
+model,mean_seconds,std_seconds,sample_size,max_length,lower_value,higher_value
+deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct,194.96023866108484,64.27637443130997,20,4096,120.34283900260925,309.82993721961975

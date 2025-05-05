@@ -1,0 +1,229 @@
+0:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 2237519
+    - Instructions: 2895118
+    - Cache References: 75029
+    - Cache Misses: 20643
+    - Branch Instructions: 550369
+
+Enclose the code between <Program> tags.
+
+
+1:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 1559281
+    - Instructions: 1127943
+    - Cache References: 72850
+    - Cache Misses: 21998
+    - Branch Instructions: 208279
+
+Enclose the code between <Program> tags.
+
+
+2:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 2090768
+    - Instructions: 2258249
+    - Cache References: 73719
+    - Cache Misses: 23000
+    - Branch Instructions: 429007
+
+Enclose the code between <Program> tags.
+
+
+3:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 704682810
+    - Instructions: 1531595105
+    - Cache References: 1174159
+    - Cache Misses: 175258
+    - Branch Instructions: 228970929
+
+Enclose the code between <Program> tags.
+
+
+4:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 1862042
+    - Instructions: 1696910
+    - Cache References: 76545
+    - Cache Misses: 29363
+    - Branch Instructions: 323580
+
+Enclose the code between <Program> tags.
+
+
+5:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 1664677
+    - Instructions: 1394319
+    - Cache References: 69597
+    - Cache Misses: 17063
+    - Branch Instructions: 263126
+
+Enclose the code between <Program> tags.
+
+
+6:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 2245108562
+    - Instructions: 4133665966
+    - Cache References: 8234288
+    - Cache Misses: 968959
+    - Branch Instructions: 798722484
+
+Enclose the code between <Program> tags.
+
+
+7:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 1624115
+    - Instructions: 1407247
+    - Cache References: 72930
+    - Cache Misses: 17779
+    - Branch Instructions: 265154
+
+Enclose the code between <Program> tags.
+
+
+8:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 1888095
+    - Instructions: 1691929
+    - Cache References: 78168
+    - Cache Misses: 22380
+    - Branch Instructions: 323195
+
+Enclose the code between <Program> tags.
+
+
+9:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 1932958
+    - Instructions: 1135235
+    - Cache References: 92291
+    - Cache Misses: 31200
+    - Branch Instructions: 210221
+
+Enclose the code between <Program> tags.
+
+
+10:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 12253222
+    - Instructions: 19848565
+    - Cache References: 149897
+    - Cache Misses: 42590
+    - Branch Instructions: 3801802
+
+Enclose the code between <Program> tags.
+
+
+11:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 11071812
+    - Instructions: 19796534
+    - Cache References: 120261
+    - Cache Misses: 31931
+    - Branch Instructions: 3793750
+
+Enclose the code between <Program> tags.
+
+
+12:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 1611907
+    - Instructions: 1131580
+    - Cache References: 69580
+    - Cache Misses: 23510
+    - Branch Instructions: 209285
+
+Enclose the code between <Program> tags.
+
+
+13:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 2260321
+    - Instructions: 2390544
+    - Cache References: 88277
+    - Cache Misses: 21442
+    - Branch Instructions: 451888
+
+Enclose the code between <Program> tags.
+
+
+14:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 2612495
+    - Instructions: 2309001
+    - Cache References: 103065
+    - Cache Misses: 37901
+    - Branch Instructions: 437419
+
+Enclose the code between <Program> tags.
+
+
+15:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 21472298
+    - Instructions: 48346046
+    - Cache References: 113584
+    - Cache Misses: 21671
+    - Branch Instructions: 9285343
+
+Enclose the code between <Program> tags.
+
+
+16:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 2162698
+    - Instructions: 1992649
+    - Cache References: 81461
+    - Cache Misses: 19832
+    - Branch Instructions: 378013
+
+Enclose the code between <Program> tags.
+
+
+17:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 3596293
+    - Instructions: 6225935
+    - Cache References: 75610
+    - Cache Misses: 17873
+    - Branch Instructions: 1191626
+
+Enclose the code between <Program> tags.
+
+
+18:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 1323776841
+    - Instructions: 2581380120
+    - Cache References: 2950488
+    - Cache Misses: 265809
+    - Branch Instructions: 498609822
+
+Enclose the code between <Program> tags.
+
+
+19:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 49291128
+    - Instructions: 103961167
+    - Cache References: 248640
+    - Cache Misses: 37427
+    - Branch Instructions: 20411569
+
+Enclose the code between <Program> tags.
+
+
+20:
+Generate a C program optimized for the following Linux `perf` statistics:
+- CPU Cycles: 2566366
+    - Instructions: 2944029
+    - Cache References: 91674
+    - Cache Misses: 29371
+    - Branch Instructions: 557000
+
+Enclose the code between <Program> tags.

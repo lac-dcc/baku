@@ -42,25 +42,30 @@ iTLB-load-misses
 """
 
 def runPerf(executable_path):
-    with open('../../code/benchgen/results/bg_results.csv', 'a', newline='') as f:
+    events_list = perf_events.strip().split('\n')
+    results_path = 'perf_results.csv'
+
+    write_header = not os.path.exists(results_path) or os.stat(results_path).st_size == 0
+
+    with open(results_path, 'a', newline='') as f:
         csv_writer = csv.writer(f, delimiter=',')
-        events_list = perf_events.strip().split('\n')
-        if not os.path.exists('../../code/benchgen/results/bg_results.csv') or os.stat('../../code/benchgen/results/bg_results.csv').st_size == 0:
+        if write_header:
             csv_writer.writerow(["Program"] + events_list)
-            
         
         if os.path.exists(executable_path):
             perf_command = ["perf", "stat", "-o", "temp.txt", "-x,"]
-            perf_command = perf_command + ["-e", ','.join(events_list), executable_path]
+            perf_command += ["-e", ','.join(events_list), executable_path]
             subprocess.run(perf_command, stdout=subprocess.PIPE)
+
             with open('temp.txt', 'r') as perf_result:
                 perf_output = perf_result.read().strip()
-                program = executable_path.split('/')[-1]
-                perf_result = [program]
+                program = os.path.basename(executable_path)
+                perf_result_row = [program]
                 for line in perf_output.split('\n')[1:]:
-                     if(line.strip()):
-                            perf_result.append(line.split(',')[0].strip())
-                csv_writer.writerow(perf_result)
+                    if line.strip():
+                        perf_result_row.append(line.split(',')[0].strip())
+                csv_writer.writerow(perf_result_row)
+
             os.remove('temp.txt')
         else:
             print(f"Executable {executable_path} not found")
@@ -68,10 +73,11 @@ def runPerf(executable_path):
 def mergeAndPerf(programs):
     for program_path in programs:
         #Execute make in the directory
-        subprocess.run(["make", "-C", program_path], check=True)
-        executable = program_path.split('/')[-1]
+        # subprocess.run(["make", "-C", program_path], check=True)
+        executable = "myprogram"
         executable_path = os.path.join(program_path, executable)
         runPerf(executable_path)
+        """
         output_name = program_path.split('/')[-1]
         output_path = f"code/benchgen/results/code/{output_name}.txt"
         with open(output_path, 'w', encoding='utf-8') as outfile:
@@ -82,7 +88,7 @@ def mergeAndPerf(programs):
                     with open(file_path, 'r', encoding='utf-8') as infile:
                         outfile.write(f'```{filename}\n')
                         outfile.write(infile.read() + '\n')
-                        outfile.write('```\n')
+                        outfile.write('```\n')"""
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compile, merge all source files and extract perf data given a list of programs")
@@ -92,4 +98,5 @@ if __name__ == "__main__":
     with open(args.input_file, 'r') as f:
         for line in f:
             programs.append(line.strip())
+    # runPerf(programs)
     mergeAndPerf(programs)

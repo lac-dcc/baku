@@ -1,0 +1,2 @@
+model,mean_seconds,std_seconds,sample_size,max_length,lower_value,higher_value
+meta-llama/Llama-3.1-8B-Instruct,155.30613482566108,41.94179637214812,20,4096,25.23263168334961,170.1336166858673
