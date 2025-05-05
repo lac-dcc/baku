@@ -1,5 +1,5 @@
-model,size,compiled,total,proportion_compiled
-CodeLLama7,7,7,7,1.0
-CodeLLama13,13,6,8,0.75
-LLAMA3.1,8,54,78,0.7051282051
-DEEPSEEKCODERV2,16,48,54,0.8888888888888888
+model,size,compiled,total,proportion_compiled,regression,total_time
+CodeLLama7,7,7,7,1.0,0,5194
+CodeLLama13,13,6,8,0.75,0,5122
+LLAMA3.1,8,54,78,0.7051282051,22,4565
+DEEPSEEKCODERV2,16,48,54,0.8888888888888888,8,5224
