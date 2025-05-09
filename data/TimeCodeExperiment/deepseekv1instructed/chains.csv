@@ -1,0 +1,13 @@
+folder_id,num_regression,time_spent,mean_time_program,std_time,regression,model_name
+HKSG,3,875.1368658542633,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+PKWL,2,796.089855670929,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+RXIX,3,879.849419593811,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+HTTP,3,681.9456653594971,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+FZSI,2,799.2887001037598,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+BFWI,2,644.8204894065857,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+GPCR,2,792.0187413692474,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+MNWE,6,855.2210738658905,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+YIFL,3,609.178225517273,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+JWVD,6,689.0059015750885,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+EPFY,5,744.3671932220459,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
+TBDX,4,815.7423102855682,0,0,False,deepseek-ai/deepseek-coder-7b-instruct-v1.5
