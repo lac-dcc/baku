@@ -86,8 +86,6 @@ def compilation(compiler, version, optimizer, folder, file, compiler_path):
             
             result = subprocess.run(cmd, capture_output=True, text=True)
 
-            print(result.returncode)
-
             if result.returncode != 0:
                 print(f"Error compiling '{file}' with {compiler} {version}:")
                 print(result.stderr)
@@ -133,7 +131,6 @@ def main():
 
     run = 0
     total = 0
-    print("passou aq 2")
 
     for folder, _, files in os.walk(file_folder):
         files.sort()
@@ -151,7 +148,7 @@ def main():
                 if compiled: 
                     run = run + 1
 
-    cm = DataLoader("../../data/TimeCode/compiled_models.csv")
+    cm = DataLoader("../../data/TimeCodeExperiment/compiled_models.csv")
     cm.new_row([model_name,size,run, total, run/total])
     cm.save()
 

@@ -132,7 +132,7 @@ def main():
                                         time_spent = time_spent + int(name_code[4:]) * (chain['time_spent']/30)
                                         break
                                     else:
-                                        time_spent = time_spent + chain['time_spent'] 
+                                        time_spent = time_spent + chain['time_spent']
 
                                 rows_csv = chains_csv[(chains_csv["folder_id"] == folder.split('/')[5])]
                                 rows_chain = (rows_csv.values).flatten()

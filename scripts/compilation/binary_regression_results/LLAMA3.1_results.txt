@@ -1,31 +1,67 @@
 Regression Analysis Report
-Generated on: 2025-05-03 10:38:13
+Generated on: 2025-05-09 10:21:16
 ============================================================
 
-Found 22 regression(s):
+Found 58 regression(s):
 
-1. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/AAMU | AAMU2.c | gcc-9 | Seconds until this regression: 29.938030242919922
-2. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/AAMU | AAMU2.c | gcc-10 | Seconds until this regression: 29.938030242919922
-3. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/AAMU | AAMU2.c | gcc-11 | Seconds until this regression: 29.938030242919922
-4. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/AAMU | AAMU2.c | gcc-12 | Seconds until this regression: 29.938030242919922
-5. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ8.c | gcc-9 | Seconds until this regression: 1829.259351237615
-6. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ8.c | gcc-10 | Seconds until this regression: 1829.259351237615
-7. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ8.c | gcc-11 | Seconds until this regression: 1829.259351237615
-8. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ8.c | gcc-12 | Seconds until this regression: 1829.259351237615
-9. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ9.c | gcc-9 | Seconds until this regression: 1848.5962291479111
-10. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ9.c | gcc-10 | Seconds until this regression: 1848.5962291479111
-11. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ9.c | gcc-12 | Seconds until this regression: 1848.5962291479111
-12. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ10.c | gcc-9 | Seconds until this regression: 1867.9331070582073
-13. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ10.c | gcc-10 | Seconds until this regression: 1867.9331070582073
-14. Regression found (-Os worse than -O0): ../../code/experiment/llama3.1/LMNZ | LMNZ10.c | gcc-12 | Seconds until this regression: 1867.9331070582073
-15. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/DNSH | DNSH10.c | gcc-9 | Seconds until this regression: 3933.216701110204
-16. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/DNSH | DNSH10.c | gcc-10 | Seconds until this regression: 3933.216701110204
-17. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/DNSH | DNSH10.c | gcc-11 | Seconds until this regression: 3933.216701110204
-18. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/DNSH | DNSH10.c | gcc-12 | Seconds until this regression: 3933.216701110204
-19. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/DNSH | DNSH11.c | gcc-9 | Seconds until this regression: 3954.0994951407115
-20. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/DNSH | DNSH11.c | gcc-10 | Seconds until this regression: 3954.0994951407115
-21. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/DNSH | DNSH11.c | gcc-11 | Seconds until this regression: 3954.0994951407115
-22. Regression found (-Os worse than -O3): ../../code/experiment/llama3.1/DNSH | DNSH11.c | gcc-12 | Seconds until this regression: 3954.0994951407115
+1. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/AAMU | AAMU2.c | gcc-9 | Seconds until this regression: 29.938030242919922
+2. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/AAMU | AAMU2.c | gcc-10 | Seconds until this regression: 29.938030242919922
+3. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/AAMU | AAMU2.c | gcc-11 | Seconds until this regression: 29.938030242919922
+4. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/AAMU | AAMU2.c | gcc-12 | Seconds until this regression: 29.938030242919922
+5. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ8.c | gcc-9 | Seconds until this regression: 1829.259351237615
+6. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ8.c | gcc-10 | Seconds until this regression: 1829.259351237615
+7. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ8.c | gcc-11 | Seconds until this regression: 1829.259351237615
+8. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ8.c | gcc-12 | Seconds until this regression: 1829.259351237615
+9. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ9.c | gcc-9 | Seconds until this regression: 1848.5962291479111
+10. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ9.c | gcc-10 | Seconds until this regression: 1848.5962291479111
+11. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ9.c | gcc-12 | Seconds until this regression: 1848.5962291479111
+12. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ10.c | gcc-9 | Seconds until this regression: 1867.9331070582073
+13. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ10.c | gcc-10 | Seconds until this regression: 1867.9331070582073
+14. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/llama3.1/LMNZ | LMNZ10.c | gcc-12 | Seconds until this regression: 1867.9331070582073
+15. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/DNSH | DNSH10.c | gcc-9 | Seconds until this regression: 3933.216701110204
+16. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/DNSH | DNSH10.c | gcc-10 | Seconds until this regression: 3933.216701110204
+17. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/DNSH | DNSH10.c | gcc-11 | Seconds until this regression: 3933.216701110204
+18. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/DNSH | DNSH10.c | gcc-12 | Seconds until this regression: 3933.216701110204
+19. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/DNSH | DNSH11.c | gcc-9 | Seconds until this regression: 3954.0994951407115
+20. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/DNSH | DNSH11.c | gcc-10 | Seconds until this regression: 3954.0994951407115
+21. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/DNSH | DNSH11.c | gcc-11 | Seconds until this regression: 3954.0994951407115
+22. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/DNSH | DNSH11.c | gcc-12 | Seconds until this regression: 3954.0994951407115
+23. Regression found (-Os worse than -O2): ../../code/TimeCodeExperiment/llama3.1/ESWC | ESWC2.c | gcc-9 | Seconds until this regression: 4798.896092907587
+24. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/ESWC | ESWC2.c | gcc-10 | Seconds until this regression: 4798.896092907587
+25. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/ESWC | ESWC2.c | gcc-11 | Seconds until this regression: 4798.896092907587
+26. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/ESWC | ESWC6.c | gcc-9 | Seconds until this regression: 4859.672218370438
+27. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/ESWC | ESWC6.c | gcc-10 | Seconds until this regression: 4859.672218370438
+28. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/ESWC | ESWC6.c | gcc-11 | Seconds until this regression: 4859.672218370438
+29. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/ESWC | ESWC7.c | gcc-9 | Seconds until this regression: 4874.86624973615
+30. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/ESWC | ESWC7.c | gcc-10 | Seconds until this regression: 4874.86624973615
+31. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/ESWC | ESWC7.c | gcc-11 | Seconds until this regression: 4874.86624973615
+32. Regression found (-Os worse than -O2): ../../code/TimeCodeExperiment/llama3.1/EDHR | EDHR4.c | gcc-10 | Seconds until this regression: 6119.312253983816
+33. Regression found (-Os worse than -O2): ../../code/TimeCodeExperiment/llama3.1/EDHR | EDHR4.c | gcc-11 | Seconds until this regression: 6119.312253983816
+34. Regression found (-Os worse than -O2): ../../code/TimeCodeExperiment/llama3.1/EDHR | EDHR5.c | gcc-10 | Seconds until this regression: 6137.379960099856
+35. Regression found (-Os worse than -O2): ../../code/TimeCodeExperiment/llama3.1/EDHR | EDHR5.c | gcc-11 | Seconds until this regression: 6137.379960099856
+36. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/EDHR | EDHR5.c | gcc-12 | Seconds until this regression: 6137.379960099856
+37. Regression found (-Os worse than -O2): ../../code/TimeCodeExperiment/llama3.1/EDHR | EDHR6.c | gcc-10 | Seconds until this regression: 6155.447666215897
+38. Regression found (-Os worse than -O2): ../../code/TimeCodeExperiment/llama3.1/EDHR | EDHR6.c | gcc-11 | Seconds until this regression: 6155.447666215897
+39. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD12.c | gcc-9 | Seconds until this regression: 9164.18645310402
+40. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD12.c | gcc-10 | Seconds until this regression: 9164.18645310402
+41. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD12.c | gcc-11 | Seconds until this regression: 9164.18645310402
+42. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD12.c | gcc-12 | Seconds until this regression: 9164.18645310402
+43. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD13.c | gcc-9 | Seconds until this regression: 9185.554028948149
+44. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD13.c | gcc-10 | Seconds until this regression: 9185.554028948149
+45. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD13.c | gcc-11 | Seconds until this regression: 9185.554028948149
+46. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD13.c | gcc-12 | Seconds until this regression: 9185.554028948149
+47. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD14.c | gcc-9 | Seconds until this regression: 9206.921604792276
+48. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD14.c | gcc-10 | Seconds until this regression: 9206.921604792276
+49. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD14.c | gcc-11 | Seconds until this regression: 9206.921604792276
+50. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD14.c | gcc-12 | Seconds until this regression: 9206.921604792276
+51. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD15.c | gcc-9 | Seconds until this regression: 9228.289180636406
+52. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD15.c | gcc-10 | Seconds until this regression: 9228.289180636406
+53. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD15.c | gcc-11 | Seconds until this regression: 9228.289180636406
+54. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD15.c | gcc-12 | Seconds until this regression: 9228.289180636406
+55. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD16.c | gcc-9 | Seconds until this regression: 9249.656756480535
+56. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD16.c | gcc-10 | Seconds until this regression: 9249.656756480535
+57. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD16.c | gcc-11 | Seconds until this regression: 9249.656756480535
+58. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/llama3.1/MTZD | MTZD16.c | gcc-12 | Seconds until this regression: 9249.656756480535
 
 ============================================================
 End of report
