@@ -9,6 +9,8 @@ instructions
 cache-references
 cache-misses
 branch-instructions
+"""
+"""
 branch-misses
 page-faults
 branch-loads
@@ -59,6 +61,7 @@ def run_perf_stat(programs_dir, compiler, flags):
     
     with open('results/results.csv', 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile, delimiter=',')
+<<<<<<< Updated upstream
         csv_writer.writerow(["Program"] + events_list)
         
         if not os.path.isdir(programs_dir):
@@ -71,6 +74,15 @@ def run_perf_stat(programs_dir, compiler, flags):
             
             # Compile
             try:
+=======
+        os.makedirs('results', exist_ok=True)
+        os.makedirs('bin', exist_ok=True)
+        events_list = perf_events.strip().split('\n')
+        csv_writer.writerow(["Program"] + events_list) 
+        if os.path.isdir(programs_dir):
+            for program in os.listdir(programs_dir):   
+                executable_path = f"myprogram"
+>>>>>>> Stashed changes
                 print(f'Compiling {program}')
                 subprocess.run([compiler] + flags + ["-o", executable_path, source_path],
                               check=True)
