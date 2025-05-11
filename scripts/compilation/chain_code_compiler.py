@@ -1,5 +1,6 @@
 import sys
 import os
+import time
 import subprocess
 sys.path.append("../classes")
 from data_loader import DataLoader
@@ -80,11 +81,16 @@ def compilation(compiler, version, optimizer, folder, file, compiler_path):
 
     try:
         bin_array = []
+        time_array = []
         for _ in range(10):
             cmd = [compiler] if version == "default" else [f"{compiler}-{version}"]
             cmd.extend([optimizer, folder+'/'+file, "-o", folder+'/output/'+output])
             
+            begin_time = time.time()
             result = subprocess.run(cmd, capture_output=True, text=True)
+            end_time = time.time()
+
+            time_array.append(abs(end_time - begin_time))
 
             if result.returncode != 0:
                 print(f"Error compiling '{file}' with {compiler} {version}:")
@@ -99,8 +105,9 @@ def compilation(compiler, version, optimizer, folder, file, compiler_path):
         min_bin = min(bin_array)
         max_bin = max(bin_array)
         mean = sum(bin_array) / len(bin_array)
+        time_spent = sum(time_array)
 
-        row = [folder.split('/')[5], file, f"{compiler}",f"{version}", optimizer, min_bin, max_bin, mean]
+        row = [folder.split('/')[5], file, f"{compiler}",f"{version}", optimizer, min_bin, max_bin, mean,time_spent]
         compilation_df.new_row(row)
         compilation_df.save()
 

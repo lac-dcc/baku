@@ -29,9 +29,10 @@ def verify_sample_results(df, file, folder, compiler, version, opt):
     min_size = df["bin_min_size"].iloc[0]
     max_size = df["bin_max_size"].iloc[0]
     mean_size = df["bin_mean_size"].iloc[0]
+    df_time = df["time"].iloc[0]
 
     if min_size != max_size or max_size != mean_size or min_size != mean_size:
-        return True,f"Regression found in samples (dead code): {folder} | {file} | {compiler}-{version} | {opt}"
+        return True,f"Regression found in samples (dead code): {folder} | {file} | {compiler}-{version} | {opt}",df_time
     
     return False,""
 
@@ -39,13 +40,14 @@ def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
     os_min = os_df["bin_min_size"].iloc[0]
     os_max = os_df["bin_max_size"].iloc[0]
     os_mean = os_df["bin_mean_size"].iloc[0]
+    os_time = os["time"].iloc[0]
     
     other_min = other_df["bin_min_size"].iloc[0]
     other_max = other_df["bin_max_size"].iloc[0]
     other_mean = other_df["bin_mean_size"].iloc[0]
     
     if os_min - other_min >= 32  or os_max - other_max >= 32  or os_mean - other_mean >= 32 :
-        return True,f"Regression found (-Os worse than {opt}): {folder} | {file} | {compiler}-{version}"
+        return True,f"Regression found (-Os worse than {opt}): {folder} | {file} | {compiler}-{version}",os_time
         
     return False,""
 
@@ -72,21 +74,21 @@ def regression_search(folder, file, compiler, version, compilation_path):
         if compilation_Os.empty:
             return False, f"No -Os data found for {file}"
         
-        result,result_str = verify_sample_results(compilation_Os, file, folder, compiler, version, "-Os")
+        result,result_str,time = verify_sample_results(compilation_Os, file, folder, compiler, version, "-Os")
         if result:
-            return result,result_str
+            return result,result_str,time
         
         for opt in OPT_FLAGS:
             current_df = compilation_df[base_query & (compilation_df["optimization"] == opt)]
 
-            result,result_str = compare_samples(compilation_Os, current_df, file, folder, compiler, version, opt)
+            result,result_str,time = compare_samples(compilation_Os, current_df, file, folder, compiler, version, opt)
             if result:
-                return result,result_str
+                return result,result_str,time
         
-            result,result_str = verify_sample_results(current_df, file, folder, compiler, version, opt)
+            result,result_str,time = verify_sample_results(current_df, file, folder, compiler, version, opt)
             if result:
 
-                return result,result_str
+                return result,result_str,time
             
         
         return False,""
@@ -120,9 +122,9 @@ def main():
                     for compiler in COMPILERS:
                         for version in VERSIONS:
                             print(f"\nChecking: {file} with {compiler}-{version} in {folder}")
-                            result,result_str = regression_search(folder, file, compiler, version,data_path+'compilation.csv')
+                            result,result_str,time = regression_search(folder, file, compiler, version,data_path+'compilation.csv')
                             if result:
-                                time_spent = 0
+                                time_spent = time
                                 chains_csv = pd.read_csv(data_path+'chains.csv')
                                 
                                 name_code = file.split(".")[0]
