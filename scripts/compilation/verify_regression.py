@@ -34,7 +34,7 @@ def verify_sample_results(df, file, folder, compiler, version, opt):
     if min_size != max_size or max_size != mean_size or min_size != mean_size:
         return True,f"Regression found in samples (dead code): {folder} | {file} | {compiler}-{version} | {opt}",df_time
     
-    return False,""
+    return False,"",0
 
 def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
     os_min = os_df["bin_min_size"].iloc[0]
@@ -49,7 +49,7 @@ def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
     if os_min - other_min >= 32  or os_max - other_max >= 32  or os_mean - other_mean >= 32 :
         return True,f"Regression found (-Os worse than {opt}): {folder} | {file} | {compiler}-{version}",os_time
         
-    return False,""
+    return False,"",0
 
 def regression_search(folder, file, compiler, version, compilation_path):
     OPT_FLAGS = ["-O0", "-O1", "-O2", "-O3", "-Ofast"]
@@ -72,7 +72,7 @@ def regression_search(folder, file, compiler, version, compilation_path):
         compilation_Os = compilation_df[os_query]
         
         if compilation_Os.empty:
-            return False, f"No -Os data found for {file}"
+            return False, f"No -Os data found for {file}",0
         
         result,result_str,time = verify_sample_results(compilation_Os, file, folder, compiler, version, "-Os")
         if result:
@@ -91,10 +91,10 @@ def regression_search(folder, file, compiler, version, compilation_path):
                 return result,result_str,time
             
         
-        return False,""
+        return False,"",0
     
     except Exception as e:
-        return False,f"Error processing {folder}/{file} with {compiler}-{version}: {str(e)}"
+        return False,f"Error processing {folder}/{file} with {compiler}-{version}: {str(e)}",0
 
 def main():
     if len(sys.argv) < 4:
