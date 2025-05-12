@@ -34,7 +34,7 @@ def verify_sample_results(df, file, folder, compiler, version, opt):
     if min_size != max_size or max_size != mean_size or min_size != mean_size:
         return True,f"Regression found in samples (dead code): {folder} | {file} | {compiler}-{version} | {opt}",df_time
     
-    return False,"",0
+    return False,"",df_time
 
 def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
     os_min = os_df["bin_min_size"].iloc[0]
@@ -49,7 +49,7 @@ def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
     if os_min - other_min >= 32  or os_max - other_max >= 32  or os_mean - other_mean >= 32 :
         return True,f"Regression found (-Os worse than {opt}): {folder} | {file} | {compiler}-{version}",os_time
         
-    return False,"",0
+    return False,"",os_time
 
 def regression_search(folder, file, compiler, version, compilation_path):
     OPT_FLAGS = ["-O0", "-O1", "-O2", "-O3", "-Ofast"]
@@ -114,6 +114,7 @@ def main():
     COMPILERS = ["gcc"]
     VERSIONS = ["9", "10", "11", "12"]
 
+    time_compilation = 0
     results = []
     for folder, _, files in os.walk(file_folder):
         if "output" not in folder:  # Skip output directories
@@ -124,7 +125,8 @@ def main():
                             print(f"\nChecking: {file} with {compiler}-{version} in {folder}")
                             result,result_str,time = regression_search(folder, file, compiler, version,data_path+'compilation.csv')
                             if result:
-                                time_spent = time
+                                time_compilation = time_compilation + time
+                                time_spent = time_compilation
                                 chains_csv = pd.read_csv(data_path+'chains.csv')
                                 
                                 name_code = file.split(".")[0]
