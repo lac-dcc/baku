@@ -1,0 +1,17 @@
+Regression Analysis Report
+Generated on: 2025-05-12 21:07:32
+============================================================
+
+Found 8 regression(s):
+
+1. Regression found (-Os worse than -O2): ../../code/TimeCodeExperiment/deepseekv2instructed/CKQW | CKQW1.c | gcc-12 | Seconds until this regression: 3086.2093764305114
+2. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/deepseekv2instructed/SFMJ | SFMJ1.c | gcc-9 | Seconds until this regression: 4054.687638648351
+3. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/deepseekv2instructed/SFMJ | SFMJ1.c | gcc-10 | Seconds until this regression: 4056.2248412450153
+4. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/deepseekv2instructed/SFMJ | SFMJ1.c | gcc-12 | Seconds until this regression: 4057.788758643468
+5. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/deepseekv2instructed/PSWL | PSWL3.c | gcc-9 | Seconds until this regression: 4875.825846004486
+6. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/deepseekv2instructed/PSWL | PSWL3.c | gcc-10 | Seconds until this regression: 4877.3361971855165
+7. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/deepseekv2instructed/PSWL | PSWL3.c | gcc-11 | Seconds until this regression: 4878.881734657288
+8. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/deepseekv2instructed/PSWL | PSWL3.c | gcc-12 | Seconds until this regression: 4880.564565706253
+
+============================================================
+End of report

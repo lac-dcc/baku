@@ -40,7 +40,7 @@ def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
     os_min = os_df["bin_min_size"].iloc[0]
     os_max = os_df["bin_max_size"].iloc[0]
     os_mean = os_df["bin_mean_size"].iloc[0]
-    os_time = os["time"].iloc[0]
+    os_time = os_df["time"].iloc[0]
     
     other_min = other_df["bin_min_size"].iloc[0]
     other_max = other_df["bin_max_size"].iloc[0]
