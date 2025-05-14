@@ -1,0 +1,2 @@
+fuzzer,total_tries,total_time,failures,success,regressions,first_regression_time
+yarpgen,512,3754.2646594047546,102,410,0,0
