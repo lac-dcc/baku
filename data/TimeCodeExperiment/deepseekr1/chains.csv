@@ -1,0 +1,9 @@
+folder_id,num_regression,time_spent,mean_time_program,std_time,regression,model_name
+MTUP,5,837.237601518631,0,0,False,deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+FVJB,4,911.3867931365967,0,0,False,deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+SQJX,3,874.2302594184875,0,0,False,deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+FTOR,2,946.8432319164276,0,0,False,deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+JASG,2,888.751837015152,0,0,False,deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+MDIM,4,843.7780425548553,0,0,False,deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+TPSR,2,816.8585424423218,0,0,False,deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+AWZD,5,927.5753512382507,0,0,False,deepseek-ai/DeepSeek-R1-Distill-Llama-8B
