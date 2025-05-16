@@ -107,7 +107,7 @@ def compilation(compiler, version, optimizer, folder, file, compiler_path):
         mean = sum(bin_array) / len(bin_array)
         time_spent = sum(time_array)
 
-        row = [folder.split('/')[5], file, f"{compiler}",f"{version}", optimizer, min_bin, max_bin, mean,time_spent]
+        row = [file.split('.')[0], f"{compiler}",f"{version}", optimizer, min_bin, max_bin, mean,time_spent]
         compilation_df.new_row(row)
         compilation_df.save()
 
@@ -118,7 +118,7 @@ def compilation(compiler, version, optimizer, folder, file, compiler_path):
 
 def main():
     if len(sys.argv) < 5:
-        print("Usage: python chain_code_compiler.py <file_folder> <compilation_csv_path> <model_name> <size>")
+        print("Usage: python singles_code_compiler.py <file_folder> <compilation_csv_path> <model_name> <size>")
         sys.exit(1)
 
     file_folder = sys.argv[1]
@@ -155,7 +155,7 @@ def main():
                 if compiled: 
                     run = run + 1
 
-    cm = DataLoader("../../data/TimeCodeExperiment/compiled_chain_models.csv")
+    cm = DataLoader("../../data/TimeCodeExperiment/compiled_singles_models.csv")
     cm.new_row([model_name,size,run, total, run/total])
     cm.save()
 
