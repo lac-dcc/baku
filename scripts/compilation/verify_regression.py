@@ -54,12 +54,12 @@ def compare_samples(os_df, other_df, file, folder, compiler, version, opt):
 
 def regression_search(folder, file, compiler, version, compilation_path, chain):
     OPT_FLAGS = ["-O0", "-O1", "-O2", "-O3", "-Ofast"]
-    
     try:
         compilation_df = pd.read_csv(compilation_path)
 
 
         folder_id = folder.split('/')[5]
+
         if(chain):
             base_query = (
                 (compilation_df['folder_id'] == str(folder_id)) &
@@ -67,10 +67,9 @@ def regression_search(folder, file, compiler, version, compilation_path, chain):
                 (compilation_df['compiler'] == str(compiler)) &
                 (compilation_df['version'] == int(version)) 
             )
-        
         else:
             base_query = (
-                (compilation_df['file'] == str(file.split(".")[0])) &
+                (compilation_df['file'] == str(file.split('.')[0])) &
                 (compilation_df['compiler'] == str(compiler)) &
                 (compilation_df['version'] == int(version)) 
             )
@@ -101,6 +100,8 @@ def regression_search(folder, file, compiler, version, compilation_path, chain):
         return False,"",0
     
     except Exception as e:
+        print(e)
+        sys.exit()
         return False,f"Error processing {folder}/{file} with {compiler}-{version}: {str(e)}",0
 
 def main():
