@@ -1,0 +1,42 @@
+Regression Analysis Report
+Generated on: 2025-05-18 11:07:16
+============================================================
+
+Found 33 regression(s):
+
+1. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 4RHL.c | gcc-9 | Seconds until this regression: 430.28977274894714
+2. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 4RHL.c | gcc-10 | Seconds until this regression: 432.4051067829132
+3. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 4RHL.c | gcc-12 | Seconds until this regression: 434.8290252685547
+4. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | PONY.c | gcc-9 | Seconds until this regression: 1200.8504898548126
+5. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | PONY.c | gcc-10 | Seconds until this regression: 1203.0787963867188
+6. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | PONY.c | gcc-11 | Seconds until this regression: 1205.3281276226044
+7. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | PONY.c | gcc-12 | Seconds until this regression: 1207.9116048812866
+8. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | QM6I.c | gcc-9 | Seconds until this regression: 1309.7737646102905
+9. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | QM6I.c | gcc-10 | Seconds until this regression: 1312.0677981376648
+10. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | QM6I.c | gcc-11 | Seconds until this regression: 1314.375742673874
+11. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | QM6I.c | gcc-12 | Seconds until this regression: 1316.8358581066132
+12. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | ZQIG.c | gcc-9 | Seconds until this regression: 2978.1871013641357
+13. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | ZQIG.c | gcc-10 | Seconds until this regression: 2980.9754667282104
+14. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | ZQIG.c | gcc-11 | Seconds until this regression: 2983.6624579429626
+15. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | ZQIG.c | gcc-12 | Seconds until this regression: 2986.8754851818085
+16. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 3U1G.c | gcc-9 | Seconds until this regression: 3001.3594238758087
+17. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 3U1G.c | gcc-10 | Seconds until this regression: 3003.3305773735046
+18. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 3U1G.c | gcc-11 | Seconds until this regression: 3005.4180541038513
+19. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 3U1G.c | gcc-12 | Seconds until this regression: 3007.5799946784973
+20. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | C9BH.c | gcc-9 | Seconds until this regression: 3155.0963037014008
+21. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | C9BH.c | gcc-10 | Seconds until this regression: 3157.5450971126556
+22. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | C9BH.c | gcc-11 | Seconds until this regression: 3159.9430117607117
+23. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | C9BH.c | gcc-12 | Seconds until this regression: 3162.2692534923553
+24. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | HHNU.c | gcc-9 | Seconds until this regression: 3213.8085339069366
+25. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | HHNU.c | gcc-10 | Seconds until this regression: 3215.9486269950867
+26. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | HHNU.c | gcc-12 | Seconds until this regression: 3218.3358585834503
+27. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 04XV.c | gcc-9 | Seconds until this regression: 3375.860562801361
+28. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 04XV.c | gcc-10 | Seconds until this regression: 3378.0393030643463
+29. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 04XV.c | gcc-12 | Seconds until this regression: 3380.4831268787384
+30. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 238S.c | gcc-9 | Seconds until this regression: 3599.3953177928925
+31. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 238S.c | gcc-10 | Seconds until this regression: 3601.5682520866394
+32. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 238S.c | gcc-11 | Seconds until this regression: 3603.6952781677246
+33. Regression found (-Os worse than -O1): ../../code/TimeCodeExperiment/singles/deepseekv2instructed/ | 238S.c | gcc-12 | Seconds until this regression: 3605.9106345176697
+
+============================================================
+End of report

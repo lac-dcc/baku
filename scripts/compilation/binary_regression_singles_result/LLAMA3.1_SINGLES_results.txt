@@ -1,0 +1,26 @@
+Regression Analysis Report
+Generated on: 2025-05-18 11:05:25
+============================================================
+
+Found 17 regression(s):
+
+1. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/singles/llama3.1/ | GC6F.c | gcc-9 | Seconds until this regression: 376.4100480079651
+2. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/singles/llama3.1/ | GC6F.c | gcc-10 | Seconds until this regression: 378.7145359516144
+3. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/singles/llama3.1/ | GC6F.c | gcc-11 | Seconds until this regression: 381.05404472351074
+4. Regression found (-Os worse than -O3): ../../code/TimeCodeExperiment/singles/llama3.1/ | GC6F.c | gcc-12 | Seconds until this regression: 383.4663574695587
+5. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | EY7C.c | gcc-9 | Seconds until this regression: 435.23380875587463
+6. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | EY7C.c | gcc-10 | Seconds until this regression: 437.3912134170532
+7. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | EY7C.c | gcc-11 | Seconds until this regression: 439.73854804039
+8. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | F3KE.c | gcc-9 | Seconds until this regression: 2223.8215193748474
+9. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | F3KE.c | gcc-10 | Seconds until this regression: 2225.9996609687805
+10. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | 39KN.c | gcc-9 | Seconds until this regression: 3271.793018579483
+11. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | 39KN.c | gcc-10 | Seconds until this regression: 3274.0738158226013
+12. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | 39KN.c | gcc-11 | Seconds until this regression: 3275.8816092014313
+13. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | 39KN.c | gcc-12 | Seconds until this regression: 3278.444157600403
+14. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | L19L.c | gcc-9 | Seconds until this regression: 6974.619255542755
+15. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | L19L.c | gcc-10 | Seconds until this regression: 6977.107711076736
+16. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | L19L.c | gcc-11 | Seconds until this regression: 6979.559841871262
+17. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/llama3.1/ | L19L.c | gcc-12 | Seconds until this regression: 6982.291813850403
+
+============================================================
+End of report

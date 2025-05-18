@@ -1,0 +1,13 @@
+Regression Analysis Report
+Generated on: 2025-05-18 11:12:55
+============================================================
+
+Found 4 regression(s):
+
+1. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekr1/ | ZQF1.c | gcc-9 | Seconds until this regression: 5739.142912387848
+2. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekr1/ | ZQF1.c | gcc-10 | Seconds until this regression: 5741.25194811821
+3. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekr1/ | ZQF1.c | gcc-11 | Seconds until this regression: 5743.389911651611
+4. Regression found (-Os worse than -O0): ../../code/TimeCodeExperiment/singles/deepseekr1/ | ZQF1.c | gcc-12 | Seconds until this regression: 5745.751200199127
+
+============================================================
+End of report
