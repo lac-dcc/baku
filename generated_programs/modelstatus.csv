@@ -1,4 +1,4 @@
-model,totalprograms,compiledprograms,averagegentime,mediumerror
-DeepSeekV2,21,21,,
-Llama3.1,21,16,,
-DeepSeekV1,31,29,,
+model,totalprograms,compiledprograms,semanticOk,averagegentime,mediumerror
+DeepSeekV2 (16B),21,21,21,
+Llama3.1 (8B),21,16,9,
+DeepSeek-coder (1.3B) ,31,29,0,

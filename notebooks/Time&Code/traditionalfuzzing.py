@@ -210,27 +210,27 @@ class GenerationPipeline:
 # ### Csmith Run
 
 # %%
-# pipeline = GenerationPipeline(CSMITH_DIR_BASE, fuzzer="csmith")
-# while(pipeline.totalTime < 3600.00):
-#     pipeline.generate()
+pipeline = GenerationPipeline(CSMITH_DIR_BASE, fuzzer="csmith")
+while(pipeline.totalTime < 3600.00 * 3):
+    pipeline.generate()
 
-# df = pd.DataFrame({
-#     'fuzzer': pipeline.fuzzer,
-#     'total_tries': pipeline.totalTries,
-#     'total_time': pipeline.totalTime,
-#     'failures': pipeline.failures,
-#     'success': pipeline.success,
-#     'regressions': pipeline.regressions,
-#     'first_regression_time': pipeline.first_regression_time
-# }, index=[0])
+df = pd.DataFrame({
+    'fuzzer': pipeline.fuzzer,
+    'total_tries': pipeline.totalTries,
+    'total_time': pipeline.totalTime,
+    'failures': pipeline.failures,
+    'success': pipeline.success,
+    'regressions': pipeline.regressions,
+    'first_regression_time': pipeline.first_regression_time
+}, index=[0])
 
-# df.to_csv(f"{CSMITH_DIR_BASE}/results.csv", index=False)
+df.to_csv(f"{CSMITH_DIR_BASE}/results.csv", index=False)
 
-# pipeline.print_status()
+pipeline.print_status()
 
 # %%
 pipeline = GenerationPipeline(YARPGEN_DIR_BASE, fuzzer="yarpgen")
-while(pipeline.totalTime < 3600.00):
+while(pipeline.totalTime < 3600.00 * 3):
     pipeline.generate()
 
 df = pd.DataFrame({
