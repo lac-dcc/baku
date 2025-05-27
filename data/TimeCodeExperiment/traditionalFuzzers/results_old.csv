@@ -1,0 +1,4 @@
+fuzzer,total_tries,total_time,failures,success,regressions,first_regression_time
+csmith,1704,10810.35020685196,0,1704,93,6.694820880889893
+yarpgen,1883,10984.382530450821,353,1530,1,18.24825143814087
+

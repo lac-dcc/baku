@@ -3,6 +3,7 @@ import os
 import time
 import subprocess
 import shutil
+import pandas as pd
 sys.path.append("../classes")
 from data_loader import DataLoader
 
@@ -30,26 +31,29 @@ def get_binary_size(file_path):
         return 0
 
 def has_main_function(file_path):
-    with open(file_path, "r") as f:
+    with open(file_path, "r", encoding="utf-8", errors="replace") as f:
         content = f.read()
     return "int main" in content or "void main" in content
 
-def get_compilable_code(folder,file):
-    file_read = open(folder+'/'+file, "r+")
-    file_content = file_read.read()
-    file_read.close()
+
+def get_compilable_code(folder, file):
+    path = os.path.join(folder, file)
+
+    with open(path, "r", encoding="latin1") as file_read:
+        file_content = file_read.read()
 
     main_template = """
-    void main(){
-        printf("%d",f(7));
-    }
-    """
+        int main() {
+            printf("%d", f(7));
+            return 0;
+        }
+        """
 
-    code= "#include<stdio.h> \n"+file_content+main_template
+    code = "#include<stdio.h>\n" + file_content + main_template
 
-    file_write = open(folder+'/'+file, "w")
-    file_write.write(code)
-    file_write.close()
+    with open(path, "w", encoding="latin1") as file_write:
+        file_write.write(code)
+
 
 def get_available_gcc_versions():
     versions = []
@@ -90,25 +94,23 @@ def compilation(compiler, version, optimizer, folder, file, compiler_path,chain_
     try:
         bin_array = []
         time_array = []
-        for _ in range(10):
-            cmd = [compiler] if version == "default" else [f"{compiler}-{version}"]
-            cmd.extend([optimizer, folder+'/'+file, "-o", folder+'/output/'+output])
-            
-            begin_time = time.time()
-            result = subprocess.run(cmd, capture_output=True, text=True)
-            end_time = time.time()
-
-            time_array.append(abs(end_time - begin_time))
-
-            if result.returncode != 0:
-                print(f"Error compiling '{file}' with {compiler} {version}:")
-                print(result.stderr)
-                return False
-            else:
-                print(f"Compiled '{file}' to '{output}' -> {compiler}-{version} {optimizer}")
-                bin_size = get_binary_size(folder+'/output/'+output)
-                bin_array.append(bin_size)
-                print(f"Binary Size: {bin_size}")
+        
+        cmd = [compiler] if version == "default" else [f"{compiler}-{version}"]
+        cmd.extend([optimizer, folder+'/'+file, "-o", folder+'/output/'+output])
+        
+        begin_time = time.time()
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        end_time = time.time()
+        time_array.append(abs(end_time - begin_time))
+        if result.returncode != 0:
+            print(f"Error compiling '{file}' with {compiler} {version}:")
+            print(result.stderr)
+            return False
+        else:
+            print(f"Compiled '{file}' to '{output}' -> {compiler}-{version} {optimizer}")
+            bin_size = get_binary_size(folder+'/output/'+output)
+            bin_array.append(bin_size)
+            print(f"Binary Size: {bin_size}")
         
         min_bin = min(bin_array)
         max_bin = max(bin_array)
@@ -150,7 +152,7 @@ def main():
         sys.exit(1)
 
     COMPILERS = {
-        "gcc": ["12"]
+        "gcc": ["14"]
     }
 
     OPT_FLAGS = ["-O0", "-O1", "-O2", "-O3", "-Os", "-Ofast"]
@@ -158,6 +160,7 @@ def main():
     run = 0
     total = 0
 
+    
     for folder, _, files in os.walk(file_folder):
         files.sort()
         if not os.path.exists(folder+"/output"):
@@ -168,23 +171,42 @@ def main():
         for file in files:
             total = total + 1
             compiled = False
-            for compiler, versions in COMPILERS.items():
-                for version in versions:
-                    for opt in OPT_FLAGS:
-                        print(f"File:{file} - Compiler: {compiler}-{version} - Opt: {opt}")
-                        compiled = compilation(compiler, version, opt, folder, file, compiler_path,chain_type)
+            
+            for opt in OPT_FLAGS:
+                if not file.endswith(".c"):
+                    continue
+                print(f"File:{file} - Compiler: {'gcc-14'} - Opt: {opt}")
+                compiled = compilation('gcc', '14', opt, folder, file, compiler_path,chain_type)
             if compiled: 
                 run = run + 1
 
-    if(chain_type):
-        cm = DataLoader("../../data/TimeCodeExperiment/compiled_chain_models.csv")
-        cm.new_row([model_name,size,run, total, run/total])
-        cm.save()
-    
+
+    if chain_type:
+        cm = pd.read_csv("../../data/TimeCodeExperiment/compiled_chain_models.csv")
+        data = pd.DataFrame({
+            'model': [model_name],
+            'size': [size],
+            'compiled': [run],
+            'total': [total],
+            'proportion_compiled': [0 if total == 0 else run / total]
+        })
+        cm = pd.concat([cm, data], ignore_index=True)
+        cm.to_csv("../../data/TimeCodeExperiment/compiled_chain_models.csv", index=False)
+        print(cm)
+
     else:
-        cm = DataLoader("../../data/TimeCodeExperiment/compiled_single_models.csv")
-        cm.new_row([model_name,size,run, total, run/total])
-        cm.save()
+        cm = pd.read_csv("../../data/TimeCodeExperiment/compiled_single_models.csv")
+        data = pd.DataFrame({
+            'model': [model_name],
+            'size': [size],
+            'compiled': [run],
+            'total': [total],
+            'proportion_compiled': [0 if total == 0 else run / total]
+        })
+        cm = pd.concat([cm, data], ignore_index=True)
+        cm.to_csv("../../data/TimeCodeExperiment/compiled_single_models.csv", index=False)
+        print(cm)
+
 
 
 if __name__ == "__main__":

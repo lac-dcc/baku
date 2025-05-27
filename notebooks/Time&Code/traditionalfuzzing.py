@@ -92,7 +92,7 @@ class GenerationPipeline:
         print("[*] Compiling the program...")
         for opt_flag in opt_flags:
             c_files = glob.glob(f"{source_dir}/*.c")
-            result = subprocess.run(["gcc", opt_flag, *c_files, f'-I{source_dir}', "-o", f'{out_dir}/{out_file}{opt_flag}.out'])
+            result = subprocess.run(["gcc-14", opt_flag, *c_files, f'-I{source_dir}', "-o", f'{out_dir}/{out_file}{opt_flag}.out'])
             if result.returncode != 0:
                 print("[!] Compilation failed")
                 self.failures += 1

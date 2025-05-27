@@ -125,7 +125,7 @@ def main():
     
 
     COMPILERS = ["gcc"]
-    VERSIONS = ["9", "10", "11", "12"]
+    VERSIONS = ["14"]
 
     time_compilation = 0
     results = []
