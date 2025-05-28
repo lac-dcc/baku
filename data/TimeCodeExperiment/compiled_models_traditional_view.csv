@@ -1,0 +1,9 @@
+model,acronym,size,compiled,total,proportion,regressions,time
+llama3.1,LL3.1,0,0,0,0,0,0
+codellama7,CL7,0,0,0,0,0,0
+codellama13,CL13,0,0,0,0,0,0
+deepseekr1,DSR1,0,0,0,0,0,0
+deepseekv1instructed,DSC1,0,0,0,0,0,0
+deepseekv2instructed,DSC2,0,0,0,0,0,0
+CSMITH,CS,8,2063,2063,1.0,96,0
+YARPGEN,YG,8,1744,2222,0.784878488,1,0
