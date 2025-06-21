@@ -1,5 +1,0 @@
-Regression Analysis Report
-Generated on: 2025-05-18 11:09:43
-============================================================
-
-No regressions found in any test cases.

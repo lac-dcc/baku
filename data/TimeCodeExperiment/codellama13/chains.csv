@@ -1,6 +1,0 @@
-folder_id,num_regression,time_spent,mean_time_program,std_time,regression,model_name
-HSQC,1,1062.581302165985,0,0,False,meta-llama/CodeLlama-13b-Instruct-hf
-AGTG,1,1056.7886865139008,0,0,False,meta-llama/CodeLlama-13b-Instruct-hf
-PWMR,2,1020.4821481704712,0,0,False,meta-llama/CodeLlama-13b-Instruct-hf
-JYTA,1,1041.729273557663,0,0,False,meta-llama/CodeLlama-13b-Instruct-hf
-LIXZ,2,943.5308349132538,0,0,False,meta-llama/CodeLlama-13b-Instruct-hf

@@ -1,3 +1,0 @@
-fuzzer,total_tries,total_time,failures,success,regressions,first_regression_time
-csmith,2063,10815.351593971252,0,2063,96,4.230470895767212
-yarpgen,2222,10863.574313640594,478,1744,1,2.736527681350708
