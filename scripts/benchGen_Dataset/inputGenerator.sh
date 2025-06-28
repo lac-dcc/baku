@@ -1,5 +1,7 @@
 #!/bin/bash
-OUTPUT_DIR="generated_data"
+OUTPUT_DIR="code/benchgen/src/"
+MIN_ITERATIONS = 5
+MAX_ITERATIONS = 10
 
 mkdir -p "$OUTPUT_DIR"
 
@@ -16,7 +18,7 @@ generate_input() {
     echo
 }
 
-for run in $(seq 1 10); do
+for run in $(seq MIN_ITERATIONS MAX_ITERATIONS); do
     for dataset in $(seq 1 20); do
         generate_input "${run}" "${dataset}"
     done

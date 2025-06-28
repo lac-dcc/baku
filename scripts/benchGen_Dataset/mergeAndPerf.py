@@ -77,7 +77,8 @@ def mergeAndPerf(programs):
         executable = "myprogram"
         executable_path = os.path.join(program_path, executable)
         runPerf(executable_path)
-        """
+        
+        # Merge all source files into a single file
         output_name = program_path.split('/')[-1]
         output_path = f"code/benchgen/results/code/{output_name}.txt"
         with open(output_path, 'w', encoding='utf-8') as outfile:
@@ -88,7 +89,7 @@ def mergeAndPerf(programs):
                     with open(file_path, 'r', encoding='utf-8') as infile:
                         outfile.write(f'```{filename}\n')
                         outfile.write(infile.read() + '\n')
-                        outfile.write('```\n')"""
+                        outfile.write('```\n')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compile, merge all source files and extract perf data given a list of programs")

@@ -180,3 +180,43 @@ cython_debug/
 *.out
 *.o
 */output
+
+# Local virtual environment
+.venv/
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# UV lock file (optional: include if you prefer not to version-lock dependencies)
+uv.lock
+
+# Python caches and logs
+.cache/
+*.log
+*.tmp
+
+# Jupyter notebook checkpoints
+*.ipynb_checkpoints
+notebooks/.ipynb_checkpoints/
+
+# Generated data, logs, results
+data/outputs/
+results/
+logs/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE settings
+.vscode/
+.idea/
+*.swp
+
+# Test artifacts and coverage reports
+htmlcov/
+.coverage
+pytest_cache/
