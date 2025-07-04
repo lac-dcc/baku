@@ -9,9 +9,11 @@ description = "generating benchmarks to stress-test computing systems such as co
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "google-genai>=1.24.0",
     "matplotlib>=3.10.3",
     "numpy==2.2.4",
     "pandas==2.2.3",
+    "scipy>=1.16.0",
     "seaborn>=0.13.2",
 ]
 

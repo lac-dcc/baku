@@ -220,3 +220,7 @@ Thumbs.db
 htmlcov/
 .coverage
 pytest_cache/
+
+
+# BenchGen source
+.gen
