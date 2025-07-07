@@ -6,6 +6,8 @@ from scipy import stats
 import numpy as np
 
 
+OUTPUT_DIR = "code/benchgen/texts/"
+
 perf_events = """
 cpu-cycles
 instructions
@@ -21,7 +23,9 @@ def parse_perf_output(output_lines: list, expected_events: list) -> dict:
     for line in output_lines:
         parts = line.split(',')
         if len(parts) >= 3:
-            event_name_from_perf = parts[2].strip()
+            # CORREÇÃO: Remove o sufixo (:u, :k, etc.) do nome do evento
+            event_name_from_perf = parts[2].strip().split(':')[0]
+            
             # O valor do contador é o primeiro campo, remove vírgulas de milhares
             counter_value = parts[0].strip().replace(',', '')
             
@@ -137,7 +141,7 @@ def mergeAndPerf(programs: list, csvpath: str='perf_data.csv'):
         
         # Merge all source files into a single file
         output_name = program_path.split('/')[-1]
-        output_path = f"code/benchgen/texts/{output_name}.txt"
+        output_path = f"{OUTPUT_DIR}{output_name}.txt"
         with open(output_path, 'w', encoding='utf-8') as outfile:
             srcdir = os.path.join(program_path, 'src')
             for filename in sorted(os.listdir(srcdir)):
