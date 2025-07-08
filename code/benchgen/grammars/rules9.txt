@@ -1,1 +1,2 @@
-A = new LOOP(remove);
+A = new LOOP(remove CALL(B));
+B = new LOOP(A)

@@ -1,4 +1,4 @@
 A = LOOP(new B);
-B = CALL(IF(CALL(C), CALL(D)));
+B = CALL(IF(CALL(C), CALL(D)) B);
 C = new LOOP(remove);
 D = insert;

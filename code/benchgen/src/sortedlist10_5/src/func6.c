@@ -1,0 +1,52 @@
+#include "sortedlist10_5.h" 
+sortedlist_t* func6(sortedlist_t_param* vars, const unsigned long PATH0, int loopsFactor) {
+   size_t pCounter = vars->size;
+   if(PATH0 & 1) {
+      sortedlist_t_param params0;
+      params0.size = 0;
+      params0.data = (sortedlist_t**)malloc(params0.size*sizeof(sortedlist_t*));
+      sortedlist_t* sortedlist3 = func7(&params0, loopsFactor);
+      DEBUG_RETURN(sortedlist3->id);
+      free(params0.data);
+      sortedlist3->refC--;
+      if(sortedlist3->refC == 0){
+           cell_t* cell1 = sortedlist3->root;
+           cell_t* tmp1  = NULL;
+           while(cell1 != NULL) {
+               tmp1 = cell1->next;
+               free(cell1);
+               cell1 = tmp1;
+           }
+           free(sortedlist3);
+           DEBUG_FREE(sortedlist3->id);
+      }
+   }
+   else {
+      sortedlist_t_param params0;
+      params0.size = 0;
+      params0.data = (sortedlist_t**)malloc(params0.size*sizeof(sortedlist_t*));
+      sortedlist_t* sortedlist5 = func8(&params0, loopsFactor);
+      DEBUG_RETURN(sortedlist5->id);
+      free(params0.data);
+      sortedlist5->refC--;
+      if(sortedlist5->refC == 0){
+           cell_t* cell2 = sortedlist5->root;
+           cell_t* tmp2  = NULL;
+           while(cell2 != NULL) {
+               tmp2 = cell2->next;
+               free(cell2);
+               cell2 = tmp2;
+           }
+           free(sortedlist5);
+           DEBUG_FREE(sortedlist5->id);
+      }
+   }
+   sortedlist_t_param params0;
+   params0.size = 0;
+   params0.data = (sortedlist_t**)malloc(params0.size*sizeof(sortedlist_t*));
+   sortedlist_t* sortedlist7 = func9(&params0, get_path(), loopsFactor);
+   DEBUG_RETURN(sortedlist7->id);
+   free(params0.data);
+   return sortedlist7;
+}
+

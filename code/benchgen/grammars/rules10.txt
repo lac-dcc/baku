@@ -1,1 +1,2 @@
-A = new LOOP(insert);
+A = new LOOP(insert LOOP(B));
+B = new CALL(A);

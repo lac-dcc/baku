@@ -1,6 +1,6 @@
 #!/bin/bash
-OUTPUT_DIR="code/benchgen/src"
-BENCHGEN_PATH=".gen/src/gen/benchGen"
+OUTPUT_DIR="code/benchgen/src/"
+BENCHGEN_PATH=".gen/benchGen"
 GRAMMARS_PATH="code/benchgen/grammars/"
 
 MIN_ITERATIONS=5
@@ -16,13 +16,17 @@ generate_input() {
     local dataset_num=$2
     
     echo "Generating input for ${run_num}_${dataset_num}"
-    ${BENCHGEN_PATH} "${run_num}" "${GRAMMARS_PATH}rules${dataset_num}.txt" "${GRAMMARS_PATH}seed${dataset_num}.txt" "${OUTPUT_DIR}/array${run_num}_${dataset_num}" array
-    ${BENCHGEN_PATH} "${run_num}" "${GRAMMARS_PATH}rules${dataset_num}.txt" "${GRAMMARS_PATH}seed${dataset_num}.txt" "${OUTPUT_DIR}/sortedlist${run_num}_${dataset_num}" sortedlist
+    ${BENCHGEN_PATH} "${run_num}" "${GRAMMARS_PATH}rules${dataset_num}.txt" "${GRAMMARS_PATH}seed${dataset_num}.txt" "array${run_num}_${dataset_num}" array
+    ${BENCHGEN_PATH} "${run_num}" "${GRAMMARS_PATH}rules${dataset_num}.txt" "${GRAMMARS_PATH}seed${dataset_num}.txt" "sortedlist${run_num}_${dataset_num}" sortedlist
+    
+    mv array${run_num}_${dataset_num} ${OUTPUT_DIR}
+    mv sortedlist${run_num}_${dataset_num} ${OUTPUT_DIR} 
+    
     echo
 }
 
 for run in $(seq ${MIN_ITERATIONS} ${MAX_ITERATIONS}); do
-    for dataset in $(seq 1 20); do
+    for dataset in $(seq 9 10); do
         generate_input "${run}" "${dataset}"
     done
 done
