@@ -1,26 +1,46 @@
 import os
-from google import genai
+import sys
+import google.generativeai as genai 
 
-api_key = os.getenv("GEMINI_API_KEY")
+def configure_api():
+    """Start the GEMINI API"""
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        print("Erro: The GEMINI_API_KEY not founded.")
+        print("Please, set up the API_KEY before the experiment.")
+        sys.exit(1) 
+    
+    genai.configure(api_key=api_key)
+    
+def geminiAsker(prompt: str, model_name: str = "gemini-1.5-flash") -> str:
+    """Send a prompt to the generative model"""
+    try:
+        model = genai.GenerativeModel(model_name)
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        print(f"Error: {e}")
+        return "" 
 
-def geminiAsker(prompt:str, model:str = "gemini-1.5-flash") -> str:
-    client = genai.Client()
-    response = client.models.generate_content(
-        model=model,
-        contents=prompt
-    )
-    return response
-
-def savetofile(response: str, filename: str = "response.txt"):
+def savetofile(content: str, filename: str = "response.txt"):
+    """Save the prompt in a file"""
     with open(filename, 'a', encoding='utf-8') as f:
-        f.write(response)
+        f.write(content + "\n---\n")
 
 def main():
+    configure_api()
+
     prompt = 'Write a hello world program in python'
-    response = geminiAsker(prompt)
-    content = response.text
-    print(content)
-    savetofile(content, "response.txt")
+    
+    content = geminiAsker(prompt)
+
+    if content:
+        print("--- Ouput from Gemini ---")
+        print(content)
+        print("--------------------------")
+        savetofile(content, "response.txt")
+        print(f"Ouput saved in '{filename}'.")
+
 
 if __name__ == "__main__":
     main()
