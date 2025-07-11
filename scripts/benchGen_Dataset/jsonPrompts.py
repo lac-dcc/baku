@@ -1,4 +1,5 @@
 import json
+import random
 import pandas as pd
 
 def row_to_json(series, origin, destiny):
@@ -22,7 +23,7 @@ def row_to_json(series, origin, destiny):
 
     {destiny}
 
-    Give the perf vector for the new CPU.
+    Give the perf vector for the new CPU, do not explain anything else.
     """
     return item
 
@@ -51,20 +52,24 @@ def main():
         cache size      : 8192 KB
         """ 
         
-        df_guima = pd.read_csv("../../data/dif/perf_data_guima.csv").get(['cpu-cycles_mean','instructions_mean','cache-references_mean','cache-misses_mean'])
-        dataframes = [df_guima]
+        df_guima = pd.read_csv("../../data/prediction_test/perf_data_guima.csv").get(['Program','cpu-cycles_mean','instructions_mean','cache-references_mean','cache-misses_mean'])
+        df_natan = pd.read_csv("../../data/prediction_test/perf_data_natan.csv").get(['Program','cpu-cycles_mean','instructions_mean','cache-references_mean','cache-misses_mean'])
+        
+        dataframes = [(df_guima,"guima","natan",arch_guima,arch_natan),(df_natan,"natan","guima",arch_natan,arch_guima)]
         dataset = []
 
-        for df in dataframes:
+        for df,name_origin,name_destination,origin,destination in dataframes:
             for _, row in df.iterrows():
-                dataset.append({"instruction" : row_to_json(row, arch_guima, arch_natan)})
+                dataset.append({"instruction" : row_to_json(row, origin, destination), "program" : row["Program"], "origin": name_origin,"destination":name_destination})
+
+        random.shuffle(dataset)
 
     except Exception as e:
         print(f"Failed to generate the results. Erro: {e}")
         return
 
     try:
-        with open("../../data/dif/prompts_test.jsonl", "w", encoding="utf-8") as jsonl_file:
+        with open("../../data/prediction_test/prompts_test.jsonl", "w", encoding="utf-8") as jsonl_file:
             for entry in dataset:
                 jsonl_file.write(json.dumps(entry) + "\n")
         print("✅ JSONL files successfully created!")
