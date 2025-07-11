@@ -2,16 +2,19 @@ import os
 import sys
 import google.generativeai as genai 
 
-def configure_api():
-    """Start the GEMINI API"""
+
+"""Start the GEMINI API"""
+try:
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        print("Erro: The GEMINI_API_KEY not founded.")
-        print("Please, set up the API_KEY before the experiment.")
-        sys.exit(1) 
-    
+        raise ValueError("Environment variable GEMINI_API_KEY not found")
+
     genai.configure(api_key=api_key)
-    
+except Exception as e:
+    print(f"Error configuring Gemini client: {e}")
+    print("Please, set up the API_KEY before running the script.")
+    sys.exit(1)
+
 def geminiAsker(prompt: str, model_name: str = "gemini-1.5-flash") -> str:
     """Send a prompt to the generative model"""
     try:
