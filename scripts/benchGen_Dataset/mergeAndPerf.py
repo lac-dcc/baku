@@ -6,7 +6,7 @@ from scipy import stats
 import numpy as np
 
 
-OUTPUT_DIR = "code/benchgen/texts/"
+OUTPUT_DIR = "../../code/benchgen/texts/"
 
 perf_events = """
 cpu-cycles

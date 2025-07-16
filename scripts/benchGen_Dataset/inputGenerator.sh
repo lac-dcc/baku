@@ -1,7 +1,7 @@
 #!/bin/bash
-OUTPUT_DIR="code/benchgen/src/"
-BENCHGEN_PATH=".gen/benchGen"
-GRAMMARS_PATH="code/benchgen/grammars/"
+OUTPUT_DIR="../../code/benchgen/src/"
+BENCHGEN_PATH="./gen/benchGen"
+GRAMMARS_PATH="../../code/benchgen/grammars/"
 
 MIN_ITERATIONS=5
 MAX_ITERATIONS=10
@@ -26,7 +26,7 @@ generate_input() {
 }
 
 for run in $(seq ${MIN_ITERATIONS} ${MAX_ITERATIONS}); do
-    for dataset in $(seq 9 10); do
+    for dataset in $(seq 1 10); do
         generate_input "${run}" "${dataset}"
     done
 done
