@@ -2,7 +2,7 @@ import json
 import random
 import pandas as pd
 
-def row_to_json(series, origin, destiny):
+def row_to_json_stats(series, origin, destiny):
     """Formats a row of performance data into a string prompt."""
     cpu = series["cpu-cycles_mean"]
     instructions = series["instructions_mean"]
@@ -26,6 +26,33 @@ def row_to_json(series, origin, destiny):
     Give the perf vector for the new CPU, do not explain anything else.
     """
     return item
+
+def row_to_json_qualitative(series, origin, destiny):
+    """Formats a row of performance data into a string prompt."""
+    
+    cpu = series["cpu-cycles_mean"]
+    instructions = series["instructions_mean"]
+    cache_ref = series["cache-references_mean"]
+    cache_mis = series["cache-misses_mean"]
+    
+    item = f"""
+    Below I have a perf output for a given program. 
+
+    CPU Cycles,Instructions,Cache References,Cache Misses
+    {cpu},{instructions},{cache_ref},{cache_mis}
+
+    It was executed in the following machine architecture:
+
+    {origin}
+
+    Suppose I change to this CPU. 
+
+    {destiny}
+
+    How would change the observed values? Give me each response in words separeted by comma, do not explain anything else.
+    """
+    return item
+
 
 def main():
     """Main function to read data, generate prompts, and save to a file."""
@@ -56,22 +83,28 @@ def main():
         df_natan = pd.read_csv("../../data/prediction_test/perf_data_natan.csv").get(['Program','cpu-cycles_mean','instructions_mean','cache-references_mean','cache-misses_mean'])
         
         dataframes = [(df_guima,"guima","natan",arch_guima,arch_natan),(df_natan,"natan","guima",arch_natan,arch_guima)]
-        dataset = []
+        dataset_stats = []
+        dataset_qualitative = []
 
         for df,name_origin,name_destination,origin,destination in dataframes:
             for _, row in df.iterrows():
-                dataset.append({"instruction" : row_to_json(row, origin, destination), "program" : row["Program"], "origin": name_origin,"destination":name_destination})
-
-        random.shuffle(dataset)
+                dataset_stats.append({"instruction" : row_to_json_stats(row, origin, destination), "program" : row["Program"], "origin": name_origin,"destination":name_destination})
+                dataset_qualitative.append({"instruction": row_to_json_qualitative(row, origin, destination), "program" : row["Program"], "origin":name_origin, "destination":name_destination})
+        random.shuffle(dataset_stats)
 
     except Exception as e:
         print(f"Failed to generate the results. Erro: {e}")
         return
 
     try:
-        with open("../../data/prediction_test/prompts_test.jsonl", "w", encoding="utf-8") as jsonl_file:
-            for entry in dataset:
+        with open("../../data/prediction_test/prompts_stats_test.jsonl", "w", encoding="utf-8") as jsonl_file:
+            for entry in dataset_stats:
                 jsonl_file.write(json.dumps(entry) + "\n")
+                
+        with open("../../data/prediction_test/prompts_qualitative_test.jsonl", "w", encoding="utf-8") as jsonl_file:
+            for entry in dataset_qualitative:
+                jsonl_file.write(json.dumps(entry) + "\n")
+                
         print("✅ JSONL files successfully created!")
     except Exception as e:
         print(f"Failed to save the results. Erro:{e}")       
