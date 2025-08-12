@@ -1,35 +1,37 @@
 import json
 import random
 import pandas as pd
-import random
+import numpy as np
 
-def row_to_json_stats(df_origin,df_destiny,program, origin, destiny, counter):
+def question_maker(df_origin,df_destiny,program, origin, destiny, counter):
     """Formats a row of performance data into a string prompt."""
     values = []
     
     series_origin = df_origin[df_origin["Program"] == program]
     series_destiny = df_destiny[df_destiny["Program"] == program]
     
-    df_destiny = df_destiny[df_destiny["Program"] != program].sample(n=4)
-
-    counter_string = counter+"_mean"
+    counter_mean = counter+"_mean"
     counter_ic_low = counter+"_ic_low"
     counter_ic_high = counter+"_ic_high"
     
-    value_origin = series_origin[counter_string]
+    value_origin = series_origin[counter_mean].iloc[0]
+     
+    ic_low_destiny = series_destiny[counter_ic_low].iloc[0]
+    ic_high_destiny = series_destiny[counter_ic_high].iloc[0]
     
-    values.append(ic_low_destiny,ic_high_destiny)   
-    
-    ic_low_destiny = series_destiny[counter_ic_low]
-    ic_high_destiny = series_destiny[counter_ic_high]
-    
-    for row in df_destiny.iterrows():
-        values.append(row[counter_ic_low],row[counter_ic_high])
-    
+    while len(values) <= 9:
+        sample = df_destiny[df_destiny["Program"] != program].sample(n=4)
+        for _,row in sample.iterrows():
+            if not ic_low_destiny <= row[counter_mean] <= ic_high_destiny:
+                values.append(row[counter_ic_low])
+                values.append(row[counter_ic_high])
+
+    values.append(ic_low_destiny)
+    values.append(ic_high_destiny)   
     
     random.shuffle(values)
     
-    item = f"""
+    text = f"""
     Below I have a perf output for a given program. 
 
     {counter}
@@ -45,14 +47,21 @@ def row_to_json_stats(df_origin,df_destiny,program, origin, destiny, counter):
 
     What is the predicted value for the {counter} counter on the destiny machine?
     
-    A){values[0][0]} to {values[0][1]} 
-    B){values[1][0]} to {values[1][1]}
-    C){values[2][0]} to {values[2][1]}
-    D){values[3][0]} to {values[3][1]}
-    E){values[4][0]} to {values[4][1]}
     """
     
-    return item
+    itens = f"""
+    A){values[0]} to {values[1]} 
+    B){values[2]} to {values[3]}
+    C){values[4]} to {values[5]}
+    D){values[6]} to {values[7]}
+    E){values[8]} to {values[9]}
+    """
+    
+    answer = f"""
+    The value are in the interval of {ic_low_destiny} to {ic_high_destiny}, considering a confidence interval around the observed mean.
+    """
+    
+    return text,itens,answer
 
 def row_to_json_qualitative(series, origin, destiny):
     """Formats a row of performance data into a string prompt."""
@@ -106,16 +115,19 @@ def main():
         cache size      : 8192 KB
         """ 
         
-        df_guima = pd.read_csv("../../data/prediction_test/perf_data_guima.csv").get(['Program','cpu-cycles_mean','instructions_mean','cache-references_mean','cache-misses_mean'])
-        df_natan = pd.read_csv("../../data/prediction_test/perf_data_natan.csv").get(['Program','cpu-cycles_mean','instructions_mean','cache-references_mean','cache-misses_mean'])
+        df_guima = pd.read_csv("../../data/prediction_test/perf_data_guima.csv")
+        df_natan = pd.read_csv("../../data/prediction_test/perf_data_natan.csv")
         
         dataframes = [(df_guima,df_natan,"guima","natan",arch_guima,arch_natan),(df_natan,df_guima,"natan","guima",arch_natan,arch_guima)]
+        counters = ["cpu-cycles","instructions","cache-references","cache-misses"]
+        
         dataset = []
 
         for df_origin,df_destiny,name_origin,name_destination,origin,destination in dataframes:
             for _, row in df_origin.iterrows():
-                dataset.append({"instruction" : row_to_json_stats(df_origin,df_destiny,row["Program"], origin, destination), "program" : row["Program"], "origin": name_origin,"destination":name_destination})
-                #dataset.append({"instruction": row_to_json_qualitative(row, origin, destination), "program" : row["Program"], "origin":name_origin, "destination":name_destination})
+                for counter in counters:
+                    text,itens,answer = question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
+                    dataset.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":name_destination})
         random.shuffle(dataset)
 
     except Exception as e:
