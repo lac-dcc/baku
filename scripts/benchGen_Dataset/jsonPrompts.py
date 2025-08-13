@@ -3,7 +3,7 @@ import random
 import pandas as pd
 import numpy as np
 
-def question_maker(df_origin,df_destiny,program, origin, destiny, counter):
+def interval_question_maker(df_origin,df_destiny,program, origin, destiny, counter):
     """Formats a row of performance data into a string prompt."""
     values = []
     
@@ -57,25 +57,55 @@ def question_maker(df_origin,df_destiny,program, origin, destiny, counter):
     E){values[8]} to {values[9]}
     """
     
-    answer = f"""
+    correct_answer = f"""
     The value are in the interval of {ic_low_destiny} to {ic_high_destiny}, considering a confidence interval around the observed mean.
     """
     
-    return text,itens,answer
+    return text,itens,correct_answer
 
-def row_to_json_qualitative(series, origin, destiny):
+def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, counter):
     """Formats a row of performance data into a string prompt."""
     
-    cpu = series["cpu-cycles_mean"]
-    instructions = series["instructions_mean"]
-    cache_ref = series["cache-references_mean"]
-    cache_mis = series["cache-misses_mean"]
+    series_origin = df_origin[df_origin["Program"] == program]
+    series_destiny = df_destiny[df_destiny["Program"] == program]
     
-    item = f"""
+    counter_mean = counter+"_mean"
+    counter_ic_low = counter+"_ic_low"
+    counter_ic_high = counter+"_ic_high"
+    
+    value_origin = series_origin[counter_mean].iloc[0]
+     
+    ic_low_destiny = series_destiny[counter_ic_low].iloc[0]
+    ic_high_destiny = series_destiny[counter_ic_high].iloc[0]
+    mean_destiny = series_destiny[counter_mean].iloc[0]
+    
+    correct_answer = ""
+    
+    answers = ["It won't change.","It would slight increase.","It won't change.","It is higher.","It is lower."]
+    
+    if ic_low_destiny <= value_origin <= ic_high_destiny and value_origin > mean_destiny:
+        correct_answer = answers[1]
+
+    elif ic_low_destiny <= value_origin <= ic_high_destiny and value_origin < mean_destiny:
+        correct_answer = answers[2]
+        
+    elif ic_low_destiny <= value_origin <= ic_high_destiny:
+        correct_answer = answers[0]
+        
+    elif value_origin > mean_destiny:
+        correct_answer = answers[3]
+    
+    elif value_origin < mean_destiny:
+        correct_answer = answers[4]
+     
+     
+    random.shuffle(answers)
+     
+    text = f"""
     Below I have a perf output for a given program. 
 
-    CPU Cycles,Instructions,Cache References,Cache Misses
-    {cpu},{instructions},{cache_ref},{cache_mis}
+    {counter}
+    {value_origin}
 
     It was executed in the following machine architecture:
 
@@ -85,9 +115,19 @@ def row_to_json_qualitative(series, origin, destiny):
 
     {destiny}
 
-    How would change the observed values? Give me each response in words separeted by comma, do not explain anything else.
+    How would change the observed values?
     """
-    return item
+    
+    itens = f"""
+    A){answers[0]} 
+    B){answers[1]}
+    C){answers[2]}
+    D){answers[3]}
+    E){answers[4]}
+    """
+    
+    
+    return text, itens, correct_answer
 
 
 def main():
@@ -123,11 +163,18 @@ def main():
         
         dataset = []
 
+        i = 1
         for df_origin,df_destiny,name_origin,name_destination,origin,destination in dataframes:
+            print(f"Creating dataset. Part {i} of {len(dataframes)}...⏰")
             for _, row in df_origin.iterrows():
                 for counter in counters:
-                    text,itens,answer = question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
+                    text,itens,answer = interval_question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
                     dataset.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":name_destination})
+                    
+                    text,itens,answer = qualitative_question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
+                    dataset.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":name_destination})
+            i += 1
+        
         random.shuffle(dataset)
 
     except Exception as e:
