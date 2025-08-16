@@ -44,7 +44,7 @@ def runPerf(executable_path: str) -> dict:
     collected_data = parse_perf_output(perf_output_lines, perf_events)
     return collected_data
 
-def analysePerf(executable_path: str, csv_path:str='perf_data.csv', runs:int=30, confidence:float=0.95):
+def analysePerf(executable_path: str, csv_path:str='perf_data.csv', runs:int=15, confidence:float=0.95):
 
     all_runs_data_raw = {event: [] for event in perf_events.strip().split('\n')}
     program_name = os.path.basename(executable_path)
