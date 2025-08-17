@@ -3,33 +3,39 @@ import random
 import pandas as pd
 import numpy as np
 
-def interval_question_maker(df_origin,df_destiny,program, origin, destiny, counter):
-    """Formats a row of performance data into a string prompt."""
-    values = []
+def interval_question_maker(df_origin, df_destiny, program, origin, destiny, counter):
+    intervals = []
     
     series_origin = df_origin[df_origin["Program"] == program]
     series_destiny = df_destiny[df_destiny["Program"] == program]
     
-    counter_mean = counter+"_mean"
-    counter_ic_low = counter+"_ic_low"
-    counter_ic_high = counter+"_ic_high"
+    counter_mean = counter + "_mean"
+    counter_ic_low = counter + "_ic_low"
+    counter_ic_high = counter + "_ic_high"
     
     value_origin = series_origin[counter_mean].iloc[0]
      
     ic_low_destiny = series_destiny[counter_ic_low].iloc[0]
     ic_high_destiny = series_destiny[counter_ic_high].iloc[0]
     
-    while len(values) <= 9:
-        sample = df_destiny[df_destiny["Program"] != program].sample(n=4)
-        for _,row in sample.iterrows():
-            if not ic_low_destiny <= row[counter_mean] <= ic_high_destiny:
-                values.append(row[counter_ic_low])
-                values.append(row[counter_ic_high])
-
-    values.append(ic_low_destiny)
-    values.append(ic_high_destiny)   
+    wrong_answers_candidates = df_destiny[
+        (df_destiny["Program"] != program) &
+        ((df_destiny[counter_mean] < ic_low_destiny) | (df_destiny[counter_mean] > ic_high_destiny))
+    ]
     
-    random.shuffle(values)
+    num_samples = min(4, len(wrong_answers_candidates))
+    
+    if num_samples < 4:
+        return None, None, None
+
+    wrong_samples = wrong_answers_candidates.sample(n=num_samples)
+    
+    for _, row in wrong_samples.iterrows():
+        intervals.append((row[counter_ic_low], row[counter_ic_high]))
+
+    intervals.append((ic_low_destiny, ic_high_destiny))   
+    
+    random.shuffle(intervals)
     
     text = f"""
     Below I have a perf output for a given program. 
@@ -46,26 +52,84 @@ def interval_question_maker(df_origin,df_destiny,program, origin, destiny, count
     {destiny}
 
     What is the predicted value for the {counter} counter on the destiny machine?
-    
     """
     
     itens = f"""
-    A){values[0]} to {values[1]} 
-    B){values[2]} to {values[3]}
-    C){values[4]} to {values[5]}
-    D){values[6]} to {values[7]}
-    E){values[8]} to {values[9]}
+    A){intervals[0][0]} to {intervals[0][1]} 
+    B){intervals[1][0]} to {intervals[1][1]}
+    C){intervals[2][0]} to {intervals[2][1]}
+    D){intervals[3][0]} to {intervals[3][1]}
+    E){intervals[4][0]} to {intervals[4][1]}
     """
     
     correct_answer = f"""
     The value are in the interval of {ic_low_destiny} to {ic_high_destiny}, considering a confidence interval around the observed mean.
     """
     
-    return text,itens,correct_answer
+    return text, itens, correct_answer
+
+
+def program_question_maker(df_origin, program, origin, counter):
+    intervals = []
+    
+    series_origin = df_origin[df_origin["Program"] == program]
+    
+    counter_mean = counter + "_mean"
+    counter_ic_low = counter + "_ic_low"
+    counter_ic_high = counter + "_ic_high"
+    
+    ic_low = series_origin[counter_ic_low].iloc[0]
+    ic_high = series_origin[counter_ic_high].iloc[0]
+    
+    wrong_answers_candidates = df_origin[
+        (df_origin["Program"] != program) &
+        ((df_origin[counter_mean] < ic_low) | (df_origin[counter_mean] > ic_high))
+    ]
+    
+    num_samples = min(4, len(wrong_answers_candidates))
+
+    if num_samples < 4:
+        return None, None, None
+
+    wrong_samples = wrong_answers_candidates.sample(n=num_samples)
+    
+    for _, row in wrong_samples.iterrows():
+        intervals.append((row[counter_ic_low], row[counter_ic_high]))
+
+    intervals.append((ic_low, ic_high))
+    
+    random.shuffle(intervals)
+    
+    with open(f"../../code/benchgen/texts/{program}.txt") as f:
+        program_code = f.read()
+    
+    text = f"""
+    Below I have a given program. 
+
+    {program_code}
+
+    It was executed in the following machine architecture:
+
+    {origin}
+
+    What is the predicted value for the {counter} counter on the destiny machine?
+    """
+    
+    itens = f"""
+    A){intervals[0][0]} to {intervals[0][1]} 
+    B){intervals[1][0]} to {intervals[1][1]}
+    C){intervals[2][0]} to {intervals[2][1]}
+    D){intervals[3][0]} to {intervals[3][1]}
+    E){intervals[4][0]} to {intervals[4][1]}
+    """
+    
+    correct_answer = f"""
+    The value are in the interval of {ic_low} to {ic_high}, considering a confidence interval around the observed mean.
+    """
+    
+    return text, itens, correct_answer
 
 def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, counter):
-    """Formats a row of performance data into a string prompt."""
-    
     series_origin = df_origin[df_origin["Program"] == program]
     series_destiny = df_destiny[df_destiny["Program"] == program]
     
@@ -81,16 +145,16 @@ def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, co
     
     correct_answer = ""
     
-    answers = ["It won't change.","It would slight increase.","It won't change.","It is higher.","It is lower."]
+    answers = ["It won't change.","It would slight increase.","It slight decrease.","It is higher.","It is lower."]
     
-    if ic_low_destiny <= value_origin <= ic_high_destiny and value_origin > mean_destiny:
+    if ic_low_destiny <= value_origin <= ic_high_destiny:
+        correct_answer = answers[0]
+    
+    elif value_origin > ic_high_destiny and abs(value_origin - mean_destiny) < 1000:
         correct_answer = answers[1]
 
-    elif ic_low_destiny <= value_origin <= ic_high_destiny and value_origin < mean_destiny:
+    elif value_origin < ic_low_destiny and abs(value_origin - mean_destiny) < 1000:
         correct_answer = answers[2]
-        
-    elif ic_low_destiny <= value_origin <= ic_high_destiny:
-        correct_answer = answers[0]
         
     elif value_origin > mean_destiny:
         correct_answer = answers[3]
@@ -98,7 +162,9 @@ def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, co
     elif value_origin < mean_destiny:
         correct_answer = answers[4]
      
-     
+    if not correct_answer:
+        return None, None, None
+
     random.shuffle(answers)
      
     text = f"""
@@ -126,12 +192,10 @@ def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, co
     E){answers[4]}
     """
     
-    
     return text, itens, correct_answer
 
 
 def main():
-    """Main function to read data, generate prompts, and save to a file."""
     try:
         arch_natan = """
         vendor_id   : GenuineIntel
@@ -155,7 +219,7 @@ def main():
         cache size      : 8192 KB
         """ 
         
-        df_guima = pd.read_csv("../../data/prediction_test/perf_data_guima.csv")
+        df_guima = pd.read_csv("../../data/prediction_test/perf_data_server_guima.csv")
         df_natan = pd.read_csv("../../data/prediction_test/perf_data_natan.csv")
         
         dataframes = [(df_guima,df_natan,"guima","natan",arch_guima,arch_natan),(df_natan,df_guima,"natan","guima",arch_natan,arch_guima)]
@@ -168,11 +232,18 @@ def main():
             print(f"Creating dataset. Part {i} of {len(dataframes)}...⏰")
             for _, row in df_origin.iterrows():
                 for counter in counters:
+                    
                     text,itens,answer = interval_question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
-                    dataset.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":name_destination})
+                    if text:
+                        dataset.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":name_destination,"type":"interval","counter":counter},)
+
+                    text,itens,answer = program_question_maker(df_origin,row["Program"], origin, counter) 
+                    if text:
+                        dataset.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":"","type":"program","counter":counter})
                     
                     text,itens,answer = qualitative_question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
-                    dataset.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":name_destination})
+                    if text:
+                        dataset.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":name_destination,"type":"random_qualitative","counter":counter})
             i += 1
         
         random.shuffle(dataset)
@@ -189,7 +260,7 @@ def main():
         print("✅ JSONL files successfully created!")
     except Exception as e:
         print(f"Failed to save the results. Erro:{e}")       
-            
+        
 if __name__ == "__main__":
     print("🚀 Starting prompt generation process...")
     main()
