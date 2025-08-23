@@ -145,22 +145,16 @@ def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, co
     
     correct_answer = ""
     
-    answers = ["It won't change.","It would slight increase.","It slight decrease.","It is higher.","It is lower."]
+    answers = ["It won't change.","It is higher.","It is lower."]
     
     if ic_low_destiny <= value_origin <= ic_high_destiny:
         correct_answer = answers[0]
-    
-    elif value_origin > ic_high_destiny and abs(value_origin - mean_destiny) < 1000:
-        correct_answer = answers[1]
-
-    elif value_origin < ic_low_destiny and abs(value_origin - mean_destiny) < 1000:
-        correct_answer = answers[2]
         
     elif value_origin > mean_destiny:
-        correct_answer = answers[3]
+        correct_answer = answers[1]
     
     elif value_origin < mean_destiny:
-        correct_answer = answers[4]
+        correct_answer = answers[2]
      
     if not correct_answer:
         return None, None, None
@@ -188,8 +182,6 @@ def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, co
     A){answers[0]} 
     B){answers[1]}
     C){answers[2]}
-    D){answers[3]}
-    E){answers[4]}
     """
     
     return text, itens, correct_answer
@@ -220,7 +212,7 @@ def main():
         """ 
         
         df_guima = pd.read_csv("../../data/prediction_test/perf_data_server_guima.csv")
-        df_natan = pd.read_csv("../../data/prediction_test/perf_data_natan.csv")
+        df_natan = pd.read_csv("../../data/prediction_test/perf_data_server_natan.csv")
         
         dataframes = [(df_guima,df_natan,"guima","natan",arch_guima,arch_natan),(df_natan,df_guima,"natan","guima",arch_natan,arch_guima)]
         counters = ["cpu-cycles","instructions","cache-references","cache-misses"]
