@@ -8,13 +8,16 @@ def interval_question_maker(df_origin, df_destiny, program, origin, destiny, cou
     
     series_origin = df_origin[df_origin["Program"] == program]
     series_destiny = df_destiny[df_destiny["Program"] == program]
+
+    if series_origin.empty or series_destiny.empty:
+        return None, None, None
     
     counter_mean = counter + "_mean"
     counter_ic_low = counter + "_ic_low"
     counter_ic_high = counter + "_ic_high"
     
     value_origin = series_origin[counter_mean].iloc[0]
-     
+        
     ic_low_destiny = series_destiny[counter_ic_low].iloc[0]
     ic_high_destiny = series_destiny[counter_ic_high].iloc[0]
     
@@ -33,7 +36,7 @@ def interval_question_maker(df_origin, df_destiny, program, origin, destiny, cou
     for _, row in wrong_samples.iterrows():
         intervals.append((row[counter_ic_low], row[counter_ic_high]))
 
-    intervals.append((ic_low_destiny, ic_high_destiny))   
+    intervals.append((ic_low_destiny, ic_high_destiny))      
     
     random.shuffle(intervals)
     
@@ -74,6 +77,9 @@ def program_question_maker(df_origin, program, origin, counter):
     
     series_origin = df_origin[df_origin["Program"] == program]
     
+    if series_origin.empty:
+        return None, None, None
+
     counter_mean = counter + "_mean"
     counter_ic_low = counter + "_ic_low"
     counter_ic_high = counter + "_ic_high"
@@ -100,9 +106,8 @@ def program_question_maker(df_origin, program, origin, counter):
     
     random.shuffle(intervals)
     
-    with open(f"../../code/benchgen/texts/{program}.txt") as f:
-        program_code = f.read()
-    
+    program_code = "Code for the program is not available."
+
     text = f"""
     Below I have a given program. 
 
@@ -133,12 +138,15 @@ def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, co
     series_origin = df_origin[df_origin["Program"] == program]
     series_destiny = df_destiny[df_destiny["Program"] == program]
     
+    if series_origin.empty or series_destiny.empty:
+        return None, None, None
+
     counter_mean = counter+"_mean"
     counter_ic_low = counter+"_ic_low"
     counter_ic_high = counter+"_ic_high"
     
     value_origin = series_origin[counter_mean].iloc[0]
-     
+        
     ic_low_destiny = series_destiny[counter_ic_low].iloc[0]
     ic_high_destiny = series_destiny[counter_ic_high].iloc[0]
     mean_destiny = series_destiny[counter_mean].iloc[0]
@@ -155,12 +163,12 @@ def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, co
     
     elif value_origin < mean_destiny:
         correct_answer = answers[2]
-     
+        
     if not correct_answer:
         return None, None, None
 
     random.shuffle(answers)
-     
+        
     text = f"""
     Below I have a perf output for a given program. 
 
@@ -245,7 +253,7 @@ def main():
         return
 
     try:
-        with open("../../data/prediction_test/test.jsonl", "w", encoding="utf-8") as jsonl_file:
+        with open("test.jsonl", "w", encoding="utf-8") as jsonl_file:
             for entry in dataset:
                 jsonl_file.write(json.dumps(entry) + "\n")
                 
