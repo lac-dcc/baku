@@ -200,23 +200,23 @@ def main():
         arch_natan = """
         vendor_id   : GenuineIntel
         cpu family  : 6
-        model       : 142
-        model name  : Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
-        stepping    : 10
-        microcode   : 0xf6
-        cpu MHz     : 3192.135
-        cache size  : 6144 KB
+        model       : 62
+        model name  : Intel(R) Xeon(R) E5-2680 v2 @ 2.80GHz
+        stepping    : 4
+        microcode   : 0x42e
+        cpu MHz     : 1200.000
+        cache size  : 25600 KB
         """
         
         arch_guima = """
-        vendor_id       : GenuineIntel
-        cpu family      : 6
-        model           : 142
-        model name      : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
-        stepping        : 11
-        microcode       : 0xffffffff
-        cpu MHz         : 1992.006
-        cache size      : 8192 KB
+        vendor_id       : AuthenticAMD
+        cpu family      : 23
+        model           : 113
+        model name      : AMD Ryzen 7 3700X 8-Core Processor
+        stepping        : 0
+        microcode       : 0x8701021
+        cpu MHz         : 2195.860
+        cache size      : 512 KB
         """ 
         
         df_guima = pd.read_csv("../../data/prediction_test/perf_data_server_guima.csv")
