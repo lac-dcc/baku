@@ -224,3 +224,6 @@ pytest_cache/
 
 # BenchGen source
 .gen
+
+# Source codes
+code/benchgen/src/*

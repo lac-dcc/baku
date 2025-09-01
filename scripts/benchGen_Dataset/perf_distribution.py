@@ -1,3 +1,4 @@
+# This script executes a given program multiple times using `perf stat` to collect performance metrics and saves the results to a CSV file.
 import subprocess
 import os
 import argparse
@@ -7,6 +8,7 @@ cpu-cycles
 instructions
 cache-references
 cache-misses
+duration_time
 """
 
 
@@ -54,7 +56,7 @@ def executeMultipleRuns(executable_path: str, runs: int = 100) -> list[dict]:
 
 def saveToCSV(data: list[dict], csv_path: str, program_name: str):
     with open(csv_path, "w") as f:
-        f.write("program," + ",run," + ",".join(data[0].keys()) + "\n")
+        f.write("program," + "run," + ",".join(data[0].keys()) + "\n")
         i = 1
         for run in data:
             f.write(program_name + f",{i}," + ",".join(run.values()) + "\n")
