@@ -41,7 +41,7 @@ def program_question_maker(df_origin, program, origin, counter):
     
     program_code = "Code for the program is not available."
     
-    with open(f"../../code/benchgen/texts/{program}.txt") as f:
+    with open(f"code/benchgen/texts/{program}.txt") as f:
         program_code = f.read()
 
     text = f"""
@@ -145,8 +145,8 @@ def main():
         cache size      : 512 KB
         """ 
         
-        df_B = pd.read_csv("../../data/prediction_test/perf_data_server_B.csv")
-        df_A = pd.read_csv("../../data/prediction_test/perf_data_server_A.csv")
+        df_B = pd.read_csv("perf_data.csv")
+        df_A = pd.read_csv("perf_data.csv")
         
         dataframes = [(df_B,df_A,"B","A",arch_B,arch_A),(df_A,df_B,"A","B",arch_A,arch_B)]
         counters = ["cpu-cycles","instructions","cache-references","cache-misses"]

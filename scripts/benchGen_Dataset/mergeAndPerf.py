@@ -6,7 +6,7 @@ from scipy import stats
 import numpy as np
 
 
-OUTPUT_DIR = "../../code/benchgen/texts/"
+OUTPUT_DIR = "code/benchgen/texts/"
 
 perf_events = """
 cpu-cycles
@@ -17,18 +17,14 @@ cache-misses
 
 
 def parse_perf_output(output_lines: list, expected_events: list) -> dict:
-    # Analisa as linhas de saída do perf stat (formato -x,) e extrai os valores dos eventos.
     parsed_values = {}
     for line in output_lines:
         parts = line.split(",")
         if len(parts) >= 3:
-            # CORREÇÃO: Remove o sufixo (:u, :k, etc.) do nome do evento
             event_name_from_perf = parts[2].strip().split(":")[0]
 
-            # O valor do contador é o primeiro campo, remove vírgulas de milhares
             counter_value = parts[0].strip().replace(",", "")
 
-            # Confere se o evento está na lista dos que estamos esperando
             if event_name_from_perf in expected_events:
                 parsed_values[event_name_from_perf] = counter_value
     return parsed_values
@@ -47,19 +43,17 @@ def runPerf(executable_path: str) -> dict:
 def analysePerf(
     executable_path: str,
     csv_path: str = "perf_data.csv",
-    runs: int = 15,
+    runs: int = 100,
     confidence: float = 0.95,
 ):
 
     all_runs_data_raw = {event: [] for event in perf_events.strip().split("\n")}
     program_name = os.path.basename(executable_path)
 
-    # warmup:
     warmup_runs = max(2, int(runs * 0.1))
     for _ in range(warmup_runs):
         runPerf(executable_path)
 
-    # real measure:
     successful_runs_count = 0
     for i in range(runs):
         results = runPerf(executable_path)
@@ -67,8 +61,6 @@ def analysePerf(
             successful_runs_count += 1
             for event, value_str in results.items():
                 try:
-                    # Converte o valor para float para cálculos numéricos.
-                    # Assegura que o evento está na nossa lista esperada
                     if event in all_runs_data_raw:
                         all_runs_data_raw[event].append(float(value_str))
                     else:
@@ -87,12 +79,10 @@ def analysePerf(
         f"\n  {successful_runs_count} de {runs} medições concluídas com sucesso para '{program_name}'."
     )
 
-    # 3. Calcular as estatísticas consolidadas
     consolidated_stats = {"Program": program_name}
 
     for event, data_points in all_runs_data_raw.items():
         if not data_points:
-            # Se não houver dados para o evento, preenche com 'N/A'
             print(
                 f"Aviso: Nenhum dado válido coletado para o evento '{event}' em '{program_name}'."
             )
@@ -133,18 +123,15 @@ def analysePerf(
             consolidated_stats[f"{event}_ic_low"] = "N/A"
             consolidated_stats[f"{event}_ic_high"] = "N/A"
 
-    # 4. Escrever no CSV Final
-    # Determina se o cabeçalho precisa ser escrito
     write_header = not os.path.exists(csv_path) or os.stat(csv_path).st_size == 0
 
-    # Construir o cabeçalho dinamicamente com base nos eventos e suas estatísticas
     header = ["Program"]
     for event in perf_events.strip().split("\n"):
         header.extend(
             [f"{event}_mean", f"{event}_std_dev", f"{event}_ic_low", f"{event}_ic_high"]
         )
 
-    with open(csv_path, "a", newline="") as f:  # Abre em modo 'append'
+    with open(csv_path, "a", newline="") as f:  
         csv_writer = csv.DictWriter(f, fieldnames=header)
         if write_header:
             csv_writer.writeheader()
@@ -161,7 +148,6 @@ def mergeAndPerf(programs: list, csvpath: str = "perf_data.csv"):
         executable_path = os.path.join(program_path, executable)
         analysePerf(executable_path)
 
-        # Merge all source files into a single file
         output_name = program_path.split("/")[-1]
         output_path = f"{OUTPUT_DIR}{output_name}.txt"
         with open(output_path, "w", encoding="utf-8") as outfile:
