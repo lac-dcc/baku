@@ -2,6 +2,7 @@ import json
 import random
 import pandas as pd
 import numpy as np
+import os
 
 def transfer_question_maker(df_origin, df_destiny, program, origin, destiny, counter):
     
@@ -37,7 +38,7 @@ def transfer_question_maker(df_origin, df_destiny, program, origin, destiny, cou
     return text
 
 
-def program_question_maker(df_origin, program, origin, counter):
+def program_question_maker(program, origin):
     
     program_code = "Code for the program is not available."
     
@@ -53,8 +54,8 @@ def program_question_maker(df_origin, program, origin, counter):
 
     {origin}
 
-    What could be the predicted value for the {counter} counter on the destiny machine? 
-    Give me only single number that fit the perf program distribution.
+    What could be the predicted value for the perf vector on the destiny machine? 
+    Exactly in this order: cpu-cycles, instructions, cache-references, cache-misses.   
     """
 
     
@@ -145,35 +146,39 @@ def main():
         cache size      : 512 KB
         """ 
         
-        df_B = pd.read_csv("perf_data.csv")
-        df_A = pd.read_csv("perf_data.csv")
-        
-        dataframes = [(df_B,df_A,"B","A",arch_B,arch_A),(df_A,df_B,"A","B",arch_A,arch_B)]
-        counters = ["cpu-cycles","instructions","cache-references","cache-misses"]
-        
+        archs = [[arch_A,"opencl"],[arch_B,"gogh"]]
         dataset_qualitatives = []
         dataset_programs = []
         dataset_transfer = []
-
-        i = 1
-        for df_origin,df_destiny,name_origin,name_destination,origin,destination in dataframes:
-            print(f"Creating dataset. Part {i} of {len(dataframes)}...⏰")
-            for _, row in df_origin.iterrows():
-                for counter in counters:
-                    
-                    text = transfer_question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
-                    if text:
-                        dataset_transfer.append({"instruction" :text, "program" : row["Program"], "origin": name_origin,"destination":name_destination,"type":"interval","counter":counter},)
-
-                    text = program_question_maker(df_origin,row["Program"], origin, counter) 
-                    if text:
-                        dataset_programs.append({"instruction" :text, "program" : row["Program"], "origin": name_origin,"destination":"","type":"program","counter":counter})
-                    
-                    text,itens,answer = qualitative_question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
-                    if text:
-                        dataset_qualitatives.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":name_destination,"type":"random_qualitative","counter":counter})
-            i += 1
         
+        text_dir = "code/benchgen/texts"
+        
+        programs = []
+        with os.scandir(text_dir) as entries:
+            for entry in entries:
+                programs.append(entry.name.split('.')[0])
+        
+        
+        for program in programs:
+            for arch,name_arch in archs:
+                text = program_question_maker(program, arch) 
+                if text:
+                    dataset_programs.append({"instruction" :text, "program" : program, "origin": name_arch,"destination":"","type":"program"})
+
+        # for df_origin,df_destiny,name_origin,name_destination,origin,destination,n in dataframes:
+        #     print(f"Creating dataset. Part {n} of {len(dataframes) }...⏰")
+        #     for _, row in df_origin.iterrows():
+
+                # for counter in counters:
+                    
+                    # text = transfer_question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
+                    # if text:
+                    #     dataset_transfer.append({"instruction" :text, "program" : row["Program"], "origin": name_origin,"destination":name_destination,"type":"interval","counter":counter},)
+                    
+                    # text,itens,answer = qualitative_question_maker(df_origin,df_destiny,row["Program"], origin, destination, counter) 
+                    # if text:
+                    #     dataset_qualitatives.append({"instruction" :text,"itens":itens, "answer":answer, "program" : row["Program"], "origin": name_origin,"destination":name_destination,"type":"random_qualitative","counter":counter})
+
         random.shuffle(dataset_programs)
         random.shuffle(dataset_qualitatives)
         random.shuffle(dataset_transfer)
