@@ -2,40 +2,41 @@ import json
 import random
 import pandas as pd
 import numpy as np
+from scipy import stats
 import os
 
-def transfer_question_maker(df_origin, df_destiny, program, origin, destiny, counter):
+# def transfer_question_maker(df_origin, df_destiny, program, origin, destiny, counter):
     
-    series_origin = df_origin[df_origin["Program"] == program]
-    series_destiny = df_destiny[df_destiny["Program"] == program]
+#     series_origin = df_origin[df_origin["Program"] == program]
+#     series_destiny = df_destiny[df_destiny["Program"] == program]
 
-    if series_origin.empty or series_destiny.empty:
-        return None, None, None
+#     if series_origin.empty or series_destiny.empty:
+#         return None, None, None
     
-    counter_mean = counter + "_mean"
+#     counter_mean = counter + "_mean"
     
-    value_origin = series_origin[counter_mean].iloc[0]
+#     value_origin = series_origin[counter_mean].iloc[0]
     
 
     
-    text = f"""
-    Below I have a perf output for a given program. 
+#     text = f"""
+#     Below I have a perf output for a given program. 
 
-    {counter}
-    {value_origin}
+#     {counter}
+#     {value_origin}
 
-    It was executed in the following machine architecture:
+#     It was executed in the following machine architecture:
 
-    {origin}
+#     {origin}
 
-    Suppose I change to this CPU. 
+#     Suppose I change to this CPU. 
 
-    {destiny}
+#     {destiny}
 
-    What is the predicted value for the {counter} counter on the destiny machine?
-    """
+#     What is the predicted value for the {counter} counter on the destiny machine?
+#     """
         
-    return text
+#     return text
 
 
 def program_question_maker(program, origin):
@@ -61,34 +62,37 @@ def program_question_maker(program, origin):
     
     return text
 
-def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, counter):
-    series_origin = df_origin[df_origin["Program"] == program]
-    series_destiny = df_destiny[df_destiny["Program"] == program]
+def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny,counter):
+    series_origin = df_origin[df_origin["program"] == program][counter]
+    series_destiny = df_destiny[df_destiny["program"] == program][counter]
     
     if series_origin.empty or series_destiny.empty:
         return None, None, None
+    
+    confidence = 0.95
+    
+    mean_origin = np.mean(series_origin)
+    mean_destiny = np.mean(series_destiny)
+    
 
-    counter_mean = counter+"_mean"
-    counter_ic_low = counter+"_ic_low"
-    counter_ic_high = counter+"_ic_high"
-    
-    value_origin = series_origin[counter_mean].iloc[0]
+    confidence_interval_destiny = stats.t.interval(
+    confidence,
+    len(series_destiny) - 1,  
+    loc=mean_destiny,
+    scale=stats.sem(series_destiny),  
+    )
         
-    ic_low_destiny = series_destiny[counter_ic_low].iloc[0]
-    ic_high_destiny = series_destiny[counter_ic_high].iloc[0]
-    mean_destiny = series_destiny[counter_mean].iloc[0]
-    
     correct_answer = ""
     
     answers = ["It won't change.","It is higher.","It is lower."]
     
-    if ic_low_destiny <= value_origin <= ic_high_destiny:
+    if confidence_interval_destiny[0] <= mean_origin <= confidence_interval_destiny[1]:
         correct_answer = answers[0]
         
-    elif value_origin > mean_destiny:
+    elif mean_origin > confidence_interval_destiny[1]:
         correct_answer = answers[1]
     
-    elif value_origin < mean_destiny:
+    elif mean_origin < confidence_interval_destiny[0]:
         correct_answer = answers[2]
         
     if not correct_answer:
@@ -100,7 +104,7 @@ def qualitative_question_maker(df_origin,df_destiny,program, origin, destiny, co
     Below I have a perf output for a given program. 
 
     {counter}
-    {value_origin}
+    {mean_origin}
 
     It was executed in the following machine architecture:
 
@@ -146,10 +150,13 @@ def main():
         cache size      : 512 KB
         """ 
         
-        archs = [[arch_A,"opencl"],[arch_B,"gogh"]]
+        df_opencl = pd.read_csv("../../data/prediction_test/bg_distributions/opencl_mean_dists.csv")
+        df_gogh = pd.read_csv("../../data/prediction_test/bg_distributions/gogh_mean_dists.csv")
+        
+        archs = [[arch_A,arch_B,"opencl","gogh",df_opencl,df_gogh],[arch_B,arch_A,"gogh","opencl",df_gogh,df_opencl]]
         dataset_qualitatives = []
         dataset_programs = []
-        dataset_transfer = []
+        #dataset_transfer = []
         
         text_dir = "code/benchgen/texts"
         
@@ -160,10 +167,20 @@ def main():
         
         
         for program in programs:
-            for arch,name_arch in archs:
-                text = program_question_maker(program, arch) 
+            for arch_origin,arch_destiny,name_arch_origin,name_arch_destiny,df_origin,df_destiny in archs:
+                
+                text = program_question_maker(program, arch_origin) 
                 if text:
-                    dataset_programs.append({"instruction" :text, "program" : program, "origin": name_arch,"destination":"","type":"program"})
+                    dataset_programs.append({"instruction" :text, "program" : program, "origin": name_arch_origin,"destination":"","type":"program"})
+                
+                counters_to_analyze = ["cpu-cycles", "instructions", "cache-misses", "cache-references"]
+                for counter in counters_to_analyze:
+                    text, itens, correct_answer = qualitative_question_maker(df_origin,df_destiny,program,arch_origin,arch_destiny,counter)    
+                    if text:
+                        dataset_qualitatives.append({"instruction" :text,"itens":itens,"correct_answer":correct_answer, 
+                                                     "program" : program, "origin": name_arch_origin,"destination":name_arch_destiny,
+                                                     "counter":counter,"type":"qualitative"})
+                        
 
         # for df_origin,df_destiny,name_origin,name_destination,origin,destination,n in dataframes:
         #     print(f"Creating dataset. Part {n} of {len(dataframes) }...⏰")
@@ -181,8 +198,8 @@ def main():
 
         random.shuffle(dataset_programs)
         random.shuffle(dataset_qualitatives)
-        random.shuffle(dataset_transfer)
-        datasets = [(dataset_transfer,"transfer"),(dataset_programs,"programs"),(dataset_qualitatives,"qualitatives")]
+        #random.shuffle(dataset_transfer)
+        datasets = [(dataset_programs,"programs"),(dataset_qualitatives,"qualitatives")]
 
     except Exception as e:
         print(f"Failed to generate the results. Erro: {e}")
