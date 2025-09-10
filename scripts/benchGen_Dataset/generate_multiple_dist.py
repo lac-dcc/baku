@@ -57,6 +57,7 @@ def main():
     range_low = int(argparser.parse_args().range_low)
     range_high = int(argparser.parse_args().range_high)
     grammars_path = argparser.parse_args().grammars_path
+    machine = argparser.parse_args().machine
 
     os.makedirs(output_path, exist_ok=True)
     os.makedirs(code_path, exist_ok=True)
@@ -75,7 +76,6 @@ def main():
             )
             executable_path = compile_program(program_path)
             data = executeMultipleRuns(executable_path)
-            machine = os.uname().nodename
             saveToCSV(
                 data,
                 f"{output_path}/perf_data_{program_name}_{machine}.csv",
