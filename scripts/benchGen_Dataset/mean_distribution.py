@@ -13,7 +13,7 @@ def bootstrap(file,server):
     for name in names:
         df_temp = df[df["program"] == name]
         for _ in range(10000):
-            series_temp = df_temp[["cpu-cycles","instructions","cache-references","cache-misses"]].sample(n=5)
+            series_temp = df_temp[["cpu-cycles","instructions","cache-references","cache-misses"]].sample(n=5,replace=True)
             means = series_temp.mean()
             dists.append({"program":name,"cpu-cycles":means["cpu-cycles"],"instructions":means["instructions"],
             "cache-references":means["cache-references"],"cache-misses":means["cache-misses"]})
